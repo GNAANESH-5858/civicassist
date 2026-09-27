@@ -13,6 +13,9 @@
   },
   "dependencies": {
     "@huggingface/transformers": "^4.3.0",
+    "compromise": "^14.17.0",
+    "natural": "^8.1.1",
+    "pdf-lib": "^1.17.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router-dom": "^7.18.4"
