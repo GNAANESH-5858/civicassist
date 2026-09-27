@@ -64,8 +64,7 @@ export default function ComplaintPage() {
         schemes may be relevant.
       </PageHeader>
 
-      <div className="layout-2">
-        <div className="stack">
+      <div className="stack">
           <form className="card" onSubmit={submit}>
             <label htmlFor="complaint" className="field-label">
               What is the problem, and where?
@@ -159,6 +158,42 @@ export default function ComplaintPage() {
             </section>
           )}
 
+          <div className="info-grid">
+            <div className="card">
+              <h2>How it works</h2>
+              <ol className="steps">
+                <li>
+                  <strong>Describe the problem</strong>Plain language is fine: English, Tanglish, short or long.
+                </li>
+                <li>
+                  <strong>Automatic routing</strong>Department, ward, urgency and repeat check. No AI model is used for this step.
+                </li>
+                <li>
+                  <strong>Relevant schemes</strong>Matched only from the 148-entry knowledge base, each with its official source.
+                </li>
+                <li>
+                  <strong>Acknowledgement</strong>An officer reviews and approves a formal letter.
+                </li>
+              </ol>
+            </div>
+            <div className="card">
+              <h2>
+                <IconShield /> Your privacy
+              </h2>
+              <ul className="trust-list">
+                <li>
+                  <IconCheck /> Phone numbers, Aadhaar-style ID numbers and emails are masked before anything is stored.
+                </li>
+                <li>
+                  <IconCheck /> Your complaint history stays in this browser only.
+                </li>
+                <li>
+                  <IconCheck /> Scheme suggestions never claim you are eligible. Verify at the official source.
+                </li>
+              </ul>
+            </div>
+          </div>
+
           {history.length > 0 && (
             <details className="card subtle">
               <summary style={{ margin: 0 }}>Your complaints in this browser ({history.length})</summary>
@@ -181,43 +216,6 @@ export default function ComplaintPage() {
               </div>
             </details>
           )}
-        </div>
-
-        <aside className="stack">
-          <div className="card">
-            <h2>How it works</h2>
-            <ol className="steps">
-              <li>
-                <strong>Describe the problem</strong>Plain language is fine: English, Tanglish, short or long.
-              </li>
-              <li>
-                <strong>Automatic routing</strong>Department, ward, urgency and repeat check. No AI model is used for this step.
-              </li>
-              <li>
-                <strong>Relevant schemes</strong>Matched only from the 148-entry knowledge base, each with its official source.
-              </li>
-              <li>
-                <strong>Acknowledgement</strong>An officer reviews and approves a formal letter.
-              </li>
-            </ol>
-          </div>
-          <div className="card">
-            <h2>
-              <IconShield /> Your privacy
-            </h2>
-            <ul className="trust-list">
-              <li>
-                <IconCheck /> Phone numbers, Aadhaar-style ID numbers and emails are masked before anything is stored.
-              </li>
-              <li>
-                <IconCheck /> Your complaint history stays in this browser only.
-              </li>
-              <li>
-                <IconCheck /> Scheme suggestions never claim you are eligible. Verify at the official source.
-              </li>
-            </ul>
-          </div>
-        </aside>
       </div>
     </>
   )

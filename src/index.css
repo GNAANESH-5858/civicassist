@@ -321,3 +321,9 @@ details summary { cursor: pointer; font-weight: 600; margin: 16px 0 8px; }
 .site-header { position: sticky; z-index: 10; }
 body, #root { background: var(--bg); }
 main.page { background: transparent; }
+
+/* Info cards under the complaint form: side by side, stacked on small screens. */
+.info-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.info-grid .card + .card { margin-top: 0; }
+.info-grid .steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; }
+@media (max-width: 760px) { .info-grid, .info-grid .steps { grid-template-columns: 1fr; } }
