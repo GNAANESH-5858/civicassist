@@ -60,6 +60,8 @@ export function buildRequest(action: Action, p: Record<string, unknown>): LLMReq
 export async function runAction(action: Action, payload: Record<string, unknown>): Promise<LLMResponse> {
   return callLLM(buildRequest(action, payload), {
     geminiKey: process.env.GEMINI_API_KEY,
+    // Set automatically by Netlify AI Gateway; unset means Google's public endpoint.
+    geminiBaseUrl: process.env.GOOGLE_GEMINI_BASE_URL,
     groqKey: process.env.GROQ_API_KEY,
     geminiModel: process.env.GEMINI_MODEL,
     groqModel: process.env.GROQ_MODEL,

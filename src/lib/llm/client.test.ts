@@ -45,6 +45,13 @@ describe('callLLM', () => {
     await expect(callLLM(req, { geminiKey: 'g' }, { fetchImpl: hang as never, sleep: noSleep, timeoutMs: 10 })).rejects.toThrow(/timed out/)
   })
 
+  it('uses a custom Gemini base URL (Netlify AI Gateway) when given', async () => {
+    const f = vi.fn(async () => gemini('via gateway'))
+    await callLLM(req, { geminiKey: 'g', geminiBaseUrl: 'https://gateway.example/gemini/' }, { fetchImpl: f as never, sleep: noSleep })
+    const [url] = f.mock.calls[0] as unknown as [string]
+    expect(url).toBe('https://gateway.example/gemini/v1beta/models/gemini-2.5-flash:generateContent')
+  })
+
   it('reports missing keys clearly', async () => {
     await expect(callLLM(req, {})).rejects.toThrow(/no API keys configured/)
   })

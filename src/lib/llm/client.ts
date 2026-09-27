@@ -18,6 +18,8 @@ export interface LLMResponse {
 
 export interface LLMKeys {
   geminiKey?: string
+  /** Gemini API base URL. Netlify AI Gateway supplies its own (GOOGLE_GEMINI_BASE_URL) with a key that only works there. */
+  geminiBaseUrl?: string
   groqKey?: string
   geminiModel?: string
   groqModel?: string
@@ -30,6 +32,7 @@ export interface ClientDeps {
 }
 
 export const DEFAULT_GEMINI_MODEL = 'gemini-2.5-flash'
+export const DEFAULT_GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com'
 export const DEFAULT_GROQ_MODEL = 'llama-3.3-70b-versatile'
 export const TIMEOUT_MS = 12_000
 export const RETRY_DELAY_MS = 2_000
@@ -74,8 +77,8 @@ async function withOneRetry<T>(fn: () => Promise<T>, deps: Required<ClientDeps>)
   }
 }
 
-async function callGemini(req: LLMRequest, key: string, model: string, deps: Required<ClientDeps>): Promise<LLMResponse> {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`
+async function callGemini(req: LLMRequest, key: string, model: string, baseUrl: string, deps: Required<ClientDeps>): Promise<LLMResponse> {
+  const url = `${baseUrl.replace(/\/+$/, '')}/v1beta/models/${encodeURIComponent(model)}:generateContent`
   const data = (await postJson(
     url,
     {
@@ -126,7 +129,7 @@ export async function callLLM(req: LLMRequest, keys: LLMKeys, deps: ClientDeps =
   const errors: string[] = []
   if (keys.geminiKey) {
     try {
-      return await withOneRetry(() => callGemini(req, keys.geminiKey!, keys.geminiModel || DEFAULT_GEMINI_MODEL, d), d)
+      return await withOneRetry(() => callGemini(req, keys.geminiKey!, keys.geminiModel || DEFAULT_GEMINI_MODEL, keys.geminiBaseUrl || DEFAULT_GEMINI_BASE_URL, d), d)
     } catch (e) {
       errors.push(`gemini: ${e instanceof Error ? e.message : String(e)}`)
     }
