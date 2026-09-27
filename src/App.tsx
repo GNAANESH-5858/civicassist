@@ -1,6 +1,5 @@
 import { lazy, Suspense } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import DemoBanner from './components/DemoBanner.tsx'
 import FloatingShapes from './components/FloatingShapes.tsx'
 import Footer from './components/Footer.tsx'
 import NavBar from './components/NavBar.tsx'
@@ -17,7 +16,6 @@ export default function App() {
   return (
     <>
       <FloatingShapes />
-      <DemoBanner />
       <NavBar />
       <main className="page">
         <div className="container">

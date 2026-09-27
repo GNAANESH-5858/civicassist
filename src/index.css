@@ -126,8 +126,6 @@ main.page { flex: 1; padding: 32px 0 56px; }
 .stack { display: flex; flex-direction: column; gap: 16px; }
 
 /* ============ Header / nav / footer ============ */
-.demo-banner { background: var(--warn-soft); color: var(--warn); font-size: 0.8rem; border-bottom: 1px solid var(--border); }
-.demo-banner .container { display: flex; align-items: center; gap: 8px; padding-top: 6px; padding-bottom: 6px; }
 .site-header { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
 .site-header .container { display: flex; align-items: center; gap: 24px; min-height: 64px; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
@@ -317,7 +315,6 @@ details summary { cursor: pointer; font-weight: 600; margin: 16px 0 8px; }
 @media (prefers-reduced-motion: reduce) { .floating-shapes { display: none; } }
 
 /* Keep all page content above the shapes. */
-.demo-banner, .site-header, main.page, .site-footer { position: relative; z-index: 1; }
 .site-header { position: sticky; z-index: 10; }
 body, #root { background: var(--bg); }
 main.page { background: transparent; }
@@ -327,3 +324,9 @@ main.page { background: transparent; }
 .info-grid .card + .card { margin-top: 0; }
 .info-grid .steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; }
 @media (max-width: 760px) { .info-grid, .info-grid .steps { grid-template-columns: 1fr; } }
+
+/* Fade shapes out towards the top so they never look cut off behind the sticky header. */
+.floating-shapes {
+  -webkit-mask-image: linear-gradient(to top, #000 55%, transparent 88%);
+  mask-image: linear-gradient(to top, #000 55%, transparent 88%);
+}
