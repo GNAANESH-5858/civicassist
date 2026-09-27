@@ -296,3 +296,28 @@ details summary { cursor: pointer; font-weight: 600; margin: 16px 0 8px; }
   .theme-toggle { margin-left: auto; }
   .nav { padding-bottom: 8px; }
 }
+
+/* ============ Floating background shapes ============ */
+.floating-shapes { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.shape {
+  position: absolute; bottom: -220px; border-radius: 22px;
+  border: 1px solid transparent; backdrop-filter: blur(1px);
+  animation-name: rise; animation-timing-function: linear; animation-iteration-count: infinite;
+  will-change: transform;
+}
+.shape-brand { background: color-mix(in srgb, var(--brand) 9%, transparent); border-color: color-mix(in srgb, var(--brand) 16%, transparent); }
+.shape-accent { background: color-mix(in srgb, var(--accent) 8%, transparent); border-color: color-mix(in srgb, var(--accent) 15%, transparent); }
+.shape-neutral { background: color-mix(in srgb, var(--muted) 6%, transparent); border-color: color-mix(in srgb, var(--muted) 12%, transparent); }
+@keyframes rise {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  8% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(calc(-100vh - 440px)) rotate(var(--rot, 15deg)); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .floating-shapes { display: none; } }
+
+/* Keep all page content above the shapes. */
+.demo-banner, .site-header, main.page, .site-footer { position: relative; z-index: 1; }
+.site-header { position: sticky; z-index: 10; }
+body, #root { background: var(--bg); }
+main.page { background: transparent; }
