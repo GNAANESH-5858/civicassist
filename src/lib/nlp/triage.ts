@@ -5,7 +5,10 @@ import type { Department } from './departments.ts'
 import { findDuplicate, type PriorComplaint } from './duplicates.ts'
 import { extractIssue, extractWard } from './entities.ts'
 import { maskPII } from './pii.ts'
+import { detectInjection } from './injection.ts'
 import { classifyUrgency, type Urgency } from './urgency.ts'
+
+export { detectInjection } from './injection.ts'
 
 export const MAX_COMPLAINT_CHARS = 2000
 
@@ -20,13 +23,6 @@ export interface TriageResult {
   masked_text: string
   flags: string[]
   error: string | null
-}
-
-const INJECTION_RE =
-  /ignore (all |any )?(previous|prior|above|earlier) (instructions|prompts?|rules)|disregard (the |all )?(previous|above|system)|you are now|act as (an? )?(admin|developer|system)|system prompt|reveal (your )?(prompt|instructions)|jailbreak|do anything now/i
-
-export function detectInjection(text: string): boolean {
-  return INJECTION_RE.test(text)
 }
 
 /** Short stable id from the text and a timestamp. */

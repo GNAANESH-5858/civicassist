@@ -5,7 +5,7 @@ import type { SchemeRecord } from '../src/lib/kb/types.ts'
 import { draftLetter, lintLetter } from '../src/lib/letter/draft.ts'
 import type BayesClassifier from 'natural/lib/natural/classifiers/bayes_classifier.js'
 import { MAX_COMPLAINT_CHARS, triage } from '../src/lib/nlp/triage.ts'
-import { letterUser } from '../src/lib/prompts/letter.v1.ts'
+import { letterUser } from '../src/lib/prompts/letter.v2.ts'
 import { ask, toContextRecord, type Gateway } from '../src/lib/rag/ask.ts'
 import type { SearchIndex } from '../src/lib/search/rank.ts'
 

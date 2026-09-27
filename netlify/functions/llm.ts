@@ -1,10 +1,11 @@
 // LLM gateway. The ONLY place API keys are read (process.env.GEMINI_API_KEY / GROQ_API_KEY).
 // Prompts are built here from { action, payload }, so the browser cannot send arbitrary system prompts.
 import { callLLM, type LLMRequest, type LLMResponse } from '../../src/lib/llm/client.ts'
+import { maskPII } from '../../src/lib/nlp/pii.ts'
 import { ANSWER_SYSTEM, answerUser, REWRITE_SYSTEM, rewriteUser } from '../../src/lib/prompts/answer.ts'
 import type { ContextRecord } from '../../src/lib/prompts/context.ts'
 import { JUDGE_SYSTEM, judgeUser } from '../../src/lib/prompts/judge.ts'
-import { CRITIQUE_SYSTEM, critiqueUser, letterSystem, letterUser, type LetterInput } from '../../src/lib/prompts/letter.v1.ts'
+import { CRITIQUE_SYSTEM, critiqueUser, letterSystem, letterUser, type LetterInput } from '../../src/lib/prompts/letter.v2.ts'
 
 export const MAX_INPUT_CHARS = 4000
 export const PUBLIC_ACTIONS = ['rewrite', 'answer', 'letter'] as const
@@ -33,8 +34,10 @@ export function buildRequest(action: Action, p: Record<string, unknown>): LLMReq
     }
     case 'letter': {
       const input: LetterInput = {
-        complaint: cap(p.complaint),
+        // Defence in depth: re-mask here so no phone, ID number or email can reach the model.
+        complaint: maskPII(cap(p.complaint)).text,
         complaint_id: cap(p.complaint_id) || 'pending',
+        date: typeof p.date === 'string' ? p.date.slice(0, 40) : undefined,
         department: typeof p.department === 'string' ? p.department : null,
         ward: typeof p.ward === 'string' ? p.ward : null,
         issue: typeof p.issue === 'string' ? p.issue : null,
@@ -43,7 +46,7 @@ export function buildRequest(action: Action, p: Record<string, unknown>): LLMReq
       }
       if (!input.complaint.trim()) throw new Error('payload.complaint is required')
       if (p.stage === 'critique') {
-        const draft = cap(p.draft)
+        const draft = maskPII(cap(p.draft)).text
         if (!draft.trim()) throw new Error('payload.draft is required for the critique stage')
         return { system: CRITIQUE_SYSTEM, user: critiqueUser(input, draft), temperature: 0 }
       }

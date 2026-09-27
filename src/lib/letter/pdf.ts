@@ -3,13 +3,13 @@ import { PDFDocument, rgb, StandardFonts, type PDFFont } from 'pdf-lib'
 
 export interface LetterPdfInput {
   complaint_id: string
-  date: Date
+  /** The full letter, including address block, date, subject, reference and closing. */
   body: string
   sources: { id: number; name: string; page: number; official_source: string }[]
 }
 
-/** Printed in grey at the top and foot of every page so the letter cannot pass as official. */
-export const DEMO_LABEL = 'SAMPLE - ACADEMIC DEMONSTRATION, NOT AN OFFICIAL COMMUNICATION'
+/** Printed in grey at the top and foot of every page: the letter is the citizen's own draft. */
+export const DRAFT_LABEL = 'DRAFT - review, complete the bracketed fields and sign before submitting'
 
 const A4: [number, number] = [595.28, 841.89]
 const MARGIN = 56
@@ -56,20 +56,20 @@ export function wrap(text: string, font: PDFFont, size: number, maxWidth: number
 
 export async function letterPdf(input: LetterPdfInput): Promise<Uint8Array> {
   const doc = await PDFDocument.create()
-  doc.setTitle(`Acknowledgement ${input.complaint_id}`)
+  doc.setTitle(`Complaint letter ${input.complaint_id}`)
   doc.setProducer('CivicAssist')
   const font = await doc.embedFont(StandardFonts.Helvetica)
   const bold = await doc.embedFont(StandardFonts.HelveticaBold)
   const width = A4[0] - MARGIN * 2
   const grey = rgb(0.5, 0.5, 0.5)
   const labelSize = 8
-  const labelWidth = bold.widthOfTextAtSize(DEMO_LABEL, labelSize)
-  // Every page gets the demo label at the top (above the letterhead) and at the foot.
+  const labelWidth = bold.widthOfTextAtSize(DRAFT_LABEL, labelSize)
+  // Every page gets the draft label at the top and at the foot.
   const addPage = () => {
     const p = doc.addPage(A4)
     const x = (A4[0] - labelWidth) / 2
-    p.drawText(DEMO_LABEL, { x, y: A4[1] - 30, size: labelSize, font: bold, color: grey })
-    p.drawText(DEMO_LABEL, { x, y: 24, size: labelSize, font: bold, color: grey })
+    p.drawText(DRAFT_LABEL, { x, y: A4[1] - 30, size: labelSize, font: bold, color: grey })
+    p.drawText(DRAFT_LABEL, { x, y: 24, size: labelSize, font: bold, color: grey })
     return p
   }
   let page = addPage()
@@ -89,12 +89,6 @@ export async function letterPdf(input: LetterPdfInput): Promise<Uint8Array> {
     }
   }
 
-  draw('Greater Chennai Corporation - Grievance Cell', bold, 14, 6)
-  page.drawLine({ start: { x: MARGIN, y }, end: { x: A4[0] - MARGIN, y }, thickness: 1, color: rgb(0.2, 0.3, 0.5) })
-  y -= 16
-  draw(`Complaint ID: ${input.complaint_id}`, font, 10)
-  draw(`Date: ${input.date.toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' })}`, font, 10)
-  y -= 12
   draw(input.body, font, 11, 5)
 
   if (input.sources.length) {

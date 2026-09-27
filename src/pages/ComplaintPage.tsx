@@ -149,7 +149,7 @@ export default function ComplaintPage() {
 
               <div className="actions">
                 <Link to={`/letter?id=${encodeURIComponent(result.complaint_id)}`} className="btn">
-                  <IconMail /> Draft acknowledgement letter
+                  <IconMail /> Draft my complaint letter
                 </Link>
                 <Link to="/advisory" className="btn btn-secondary">
                   <IconSearch /> Ask about a scheme
@@ -172,7 +172,7 @@ export default function ComplaintPage() {
                   <strong>Relevant schemes</strong>Matched only from the 148-entry knowledge base, each with its official source.
                 </li>
                 <li>
-                  <strong>Acknowledgement</strong>An officer reviews and approves a formal letter.
+                  <strong>Your complaint letter</strong>A formal letter from you to the Corporation. You sign it and submit it yourself.
                 </li>
               </ol>
             </div>

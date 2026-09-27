@@ -1,12 +1,13 @@
 import { useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { IconAlert, IconCheck, IconDownload, IconMail } from '../components/icons.tsx'
+import { IconAlert, IconCheck, IconDownload, IconFile, IconInfo, IconLink, IconMail } from '../components/icons.tsx'
 import { PageHeader, SchemeCard, Status, UrgencyBadge } from '../components/ui.tsx'
 import { makeGateway } from '../lib/browser/gateway.ts'
 import { loadKb } from '../lib/browser/kb.ts'
 import { loadHistory } from '../lib/browser/storage.ts'
+import { SUBMISSION_CHANNELS } from '../lib/config.ts'
 import { draftLetter, lintLetter, type LetterDraft } from '../lib/letter/draft.ts'
-import { DEMO_LABEL, letterPdf } from '../lib/letter/pdf.ts'
+import { DRAFT_LABEL, letterPdf } from '../lib/letter/pdf.ts'
 import { toContextRecord } from '../lib/rag/ask.ts'
 import { findRelevant, type RelevantRecord } from '../lib/rag/relevant.ts'
 
@@ -20,6 +21,7 @@ export default function LetterPage() {
   const [relevant, setRelevant] = useState<RelevantRecord[]>([])
   const [loading, setLoading] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [copied, setCopied] = useState<'idle' | 'ok' | 'fail'>('idle')
   const gateway = useMemo(() => makeGateway(), [])
   const records = relevant.map((r) => r.record)
 
@@ -27,12 +29,14 @@ export default function LetterPage() {
     if (!complaint) return
     setError(null)
     setDraft(null)
+    setCopied('idle')
     try {
       setLoading('Finding relevant records in the knowledge base…')
       const r = complaint.result
       const rel = await findRelevant(r.masked_text, await loadKb())
       setRelevant(rel)
-      setLoading('Drafting and self-reviewing the letter…')
+      setLoading('Drafting and self-reviewing your letter…')
+      // Only the masked complaint text is sent; name, address and contact stay as placeholders.
       const d = await draftLetter(
         { complaint: r.masked_text, complaint_id: r.complaint_id, department: r.department, ward: r.ward, issue: r.issue, urgency: r.urgency, records: rel.map((x) => toContextRecord(x.record)) },
         gateway,
@@ -48,24 +52,39 @@ export default function LetterPage() {
 
   async function downloadPdf() {
     if (!complaint) return
-    const bytes = await letterPdf({ complaint_id: complaint.complaint_id, date: new Date(), body: text, sources: records })
+    const bytes = await letterPdf({ complaint_id: complaint.complaint_id, body: text, sources: records })
     const url = URL.createObjectURL(new Blob([bytes as BlobPart], { type: 'application/pdf' }))
     const a = document.createElement('a')
     a.href = url
-    a.download = `acknowledgement-${complaint.complaint_id}.pdf`
+    a.download = `complaint-letter-${complaint.complaint_id}.pdf`
     a.click()
     setTimeout(() => URL.revokeObjectURL(url), 1000)
   }
 
+  async function copyText() {
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopied('ok')
+    } catch {
+      // Clipboard API unavailable (e.g. insecure context): select the text so the user can copy it.
+      const ta = document.getElementById('letter') as HTMLTextAreaElement | null
+      ta?.select()
+      setCopied('fail')
+    }
+  }
+
   const warnings = draft ? lintLetter(text, records.map(toContextRecord)) : []
+  const banner = (
+    <div className="sample-banner" role="note">
+      <IconAlert /> {DRAFT_LABEL}
+    </div>
+  )
 
   if (history.length === 0) {
     return (
       <>
-        <PageHeader eyebrow="Step 3 · Acknowledge" title="Acknowledgement letter" />
-        <div className="sample-banner" role="note">
-        <IconAlert /> {DEMO_LABEL}
-      </div>
+        <PageHeader eyebrow="Step 3 · Write" title="Your complaint letter" />
+        {banner}
         <Status kind="empty">
           No complaints in this browser yet. <Link to="/complaint">File a complaint</Link> first, then come back to draft its letter.
         </Status>
@@ -75,13 +94,11 @@ export default function LetterPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Step 3 · Acknowledge" title="Acknowledgement letter">
-        A formal letter drafted for an officer to review, edit and approve. It can only mention schemes that were retrieved from the knowledge base for this
-        complaint.
+      <PageHeader eyebrow="Step 3 · Write" title="Your complaint letter">
+        A formal letter from you to the Greater Chennai Corporation, ready for you to check, sign and submit. It can only mention programmes retrieved from the
+        knowledge base for this complaint.
       </PageHeader>
-      <div className="sample-banner" role="note">
-        <IconAlert /> {DEMO_LABEL}
-      </div>
+      {banner}
 
       <div className="layout-2">
         <div className="stack">
@@ -128,7 +145,7 @@ export default function LetterPage() {
             )}
             <div className="actions">
               <button onClick={generate} disabled={!complaint || loading !== null}>
-                <IconMail /> {draft ? 'Regenerate draft' : 'Generate draft'}
+                <IconMail /> {draft ? 'Redraft letter' : 'Draft my letter'}
               </button>
             </div>
           </div>
@@ -139,16 +156,17 @@ export default function LetterPage() {
           {draft && (
             <div className="card">
               <div className="card-title">
-                <h2>Draft for review</h2>
+                <h2>Your draft</h2>
                 <span className="hint">
                   Prompt <code>{draft.prompt_version}</code> · {draft.source === 'llm' ? `AI draft, ${draft.stages.join(' → ')}` : 'Rule-based template (AI unavailable)'}
                 </span>
               </div>
-              {draft.error && <Status kind="info">{draft.source === 'template' ? 'The AI service is not configured, so a rule-safe template letter was used.' : draft.error}</Status>}
+              {draft.error && <Status kind="info">{draft.source === 'template' ? 'The AI service is not available, so a rule-safe template letter was used.' : draft.error}</Status>}
               <label htmlFor="letter" className="sr-only">
                 Letter text
               </label>
-              <textarea id="letter" className="letter-paper" rows={16} value={text} onChange={(e) => setText(e.target.value)} />
+              <textarea id="letter" className="letter-paper" rows={22} value={text} onChange={(e) => setText(e.target.value)} />
+              <p className="hint">Replace [Your name], [Your address] and [Your contact number] by hand before signing. These details are never sent anywhere.</p>
               {warnings.length > 0 ? (
                 <ul className="checks warn">
                   {warnings.map((w) => (
@@ -160,30 +178,71 @@ export default function LetterPage() {
               ) : (
                 <ul className="checks ok">
                   <li>
-                    <IconCheck /> Mentions only schemes retrieved for this complaint
+                    <IconCheck /> Written by you, addressed to the Corporation
                   </li>
                   <li>
-                    <IconCheck /> Makes no eligibility claims; rules are not described as benefits
+                    <IconCheck /> Mentions only programmes retrieved for this complaint, with no claim of entitlement
                   </li>
                   <li>
-                    <IconCheck /> Within 200 words
+                    <IconCheck /> Within 250 words
                   </li>
                 </ul>
               )}
-              <div className="actions">
-                <button onClick={downloadPdf} disabled={!text.trim()}>
-                  <IconDownload /> Download PDF
-                </button>
+            </div>
+          )}
+
+          {draft && (
+            <div className="card submit-panel">
+              <h2>How to submit this</h2>
+              <div className="submit-note">
+                <IconInfo /> This application prepares your complaint. You submit it yourself through the official channels below.
               </div>
+              <ol className="submit-steps">
+                <li>
+                  <strong>Download the letter</strong>
+                  <button onClick={downloadPdf} disabled={!text.trim()}>
+                    <IconDownload /> Download PDF
+                  </button>
+                </li>
+                <li>
+                  <strong>Or copy the text</strong>
+                  <button className="btn-secondary" onClick={copyText} disabled={!text.trim()}>
+                    <IconFile /> Copy letter text
+                  </button>
+                  {copied === 'ok' && <span className="ok small"> Copied.</span>}
+                  {copied === 'fail' && <span className="warn small"> Copy isn't available here; the text is selected, so press Ctrl+C.</span>}
+                </li>
+                <li>
+                  <strong>File it through an official channel</strong>
+                  <ul className="channels">
+                    {SUBMISSION_CHANNELS.map((c) => (
+                      <li key={c.label}>
+                        {c.url ? (
+                          <a href={c.url} target="_blank" rel="noopener noreferrer">
+                            <IconLink size={13} /> {c.label}
+                          </a>
+                        ) : (
+                          <span>{c.label}</span>
+                        )}
+                        {c.note && <span className="hint"> · {c.note}</span>}
+                        {c.url && <span className="hint mono"> {c.url}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+                <li>
+                  <strong>Keep the complaint ID for follow-up.</strong> <span className="mono">{complaint?.complaint_id}</span>
+                </li>
+              </ol>
             </div>
           )}
         </div>
 
         <aside className="stack">
           <div className="card">
-            <h2>Records cited</h2>
+            <h2>Programmes cited</h2>
             {!draft ? (
-              <p className="hint">Generate a draft to see which knowledge-base records it may cite.</p>
+              <p className="hint">Draft the letter to see which knowledge-base records it may cite as supporting grounds.</p>
             ) : relevant.length ? (
               <div className="scheme-list">
                 {relevant.map((r) => (
@@ -191,7 +250,7 @@ export default function LetterPage() {
                 ))}
               </div>
             ) : (
-              <p className="hint">No record matched this complaint's domains or signals closely enough, so the letter mentions none.</p>
+              <p className="hint">No record matched this complaint closely enough, so the letter cites none.</p>
             )}
             <p className="hint">Official source links are printed at the foot of the PDF.</p>
           </div>

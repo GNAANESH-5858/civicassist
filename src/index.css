@@ -338,3 +338,12 @@ main.page { background: transparent; }
   background: var(--surface-2); color: var(--muted);
   font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
 }
+
+/* ============ Submission panel (Letter page) ============ */
+.submit-note { display: flex; gap: 8px; align-items: flex-start; padding: 10px 14px; border-radius: var(--radius-sm); background: var(--brand-soft); font-size: 0.88rem; font-weight: 600; margin-bottom: 16px; }
+.submit-steps { margin: 0; padding-left: 20px; display: grid; gap: 14px; }
+.submit-steps > li { padding-left: 4px; }
+.submit-steps > li > strong { display: block; margin-bottom: 6px; }
+.submit-steps button { margin-top: 2px; }
+.channels { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 6px; font-size: 0.9rem; }
+.channels .mono { display: block; font-size: 0.75rem; }

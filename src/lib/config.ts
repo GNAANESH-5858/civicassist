@@ -22,3 +22,16 @@ export const LOCALITY_BOOST = {
   urban: 0.03, // "Urban" or "ULB"
   other: 0, // National, Selected areas, etc.
 } as const
+
+/**
+ * Official channels where the citizen files the letter THEMSELVES. CivicAssist never submits,
+ * emails or calls any external service on the citizen's behalf: the complaints in this project
+ * are synthetic, and filing them would put fabricated reports in front of real staff.
+ * Verified September 2026. Re-check every entry before any real use.
+ */
+export const SUBMISSION_CHANNELS: { label: string; url?: string; note?: string }[] = [
+  { label: 'GCC Public Grievance Redressal', url: 'https://gccservices.in/pgr' },
+  { label: 'Register a complaint (GCC ERP portal)', url: 'https://erp.chennaicorporation.gov.in/pgr/citizen/BeforeReg.do' },
+  { label: 'Namma Chennai app', note: 'Search for "Namma Chennai" on the Play Store or App Store' },
+  { label: 'Helpline', note: 'Call 1913' },
+]
