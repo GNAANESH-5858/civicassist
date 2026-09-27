@@ -1,0 +1,3475 @@
+[
+ {
+  "complaint_id": "C001",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 48",
+  "issue": "potholes",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0,
+  "masked_text": "hello Road is full of potholes, two wheelers struggling in W-48, MGR Nagar 4th Street. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C002",
+  "department": "Street Lighting",
+  "ward": "Ward 120",
+  "issue": "stretch",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.08,
+  "masked_text": "respected sir whole stretch of street lights off for 2 days women afraid to walk in ward no 120 gandhi street",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C003",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 117",
+  "issue": "illegal construction next door",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.223,
+  "masked_text": "Pls sir Illegal construction next door without approval in ward 117, MGR Nagar 4th Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C004",
+  "department": "Solid Waste Management",
+  "ward": "Ward 150",
+  "issue": "garbage bins",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.148,
+  "masked_text": "Pls sir Garbage bins overflowing near the market and stinkign in ward 150, Gandhi Street. Nobody is responding.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C005",
+  "department": "Health Services",
+  "ward": "Ward 66",
+  "issue": "medicinse available",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.072,
+  "masked_text": "No medicinse available at the corporation dispensary in W-66, Kamarajar Road. very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C006",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 1",
+  "issue": "rain water",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.063,
+  "masked_text": "Sir, Rain water stagnating knee deep, storm water drain blocked in ward no 1, Anna Salai. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C007",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 132",
+  "issue": "animal lying",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.217,
+  "masked_text": "Dead animal lying on the road for two days in ward 132, Nehru Nagar.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C008",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 137",
+  "issue": "setback",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.189,
+  "masked_text": "Building setback violated, footpath blocked in Ward No. 137, Gandhi Street. pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C009",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 24",
+  "issue": "cracks",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.156,
+  "masked_text": "Dear officer, Cracks in the old dilapidated building, may collapse any time in Ward No. 24, Velachery Main Road. Nobody is responding.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C010",
+  "department": "Solid Waste Management",
+  "ward": "Ward 163",
+  "issue": "dustbin",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.258,
+  "masked_text": "Sir, Dustbin is overflowing and waste is spilling on the road in W-163, Temple Street. very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C011",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 194",
+  "issue": "water supply",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.297,
+  "masked_text": "hello water supply is irregular and pressure is too low to fill the sump in ward no 194 velachery main road nobody is responding",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C012",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 101",
+  "issue": "water supply",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.759,
+  "masked_text": "hello water supply is irregular and pressure is too low to fill the sump in ward no 101 temple street",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C013",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 136",
+  "issue": "cut",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.239,
+  "masked_text": "Pls sir Road cut for pipeline work left open for weeks in ward no 136, Velachery Main Road. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C014",
+  "department": "Solid Waste Management",
+  "ward": "Ward 10",
+  "issue": "conservancy workers",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.223,
+  "masked_text": "Sir, Conservancy workers have not picked up waste for 5 days, bins full in ward 10, Anna Salai. Nobody is responding.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C015",
+  "department": "Street Lighting",
+  "ward": "Ward 190",
+  "issue": "lamp",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.208,
+  "masked_text": "Respected sir, Lamp posts glowing even in daytime in ward 190, Nehru Nagar. pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C016",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 195",
+  "issue": "community toilet",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.243,
+  "masked_text": "Pls sir Community toilet has no water and is unusable in Ward 195, Kamarajar Road. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C017",
+  "department": "Health Services",
+  "ward": "Ward 89",
+  "issue": "medicines available",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.811,
+  "masked_text": "PLS SIR NO MEDICINES AVAILABLE AT THE CORPORATION DISPENSARY IN WARD 89, KAMARAJAR ROAD. VERY WORST SITUATION",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C018",
+  "department": "Street Lighting",
+  "ward": "Ward 152",
+  "issue": "light",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.44,
+  "masked_text": "pls sir street light not working on our road in ward 152 temple street very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C019",
+  "department": "Street Lighting",
+  "ward": "Ward 20",
+  "issue": "power",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.276,
+  "masked_text": "Street lights are on during the day, wasting power in Ward No. 20, Kamarajar Road. Noboyd is responding.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C020",
+  "department": "Health Services",
+  "ward": "Ward 191",
+  "issue": "medicines available",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.475,
+  "masked_text": "No medicines available at the corporatino dispensary in W-191, Gandhi Street. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C021",
+  "department": "Social Welfare",
+  "ward": null,
+  "issue": "vendors",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.263,
+  "masked_text": "hello street vendors need a vending certificate and space near 2nd cross street very worst situation",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C022",
+  "department": "Social Welfare",
+  "ward": null,
+  "issue": "solar panels",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.236,
+  "masked_text": "How to get solar panels installed on my roof with subsidy near MGR Nagar 4th Street. pls help urgently",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C023",
+  "department": "Street Lighting",
+  "ward": "Ward 64",
+  "issue": "lamps",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.288,
+  "masked_text": "hello All lamps on the road dark for a week, chain snatching risk in Ward No. 64, MGR Nagar 4th Street. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C024",
+  "department": "Street Lighting",
+  "ward": "Ward 175",
+  "issue": "office r stretch",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.848,
+  "masked_text": "Dear office,r Whole stretch of street lights off for 3 day,s women afraid to walk in ward#175, Gandhi Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C025",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 139",
+  "issue": "illegal construction next door",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.724,
+  "masked_text": "hello Illegal construction next door without approval in W-139, Temple Street. pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C026",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 177",
+  "issue": "children",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.27,
+  "masked_text": "Children park not maintained, play equipment broken in Ward 177, Temple Street. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C027",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 151",
+  "issue": "storm water drain",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.286,
+  "masked_text": "Dear officer, Storm water drain is clogged with silt and plastic in Ward 151, 2nd Cross Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C028",
+  "department": "Social Welfare",
+  "ward": "Ward 118",
+  "issue": "elderly homeless man",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.312,
+  "masked_text": "Elderly homeless man sleeping on the pavement, needs a night shelter in ward no 118, 2nd Cross Street. very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C029",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 54",
+  "issue": "temple tank water body",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.241,
+  "masked_text": "temple tank water body neglected and full of waste in ward 54 2nd cross street pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C030",
+  "department": "Health Services",
+  "ward": "Ward 78",
+  "issue": "immunisation",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.272,
+  "masked_text": "Pls sir Immunisation for babies not happening at the health post in ward#78, Temple Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C031",
+  "department": "Solid Waste Management",
+  "ward": "Ward 102",
+  "issue": "collection van skips",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.302,
+  "masked_text": "Waste collection van skips our lane most days in Ward No. 102, Anna Salai. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C032",
+  "department": "Social Welfare",
+  "ward": "Ward 31",
+  "issue": "homeless persno neesd shelter near the flyover",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.286,
+  "masked_text": "Homeless persno neesd shelter near the flyover in ward#31, Temple Street. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C033",
+  "department": "Health Services",
+  "ward": "Ward 24",
+  "issue": "maternity",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.188,
+  "masked_text": "hello Maternity ward at the corporation hospitla is overcrowded in W-24, Velacheyr Main Road.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C034",
+  "department": "Health Services",
+  "ward": "Ward 104",
+  "issue": "uphc",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.271,
+  "masked_text": "UPHC closed during working hours, patients waiting in ward no 104, Nehru Nagar. pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C035",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 137",
+  "issue": "water",
+  "urgency": "high",
+  "duplicate_of": null,
+  "similarity": 0.252,
+  "masked_text": "we are getting muddy and dirty water in the pipeline children falling sick in ward 137 kamarajar road kindly do the needful",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C036",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 10",
+  "issue": "metro water",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.149,
+  "masked_text": "Metro water has not come to our area for the last 2 days, taps are dry in ward no 10, Kamarajra Road.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C037",
+  "department": "Pollution Control",
+  "ward": "Ward 106",
+  "issue": "air pollution",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.242,
+  "masked_text": "Pls sir Air pollution from burning waste every evening in W-106, Anna Salai.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C038",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 121",
+  "issue": "rain water",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.815,
+  "masked_text": "hello Rain water stagnating knee deep, storm water drain blocked in Ward 121, Nehru Nagar.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C039",
+  "department": "Solid Waste Management",
+  "ward": "Ward 46",
+  "issue": "dustbin",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.706,
+  "masked_text": "Sir, Dustbin is overflowing and waste is spilling on the road in ward 46, Nehru Nagar.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C040",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 118",
+  "issue": "water pipeline",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.426,
+  "masked_text": "hello Water pipeline leaking on the main road for a week in ward#118, Anna Salai. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C041",
+  "department": "Pollution Control",
+  "ward": null,
+  "issue": "loudspeakers",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.159,
+  "masked_text": "hello Loudspeakers blaring past midnight, cannot sleep near Nehru Nagar. Kindly do the needful.",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C042",
+  "department": "Street Lighting",
+  "ward": "Ward 40",
+  "issue": "broken streetlight near the junction",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.238,
+  "masked_text": "Sir, Broken streetlight near the junction, area is dark in ward 40, Gandhi Street. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C043",
+  "department": "Pollution Control",
+  "ward": "Ward 85",
+  "issue": "garbage",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.255,
+  "masked_text": "Respected sir, People burning garbage and plastic, thick smoke in the area in ward#85, Nehru Nagar. Nobody is responding.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C044",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 96",
+  "issue": "sewage",
+  "urgency": "high",
+  "duplicate_of": null,
+  "similarity": 0.341,
+  "masked_text": "Sewage is overflowing from the manhole onto the road in Ward 96, MGR Nagar 4th Street. pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C045",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 129",
+  "issue": "setback",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.717,
+  "masked_text": "Building setback violated, footpath blocked in Ward 129, Kamarajar Road. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C046",
+  "department": "Solid Waste Management",
+  "ward": "Ward 169",
+  "issue": "open dumping of garbage near the bus stop",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.207,
+  "masked_text": "hello Open dumping of garbage near the bus stop every night in ward 169, MGR Nagar 4th Street. Contact [PHONE].",
+  "flags": [
+   "phone_masked"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C047",
+  "department": "Social Welfare",
+  "ward": null,
+  "issue": "house",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.213,
+  "masked_text": "hello Want to apply for a house under a housing scheme near Gandhi Street. Please take action.",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C048",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 8",
+  "issue": "water",
+  "urgency": "high",
+  "duplicate_of": null,
+  "similarity": 0.83,
+  "masked_text": "Respected sir, We are getting muddy and dirty water in the pipeline, children falling sick in ward#8, 2nd Cross Street. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C049",
+  "department": "Solid Waste Management",
+  "ward": "Ward 179",
+  "issue": "dumping waste",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.247,
+  "masked_text": "PEOPLE DUMPING WASTE ON THE EMPTY PLOT NEXT TO OUR HOUSE IN WARD#179, NEHRU NAGAR.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C050",
+  "department": "Pollution Control",
+  "ward": null,
+  "issue": "industrial unit",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.272,
+  "masked_text": "Respected sir, Industrial unit emitting fumes, residents coughing near Temple Street. very worst situation",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C051",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 71",
+  "issue": "public toilet",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.222,
+  "masked_text": "PUBLIC TOILET IS FILTHY AND NOT CLEANED IN WARD NO 71, 2ND CROSS STREET.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C052",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 85",
+  "issue": "low water pressure",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.362,
+  "masked_text": "Very low water pressure, water comes only for 10 minutes in ward 85, 2nd Cross Street. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C053",
+  "department": "Pollution Control",
+  "ward": "Ward 185",
+  "issue": "loudspeakers",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.693,
+  "masked_text": "SIR, LOUDSPEAKERS BLARING PAST MIDNIGHT, CANNOT SLEEP IN W-185, 2ND CROSS STREET. VERY WORST SITUATION",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C054",
+  "department": "Health Services",
+  "ward": "Ward 87",
+  "issue": "maternity",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.49,
+  "masked_text": "Maternity ward at the corporation hospital is overcrowded in Ward 87, 2nd Cross Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C055",
+  "department": "Pollution Control",
+  "ward": null,
+  "issue": "dust",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.296,
+  "masked_text": "hello Dust from road work causing breathing problems near Nehru Nagar. pls help urgently",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C056",
+  "department": "Social Welfare",
+  "ward": "Ward 9",
+  "issue": "elderly homeless man",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.751,
+  "masked_text": "respected sir elderly homeless man sleeping on the pavement needs a night shelter in ward 9 gandhi street nobody is responding",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C057",
+  "department": "Solid Waste Management",
+  "ward": "Ward 71",
+  "issue": "construction debris",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.256,
+  "masked_text": "RESPECTED SIR, CONSTRUCTION DEBRIS DUMPED ON THE PAVEMENT IN WARD 71, VELACHERY MAIN ROAD. PLEASE TAKE ACTION.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C058",
+  "department": "Street Lighting",
+  "ward": null,
+  "issue": "exposed electric wire",
+  "urgency": "high",
+  "duplicate_of": null,
+  "similarity": 0.233,
+  "masked_text": "Exposed electric wire at the lamp post, sparking in rain near Temple Street. Contact [PHONE].",
+  "flags": [
+   "phone_masked",
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C059",
+  "department": "Pollution Control",
+  "ward": "Ward 28",
+  "issue": "construction dust",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.322,
+  "masked_text": "pls sir construction dust everywhere from the site next door in w-28 kamarajar road very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C060",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 152",
+  "issue": "big pothoel",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.197,
+  "masked_text": "Big pothoel on the main road causing trouble in ward#152, Temple Street. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C061",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 166",
+  "issue": "temple tank water body",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.855,
+  "masked_text": "temple tank water body neglected and full of waste in w-166 2nd cross street very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C062",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 105",
+  "issue": "water body",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.483,
+  "masked_text": "hello Water body being filled with debris for encroachment in ward 105, 2nd Cross Street. pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C063",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 187",
+  "issue": "pack",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.303,
+  "masked_text": "Sir, Pack of stray dogs attacking people at night in ward 187, Gandhi Street. Nobody is responding.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C064",
+  "department": "Street Lighting",
+  "ward": "Ward 49",
+  "issue": "live wire",
+  "urgency": "high",
+  "duplicate_of": null,
+  "similarity": 0.23,
+  "masked_text": "hello Live wire hanging from the street light pole in ward 49, Velachery Main Road.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C065",
+  "department": "Social Welfare",
+  "ward": "Ward 34",
+  "issue": "wheelchair access",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.243,
+  "masked_text": "Wheelchair access missing at the ward office in Ward No. 34, Anna Salai.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C066",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 49",
+  "issue": "old building",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.411,
+  "masked_text": "Old building in our street is about to collapse in ward 49, Kamarajar Road. very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C067",
+  "department": "Pollution Control",
+  "ward": "Ward 188",
+  "issue": "factory releasing black",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.273,
+  "masked_text": "Respected sir, Factory releasing black smoke into the residential area in Ward 188, Temple Street. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C068",
+  "department": "Street Lighting",
+  "ward": "Ward 105",
+  "issue": "exposed electric wire",
+  "urgency": "high",
+  "duplicate_of": null,
+  "similarity": 0.829,
+  "masked_text": "EXPOSED ELECTRIC WIRE AT THE LAMP POST, SPARKING IN RAIN IN WARD 105, TEMPLE STREET. KINDLY DO THE NEEDFUL.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C069",
+  "department": "Social Welfare",
+  "ward": "Ward 117",
+  "issue": "vendor issue",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.375,
+  "masked_text": "hello Street vendor issue, vendors evicted without notice in W-117, Kamarajar Road. very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C070",
+  "department": "Solid Waste Management",
+  "ward": "Ward 55",
+  "issue": "dumping waste",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.874,
+  "masked_text": "people dumping waste on the empty plot next to our house in ward no 55 temple street",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C071",
+  "department": "Social Welfare",
+  "ward": "Ward 53",
+  "issue": "vendor issue",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.835,
+  "masked_text": "Street vendor issue, vendors evicted without notice in Ward 53, 2nd Cross Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C072",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 199",
+  "issue": "big leak",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.282,
+  "masked_text": "Sir, Big leak in the water pipe, lot of drinking water wasted daily in ward#199, Nehru Nagar. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C073",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 68",
+  "issue": "water body",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.631,
+  "masked_text": "water body being filled with debris for encroachment in ward 68 velachery main road very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C074",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 158",
+  "issue": "potholes two wheelers struggling in temple nobody",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.695,
+  "masked_text": "respected sir road is full of potholes two wheelers struggling in ward 158 temple street nobody is responding",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C075",
+  "department": "Pollution Control",
+  "ward": null,
+  "issue": "industrial unit",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.765,
+  "masked_text": "Dear officer, Industrial unit emitting fumes, residents coughing near Kamarajar Road.",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C076",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 23",
+  "issue": "cable work",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.271,
+  "masked_text": "Dear officer, Road dug up for cable work and never relaid in ward no 23, Kamarajar Road. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C077",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 108",
+  "issue": "carcass of a dog",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.22,
+  "masked_text": "Pls sir Carcass of a dog on the street, foul smell in ward no 108, Kamarajar Road. pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C078",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 180",
+  "issue": "stray dogs menace",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.327,
+  "masked_text": "Sir, Stray dogs menace, dogs chasing children in ward#180, Velachery Main Road. very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C079",
+  "department": "Social Welfare",
+  "ward": "Ward 14",
+  "issue": "widow pension",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.232,
+  "masked_text": "Widow pension stopped without reason in ward no 14, Velachery Main Road.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C080",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 2",
+  "issue": "gates",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.22,
+  "masked_text": "Park gates locked in the evening, walkers cannot use it in W-2, MGR Nagar 4th Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C081",
+  "department": "Social Welfare",
+  "ward": "Ward 43",
+  "issue": "wheelchair access",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.728,
+  "masked_text": "Sir, Wheelchair access missing at the ward office in ward#43, Temple Street. pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C082",
+  "department": "Health Services",
+  "ward": "Ward 1",
+  "issue": "uphc",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.748,
+  "masked_text": "hello UPHC closed during working hours, patients waiting in ward no 1, Anna Salai. very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C083",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 83",
+  "issue": "sewage",
+  "urgency": "high",
+  "duplicate_of": null,
+  "similarity": 0.698,
+  "masked_text": "hello sewage is overflowing from the manhole onto the road in ward#83 2nd cross street",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C084",
+  "department": "Parks & Water Bodies",
+  "ward": null,
+  "issue": "water body",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.752,
+  "masked_text": "hello Water body being filled with debris for encroachment near Temple Street.",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C085",
+  "department": "Pollution Control",
+  "ward": "Ward 192",
+  "issue": "air pollution",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.745,
+  "masked_text": "air pollution from burning waste every evening in ward no 192 mgr nagar 4th street kindly do the needful",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C086",
+  "department": "Pollution Control",
+  "ward": "Ward 67",
+  "issue": "construction dust",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.781,
+  "masked_text": "hello Construction dust everywhere from the site next door in ward no 67, Nehru Nagar.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C087",
+  "department": "Health Services",
+  "ward": null,
+  "issue": "urban primary health centre",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.214,
+  "masked_text": "Pls sir Urban primary health centre has no doctor in the morning near MGR Nagar 4th Street.",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C088",
+  "department": "Buildings & Town Planning",
+  "ward": null,
+  "issue": "building setback",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.675,
+  "masked_text": "Dear officer, Building setback violated, footpath blocked near Anna Salai.",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C089",
+  "department": "Solid Waste Management",
+  "ward": "Ward 200",
+  "issue": "door",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.221,
+  "masked_text": "Respected sir, Door to door collection vehicle does not come regularly in ward 200, Gandhi Street. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C090",
+  "department": "Solid Waste Management",
+  "ward": "Ward 31",
+  "issue": "conservancy workers",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.75,
+  "masked_text": "conservancy workers have not picked up waste for 3 days bins full in ward 31 mgr nagar 4th street please take action",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C091",
+  "department": "Health Services",
+  "ward": "Ward 48",
+  "issue": "medicines available",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.825,
+  "masked_text": "Pls sir No medicines available at the corporation dispensary in ward no 48, Anna Salai. very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C092",
+  "department": "Street Lighting",
+  "ward": "Ward 52",
+  "issue": "electric wire",
+  "urgency": "high",
+  "duplicate_of": null,
+  "similarity": 0.777,
+  "masked_text": "RESPECTED SIR, EXPOSED ELECTRIC WIRE AT THE LAMP POST, SPARKING IN RAIN IN WARD 52, VELACHERY MAIN ROAD. PLS HELP URGENTLY",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C093",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 106",
+  "issue": "illegal construction next door",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.688,
+  "masked_text": "Sir, Illegal construction next door without approval in W-106, 2nd Cross Stree.t Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C094",
+  "department": "Pollution Control",
+  "ward": "Ward 63",
+  "issue": "garbage",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.792,
+  "masked_text": "People burning garbage and plastic, thick smoke in the area in W-63, MGR Nagar 4th Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C095",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 48",
+  "issue": "stray dogs menace",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.847,
+  "masked_text": "Stray dogs menace, dogs chasing children in ward 48, Gandhi Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C096",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 60",
+  "issue": "storm water drain",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.756,
+  "masked_text": "storm water drain is clogged with silt and plastic in ward no 60 nehru nagar",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C097",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 23",
+  "issue": "children park",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.915,
+  "masked_text": "Pls sir Children park not maintained, play equipment broken in ward#23, Gandhi Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C098",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 53",
+  "issue": "public toilet",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.941,
+  "masked_text": "SIR, PUBLIC TOILET IS FILTHY AND NOT CLEANED IN WARD 53, 2ND CROSS STREET. PLEASE TAKE ACTION.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C099",
+  "department": "Street Lighting",
+  "ward": "Ward 128",
+  "issue": "respectde",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.377,
+  "masked_text": "Respectde sir, Strete light not working on our road in Ward No. 128, MGR Nagra 4th Stree.t Noboyd is responding.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C100",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 90",
+  "issue": "building plan approval",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.298,
+  "masked_text": "dear officer building plan approval pending for three months in w-90 velachery main road kindly do the needful",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C101",
+  "department": "Solid Waste Management",
+  "ward": "Ward 28",
+  "issue": "office r conservancy workers",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.601,
+  "masked_text": "Dear office,r Conservancy workers have not picked up waset for 6 days, bins full in Ward No. 28, Gandhi Street. Noboyd is responding. Contact [PHONE].",
+  "flags": [
+   "phone_masked"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C102",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 115",
+  "issue": "gandhi",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.201,
+  "masked_text": "Flooding and waterlogging on our street after rain in W-115, Gandhi Street. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C103",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 62",
+  "issue": "metor watre",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.552,
+  "masked_text": "Pls sir Metor watre has not come to our area for the last 5 days, taps are dry in Ward 62, Gandhi Stree.t pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C104",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 15",
+  "issue": "animal lying",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.756,
+  "masked_text": "Dead animal lying on the road for two days in ward no 15, Gandhi Street. very worst situatino",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C105",
+  "department": "Health Services",
+  "ward": "Ward 130",
+  "issue": "urban primary health centre",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.841,
+  "masked_text": "Urban primary health centre has no doctor in the morning in Ward 130, Temple Street. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C106",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 95",
+  "issue": "children",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.818,
+  "masked_text": "Children park not maintained, play equipment broken in ward no 95, Nehru Nagar. Nobody is responding.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C107",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 152",
+  "issue": "lake near",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.377,
+  "masked_text": "Dear officer, Lake near our area is polluted with sewage and plastic in ward 152, MGR Nagar 4th Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C108",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 177",
+  "issue": "cracsk",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.512,
+  "masked_text": "Cracsk in the old dilapidated buildin,g may collapse any time in ward 177, Temple Street. Please take actio.n",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C109",
+  "department": "Social Welfare",
+  "ward": "Ward 146",
+  "issue": "house",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.82,
+  "masked_text": "Dear officer, Want to apply for a house under a housing scheme in Ward 146, Gandhi Street. very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C110",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 168",
+  "issue": "footpath",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.248,
+  "masked_text": "RESPECTED SIR, SHOP ENCROACHING ON THE FOOTPATH WITH A SHED IN WARD 168, TEMPLE STREET. PLEASE TAKE ACTION.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C111",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 50",
+  "issue": "children park",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.863,
+  "masked_text": "Respected sir, Children park not maintained, play equipment broken in ward 50, Kamarajar Road.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C112",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 192",
+  "issue": "mosquitoes",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.222,
+  "masked_text": "Too many mosquitoes, dengue fever cases in the street in Ward 192, Anna Salai. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C113",
+  "department": "Social Welfare",
+  "ward": "Ward 173",
+  "issue": "widow pension",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.752,
+  "masked_text": "Dear officer, Widow pension stopped without reason in ward 173, Nehru Nagar.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C114",
+  "department": "Water Supply & Sewerage",
+  "ward": null,
+  "issue": "drainage water",
+  "urgency": "high",
+  "duplicate_of": null,
+  "similarity": 0.365,
+  "masked_text": "Drainage water is overflowing from the sewer and entering houses near Gandhi Street. Nobody is responding.",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C115",
+  "department": "Health Services",
+  "ward": "Ward 147",
+  "issue": "vaccination camp",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.224,
+  "masked_text": "Sir, Need vaccination camp for children in our area in ward#147, Gandhi Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C116",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 117",
+  "issue": "open defecation near the canla bank",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.298,
+  "masked_text": "Open defecation near the canla bank in ward 117, MGR Nagar 4th Stree.t",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C117",
+  "department": "Parks & Water Bodies",
+  "ward": null,
+  "issue": "park",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.529,
+  "masked_text": "Sir, Park lights not working and gate closed early near Gandhi Street. very worst situation",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C118",
+  "department": "Street Lighting",
+  "ward": "Ward 25",
+  "issue": "power",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.852,
+  "masked_text": "Sir, Street lights are on during the day, wasting power in Ward No. 25, Kamarajar Road. Nobody is responding.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C119",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 30",
+  "issue": "old building",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.584,
+  "masked_text": "Dear officer, Old building in our street is about to collapse in W-30, Anna Salai.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C120",
+  "department": "Public Health & Sanitation",
+  "ward": null,
+  "issue": "mosquito menace",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.29,
+  "masked_text": "DEAR OFFICER, MOSQUITO MENACE, NO FOGGING DONE IN OUR AREA NEAR NEHRU NAGAR. PLEASE TAKE ACTION.",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C121",
+  "department": "Social Welfare",
+  "ward": "Ward 149",
+  "issue": "widow pension",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.714,
+  "masked_text": "sir widow pension stopped without reason in ward no 149 gandhi street kindly do the needful Contact [PHONE].",
+  "flags": [
+   "phone_masked"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C122",
+  "department": "Pollution Control",
+  "ward": "Ward 38",
+  "issue": "industrial unit",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.846,
+  "masked_text": "Sir, Industrial unit emitting fumes, residents coughing in ward no 38, Nehru Nagar. very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C123",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 83",
+  "issue": "mosquito menace",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.77,
+  "masked_text": "Sir, Mosquito menace, no fogging done in our area in Ward 83, Gandhi Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C124",
+  "department": "Solid Waste Management",
+  "ward": "Ward 189",
+  "issue": "conservancy workers",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.789,
+  "masked_text": "Conservancy workers have not picked up waste for 2 days, bins full in Ward No. 189, Anna Salai. very worst situation Contact [PHONE].",
+  "flags": [
+   "phone_masked"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C125",
+  "department": "Roads & Storm Water Drains",
+  "ward": null,
+  "issue": "open storm water drain",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.349,
+  "masked_text": "Open storm water drain without cover, a child fell in near Anna Salai. pls help urgently",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C126",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 100",
+  "issue": "permission file",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.253,
+  "masked_text": "Planning permission file not moving in ward no 100, MGR Nagar 4th Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C127",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 23",
+  "issue": "big leak",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.894,
+  "masked_text": "Big leak in the water pipe, lot of drinking water wasted daily in Ward No. 23, Kamarajar Road.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C128",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 75",
+  "issue": "new water connection two ago",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.168,
+  "masked_text": "applied for new water connection two months ago no update in ward 75 temple street",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C129",
+  "department": "Social Welfare",
+  "ward": "Ward 35",
+  "issue": "want rooftop solar connection",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.414,
+  "masked_text": "Dear officer, Want rooftop solar connection for my house in W-35, 2nd Cross Street. Contact [PHONE].",
+  "flags": [
+   "phone_masked"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C130",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 55",
+  "issue": "rain water",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.812,
+  "masked_text": "Respected sir, Rain water stagnating knee deep, storm water drain blocked in ward no 55, Kamarajar Road. Nobody is responding.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C131",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 101",
+  "issue": "park",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.304,
+  "masked_text": "RESPECTED SIR, PARK IS NEGLECTED, BROKEN SWINGS AND OVERGROWN GRASS IN W-101, TEMPLE STREET. VERY WORST SITUATION",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C132",
+  "department": "Social Welfare",
+  "ward": "Ward 172",
+  "issue": "rooftop solar connection",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.664,
+  "masked_text": "Want rooftop solar connection for my house in W-172, Anna Salai. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C133",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 13",
+  "issue": "old building",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.847,
+  "masked_text": "Sir, Old building in our street is about to collapse in Ward No. 13, Anna Salai.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C134",
+  "department": "Street Lighting",
+  "ward": "Ward 20",
+  "issue": "broken streetlight near the junction",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.836,
+  "masked_text": "Broken streetlight near the junction, area is dark in Ward 20, MGR Nagar 4th Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C135",
+  "department": "Street Lighting",
+  "ward": "Ward 98",
+  "issue": "stretch",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.882,
+  "masked_text": "Pls sir Whole stretch of street lights off for 5 days, women afraid to walk in ward no 98, 2nd Cross Street. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C136",
+  "department": "Health Services",
+  "ward": "Ward 84",
+  "issue": "need vaccination camp",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.779,
+  "masked_text": "hello Need vaccination camp for children in our area in ward no 84, Gandhi Stree.t Please take actio.n",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C137",
+  "department": "Parks & Water Bodies",
+  "ward": null,
+  "issue": "encroachment",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.411,
+  "masked_text": "Respected sir, Encroachment on the lake bund near MGR Nagar 4th Street. pls help urgently",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C138",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 140",
+  "issue": "metro water",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.818,
+  "masked_text": "Respected sir, Metro water has not come to our area for the last 2 days, taps are dry in ward#140, Kamarajar Road. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C139",
+  "department": "Pollution Control",
+  "ward": "Ward 122",
+  "issue": "loudspeakers",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.742,
+  "masked_text": "Dear officer, Loudspeakers blaring past midnight, cannot sleep in W-122, Kamarajar Road.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C140",
+  "department": "Street Lighting",
+  "ward": "Ward 113",
+  "issue": "office r exposed electrci wire",
+  "urgency": "high",
+  "duplicate_of": null,
+  "similarity": 0.594,
+  "masked_text": "Dear office,r Exposed electrci wire at the lamp pos,t sparking in rain in ward no 113, MGR Nagar 4th Street. Kindly do the needful. Contact [PHONE].",
+  "flags": [
+   "phone_masked"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C141",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 104",
+  "issue": "open storm water drain",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.869,
+  "masked_text": "Dear officer, Open storm water drain without cover, a child fell in in ward#104, Anna Salai.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C142",
+  "department": "Social Welfare",
+  "ward": "Ward 66",
+  "issue": "disabled person",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.202,
+  "masked_text": "Pls sir Disabled person needs ramp at the corporation office in Ward No. 66, Gandhi Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C143",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 159",
+  "issue": "applied",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.77,
+  "masked_text": "Sir, Applied for new water connection two months ago, no updaet in ward#159, Nehru Nagar.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C144",
+  "department": "Buildings & Town Planning",
+  "ward": null,
+  "issue": "building plan approval",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.857,
+  "masked_text": "dear officer building plan approval pending for three months near kamarajar road",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C145",
+  "department": "Health Services",
+  "ward": "Ward 78",
+  "issue": "maternity",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.74,
+  "masked_text": "hello Maternity ward at the corporation hospital is overcrowded in ward#78, Kamarajar Road. pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C146",
+  "department": "Pollution Control",
+  "ward": null,
+  "issue": "loud noise",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.287,
+  "masked_text": "Dear officer, Loud noise at night from a marriage hall near Anna Salai. Please take action.",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C147",
+  "department": "Health Services",
+  "ward": "Ward 172",
+  "issue": "urban primary health centre",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.865,
+  "masked_text": "sir urban primary health centre has no doctor in the morning in ward#172 gandhi street pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C148",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 105",
+  "issue": "park gates",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.817,
+  "masked_text": "dear officer park gates locked in the evening walkers cannot use it in w-105 gandhi street please take action",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C149",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 179",
+  "issue": "helol park",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.743,
+  "masked_text": "helol Park lights not working and gate closed early in W-179, Nehru Nagar.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C150",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 148",
+  "issue": "pack",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.895,
+  "masked_text": "pls sir pack of stray dogs attacking people at night in ward 148 gandhi street please take action",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C151",
+  "department": "Health Services",
+  "ward": "Ward 11",
+  "issue": "maternity",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.783,
+  "masked_text": "dear officer maternity ward at the corporation hospital is overcrowded in w-11 gandhi street",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C152",
+  "department": "Pollution Control",
+  "ward": "Ward 129",
+  "issue": "garbage",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.899,
+  "masked_text": "pls sir people burning garbage and plastic thick smoke in the area in ward 129 nehru nagar",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C153",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 105",
+  "issue": "unauthorised extra floro",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.285,
+  "masked_text": "Sir, Unauthorised extra floro being built in the next buildign in ward#105, 2nd Cross Stree.t Please take actio.n",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C154",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 193",
+  "issue": "community toilet",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.83,
+  "masked_text": "Community toilet has no water and is unusable in ward no 193, 2nd Cross Street. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C155",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 63",
+  "issue": "open storm water drain",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.793,
+  "masked_text": "Respected sir, Open storm water drain without cover, a child fell in in ward#63, Nehru Nagar. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C156",
+  "department": "Solid Waste Management",
+  "ward": "Ward 193",
+  "issue": "dustbin",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.886,
+  "masked_text": "Dear officer, Dustbin is overflowing and waste is spilling on the road in ward#193, Nehru Nagar. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C157",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 104",
+  "issue": "rubble and debris",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.396,
+  "masked_text": "DEAR OFFICER, SOMEONE LEFT BUILDING RUBBLE AND DEBRIS BLOCKING THE FOOTPATH IN WARD NO. 104, 2ND CROSS STREET.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C158",
+  "department": "Solid Waste Management",
+  "ward": "Ward 87",
+  "issue": "open dumping of garbage near the bus stop",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.74,
+  "masked_text": "Respected sir, Open dumping of garbage near the bus stop every night in W-87, Anna Salai.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C159",
+  "department": "Health Services",
+  "ward": "Ward 2",
+  "issue": "health centre",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.364,
+  "masked_text": "Health centre ran out of basic medicines in Ward 2, Temple Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C160",
+  "department": "Roads & Storm Water Drains",
+  "ward": null,
+  "issue": "cable work",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.787,
+  "masked_text": "Road dug up for cable work and never relaid near Nehru Nagar. Please take action.",
+  "flags": [
+   "ward_missing"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C161",
+  "department": "Social Welfare",
+  "ward": "Ward 152",
+  "issue": "houes",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.596,
+  "masked_text": "Want to apply for a houes under a housing scheme in ward no 152, Nehru Nagar. Nobody is responding.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C162",
+  "department": "Pollution Control",
+  "ward": "Ward 3",
+  "issue": "loud noise",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.726,
+  "masked_text": "Loud noise at night from a marriage hall in ward#3, Nehru Nagar. pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C163",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 30",
+  "issue": "mosquito menace",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.764,
+  "masked_text": "Mosquito menace, no foggign done in our area in ward 30, Gandhi Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C164",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 94",
+  "issue": "drain near the school",
+  "urgency": "high",
+  "duplicate_of": null,
+  "similarity": 0.346,
+  "masked_text": "hello Drain near the school is blocked, water not flowing in Ward 94, Velachery Main Road. very worst situation Contact [PHONE].",
+  "flags": [
+   "phone_masked"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C165",
+  "department": "Street Lighting",
+  "ward": "Ward 131",
+  "issue": "lighst",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.398,
+  "masked_text": "Street lighst are on durign the day, wasting power in ward 131, Gandhi Stree.t Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C166",
+  "department": "Solid Waste Management",
+  "ward": "Ward 191",
+  "issue": "construction debris",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.655,
+  "masked_text": "Respected sir, Construction debris dumped on the pavement in ward 191, MGR Nagar 4th Street. Nobody is responding.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C167",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 6",
+  "issue": "open defecation near the canal bank",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.708,
+  "masked_text": "OPEN DEFECATION NEAR THE CANAL BANK IN WARD NO. 6, MGR NAGAR 4TH STREET.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C168",
+  "department": "Health Services",
+  "ward": "Ward 86",
+  "issue": "vaccination camp",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.912,
+  "masked_text": "need vaccination camp for children in our area in ward 86 temple street",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C169",
+  "department": "Solid Waste Management",
+  "ward": "Ward 61",
+  "issue": "door",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.786,
+  "masked_text": "Door to door collection vehicle does not come regularly in ward no 61, Velachery Main Road. Nobody is responding.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C170",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 75",
+  "issue": "near the school",
+  "urgency": "high",
+  "duplicate_of": null,
+  "similarity": 0.693,
+  "masked_text": "Drain near the school is blocked, water not flowing in Ward No. 75, Kamarajar Road. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C171",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 134",
+  "issue": "illegal construction next door",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.848,
+  "masked_text": "hello Illegal construction next door without approval in ward no 134, 2nd Cross Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "medium",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C172",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 9",
+  "issue": "lake near",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.735,
+  "masked_text": "Pls sir Lake near our area is polluted with sewage and plastic in ward 9, Velachery Main Road.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C173",
+  "department": "Roads & Storm Water Drains",
+  "ward": "Ward 38",
+  "issue": "big pothole",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.588,
+  "masked_text": "hello big pothole on the main road causing trouble in w-38 mgr nagar 4th street pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Roads & Storm Water Drains",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C174",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 175",
+  "issue": "open defecation near the canal bank",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.805,
+  "masked_text": "Open defecation near the canal bank in ward no 175, Gandhi Street. very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C175",
+  "department": "Street Lighting",
+  "ward": "Ward 86",
+  "issue": "broken streetlight near the junction",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.831,
+  "masked_text": "hello Broken streetlight near the junction, area is dark in Ward 86, 2nd Cross Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C176",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 10",
+  "issue": "temple tank water body",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.728,
+  "masked_text": "respected sir temple tank water body neglected and full of waste in w-10 anna salai please take action",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C177",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 84",
+  "issue": "building plan approval",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.864,
+  "masked_text": "dear officer building plan approval pending for three months in w-84 2nd cross street",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C178",
+  "department": "Pollution Control",
+  "ward": "Ward 15",
+  "issue": "dust",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.764,
+  "masked_text": "Sir, Dust from road work causing breathing problems in Ward 15, Temple Street. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C179",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 85",
+  "issue": "new water connection two ago",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.85,
+  "masked_text": "Applied for new water connection two months ago, no update in Ward 85, Nehru Naga.r Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "low",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C180",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 74",
+  "issue": "contaminated drinking water",
+  "urgency": "high",
+  "duplicate_of": null,
+  "similarity": 0.325,
+  "masked_text": "Dear officer, Contaminated drinking water with foul smell coming in the tap in ward 74, MGR Nagar 4th Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "high",
+   "duplicate_of": null
+  }
+ },
+ {
+  "complaint_id": "C181",
+  "department": "Solid Waste Management",
+  "ward": "Ward 71",
+  "issue": "construction debris",
+  "urgency": "low",
+  "duplicate_of": "C057",
+  "similarity": 1,
+  "masked_text": "RESPECTED SIR, CONSTRUCTION DEBRIS DUMPED ON THE PAVEMENT IN WARD 71, VELACHERY MAIN ROAD. PLEASE TAKE ACTION!!",
+  "flags": [
+   "possible_repeat"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "low",
+   "duplicate_of": "C057"
+  }
+ },
+ {
+  "complaint_id": "C182",
+  "department": "Water Supply & Sewerage",
+  "ward": "Ward 23",
+  "issue": "big leak",
+  "urgency": "low",
+  "duplicate_of": "C127",
+  "similarity": 1,
+  "masked_text": "big leak in the water pipe, lot of drinking water wasted daily in ward no. 23, kamarajar road.",
+  "flags": [
+   "possible_repeat"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Water Supply & Sewerage",
+   "urgency": "medium",
+   "duplicate_of": "C127"
+  }
+ },
+ {
+  "complaint_id": "C183",
+  "department": "Solid Waste Management",
+  "ward": "Ward 10",
+  "issue": "conservancy workers",
+  "urgency": "medium",
+  "duplicate_of": "C014",
+  "similarity": 0.908,
+  "masked_text": "Sir, Conservancy workers have not picked up waste for 5 days, bins full in ward 10, Anna Salai. Nobody is responding. Still not solved.",
+  "flags": [
+   "possible_repeat"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "medium",
+   "duplicate_of": "C014"
+  }
+ },
+ {
+  "complaint_id": "C184",
+  "department": "Solid Waste Management",
+  "ward": "Ward 193",
+  "issue": "dustbin",
+  "urgency": "medium",
+  "duplicate_of": "C156",
+  "similarity": 1,
+  "masked_text": "dear officer, dustbin is overflowing and waste is spilling on the road in ward#193, nehru nagar. please take action.",
+  "flags": [
+   "possible_repeat"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "medium",
+   "duplicate_of": "C156"
+  }
+ },
+ {
+  "complaint_id": "C185",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 23",
+  "issue": "children park",
+  "urgency": "medium",
+  "duplicate_of": "C097",
+  "similarity": 0.895,
+  "masked_text": "Again complaining: Pls sir Children park not maintained, play equipment broken in ward#23, Gandhi Street.",
+  "flags": [
+   "possible_repeat"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": "C097"
+  }
+ },
+ {
+  "complaint_id": "C186",
+  "department": "Parks & Water Bodies",
+  "ward": "Ward 101",
+  "issue": "park",
+  "urgency": "low",
+  "duplicate_of": "C131",
+  "similarity": 1,
+  "masked_text": "RESPECTED SIR, PARK IS NEGLECTED, BROKEN SWINGS AND OVERGROWN GRASS IN W-101, TEMPLE STREET. VERY WORST SITUATION",
+  "flags": [
+   "possible_repeat"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Parks & Water Bodies",
+   "urgency": "low",
+   "duplicate_of": "C131"
+  }
+ },
+ {
+  "complaint_id": "C187",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 168",
+  "issue": "footpath",
+  "urgency": "low",
+  "duplicate_of": "C110",
+  "similarity": 1,
+  "masked_text": "respected sir, shop encroaching on the footpath with a shed in ward 168, temple street. please take action.",
+  "flags": [
+   "possible_repeat"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "low",
+   "duplicate_of": "C110"
+  }
+ },
+ {
+  "complaint_id": "C188",
+  "department": "Public Health & Sanitation",
+  "ward": "Ward 195",
+  "issue": "community toilet",
+  "urgency": "medium",
+  "duplicate_of": "C016",
+  "similarity": 1,
+  "masked_text": "pls sir community toilet has no water and is unusable in ward 195, kamarajar road. kindly do the needful.",
+  "flags": [
+   "possible_repeat"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Public Health & Sanitation",
+   "urgency": "medium",
+   "duplicate_of": "C016"
+  }
+ },
+ {
+  "complaint_id": "C189",
+  "department": "Social Welfare",
+  "ward": "Ward 146",
+  "issue": "house",
+  "urgency": "low",
+  "duplicate_of": "C109",
+  "similarity": 0.908,
+  "masked_text": "Dear officer, Want to apply for a house under a housing scheme in Ward 146, Gandhi Street. very worst situation Still not solved.",
+  "flags": [
+   "possible_repeat"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": "C109"
+  }
+ },
+ {
+  "complaint_id": "C190",
+  "department": "Social Welfare",
+  "ward": "Ward 9",
+  "issue": "elderly homeless man",
+  "urgency": "medium",
+  "duplicate_of": "C056",
+  "similarity": 0.926,
+  "masked_text": "respected sir elderly homeless man sleeping on the pavement needs a night shelter in ward 9 gandhi street nobody is responding Still not solved.",
+  "flags": [
+   "possible_repeat"
+  ],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "medium",
+   "duplicate_of": "C056"
+  }
+ },
+ {
+  "complaint_id": "C191",
+  "department": "Health Services",
+  "ward": "Ward 86",
+  "issue": "immunisation",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.823,
+  "masked_text": "hello immunisation for babies not happening at the health post in ward#86 anna salai very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Health Services",
+   "urgency": "low",
+   "duplicate_of": "C168"
+  }
+ },
+ {
+  "complaint_id": "C192",
+  "department": "Street Lighting",
+  "ward": "Ward 64",
+  "issue": "stretch",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.963,
+  "masked_text": "Whole stretch of street lights off for 3 days, women afraid to walk in ward#64, Gandhi Street.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "medium",
+   "duplicate_of": "C023"
+  }
+ },
+ {
+  "complaint_id": "C193",
+  "department": "Social Welfare",
+  "ward": "Ward 53",
+  "issue": "vendors",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.758,
+  "masked_text": "Sir, Street vendors need a vending certificate and space in Ward 53, Nehru Nagar. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": "C071"
+  }
+ },
+ {
+  "complaint_id": "C194",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 84",
+  "issue": "planning permission file",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.861,
+  "masked_text": "hello Planning permission file not moving in Ward No. 84, Nehru Nagar.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "low",
+   "duplicate_of": "C177"
+  }
+ },
+ {
+  "complaint_id": "C195",
+  "department": "Social Welfare",
+  "ward": "Ward 172",
+  "issue": "solar panels",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.714,
+  "masked_text": "pls sir how to get solar panels installed on my roof with subsidy in ward#172 velachery main road very worst situation",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Social Welfare",
+   "urgency": "low",
+   "duplicate_of": "C132"
+  }
+ },
+ {
+  "complaint_id": "C196",
+  "department": "Pollution Control",
+  "ward": "Ward 67",
+  "issue": "dust",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.823,
+  "masked_text": "Dust from road work causing breathing problems in ward no 67, Gandhi Stree.t",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "low",
+   "duplicate_of": "C086"
+  }
+ },
+ {
+  "complaint_id": "C197",
+  "department": "Street Lighting",
+  "ward": "Ward 120",
+  "issue": "lamps",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.898,
+  "masked_text": "hello All lamps on the road dark for a week, chain snatching risk in ward#120, Temple Street. Please take action.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Street Lighting",
+   "urgency": "medium",
+   "duplicate_of": "C002"
+  }
+ },
+ {
+  "complaint_id": "C198",
+  "department": "Buildings & Town Planning",
+  "ward": "Ward 100",
+  "issue": "building plan approval",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.788,
+  "masked_text": "Sir, Building plan approval pending for three months in Ward No. 100, Nehru Nagar. Kindly do the needful.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Buildings & Town Planning",
+   "urgency": "low",
+   "duplicate_of": "C126"
+  }
+ },
+ {
+  "complaint_id": "C199",
+  "department": "Solid Waste Management",
+  "ward": "Ward 179",
+  "issue": "open dumping of garbage near the bus stop",
+  "urgency": "medium",
+  "duplicate_of": null,
+  "similarity": 0.798,
+  "masked_text": "hello Open dumping of garbage near the bus stop every night in W-179, Gandhi Street. pls help urgently",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Solid Waste Management",
+   "urgency": "low",
+   "duplicate_of": "C049"
+  }
+ },
+ {
+  "complaint_id": "C200",
+  "department": "Pollution Control",
+  "ward": "Ward 38",
+  "issue": "factory releasing black",
+  "urgency": "low",
+  "duplicate_of": null,
+  "similarity": 0.844,
+  "masked_text": "Pls sir Factory releasing black smoke into the residential area in ward no 38, Anna Salai.",
+  "flags": [],
+  "error": null,
+  "expected": {
+   "department": "Pollution Control",
+   "urgency": "medium",
+   "duplicate_of": "C122"
+  }
+ }
+]

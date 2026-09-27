@@ -6,6 +6,6 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react()],
   test: {
-    include: ['src/**/*.test.ts', 'src/**/*.test.tsx', 'netlify/**/*.test.ts', 'scripts/**/*.test.ts'],
+    include: ['src/**/*.test.ts', 'src/**/*.test.tsx', 'netlify/**/*.test.ts', 'scripts/**/*.test.ts', 'eval/**/*.test.ts'],
   },
 })

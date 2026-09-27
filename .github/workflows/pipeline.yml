@@ -1,0 +1,68 @@
+name: pipeline
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pipeline-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-data:
+    # Skip the commit this workflow pushes back, so it does not loop.
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Record build start
+        run: echo "BUILD_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
+
+      - name: Install
+        run: npm ci
+
+      - name: Cache embedding model
+        uses: actions/cache@v4
+        with:
+          path: node_modules/@huggingface/transformers/.cache
+          key: hf-${{ hashFiles('src/lib/config.ts') }}
+
+      - name: Unit tests
+        run: npx vitest run
+
+      - name: Parse knowledge base
+        run: npx tsx scripts/parse_schemes.ts
+
+      - name: Build search index
+        run: npx tsx scripts/build_index.ts
+
+      - name: Triage all complaints
+        run: npx tsx scripts/pipeline.ts
+
+      - name: Type-check and build
+        run: npm run build
+
+      - name: Commit changed data
+        if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "chore(data): refresh pipeline outputs [skip ci]"
+            git push
+          fi

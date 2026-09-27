@@ -1,0 +1,10 @@
+{
+  "recall_at_4": 0.8,
+  "mrr": 0.7,
+  "precision_at_4": 0.3,
+  "faithfulness": 0.85,
+  "answer_relevance": 0.8,
+  "department_accuracy": 0.8,
+  "duplicate_f1": 0.7,
+  "out_of_scope_refusal": 0.8
+}
