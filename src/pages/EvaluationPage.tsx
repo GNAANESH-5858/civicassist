@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Status } from '../components/ui.tsx'
+import { PageHeader, Status } from '../components/ui.tsx'
 
 // Shape of public/data/eval_report.json. Every number on this page comes from that file.
 export interface EvalReport {
@@ -38,12 +38,11 @@ export default function EvaluationPage() {
   if (!report) return <Status kind="loading">Loading evaluation report…</Status>
 
   return (
-    <section>
-      <h1>Evaluation</h1>
-      <p className="muted">
-        Generated {new Date(report.generated_at).toLocaleString()} from <code>eval/questions.json</code> and the synthetic complaint set.
-        {!report.llm_available && ' No LLM key was available for this run, so model-judged metrics were skipped.'}
-      </p>
+    <>
+      <PageHeader eyebrow="Transparency" title="How well does it work?">
+        Measured on <code>eval/questions.json</code> (30 questions) and the 200 synthetic complaints. Generated {new Date(report.generated_at).toLocaleString()}.
+        {!report.llm_available && ' No AI key was available for this run, so AI-judged metrics were skipped.'}
+      </PageHeader>
       <div className="metrics">
         {Object.entries(report.metrics).map(([k, m]) => (
           <div key={k} className={`metric ${m.pass === null ? 'skip' : m.pass ? 'pass' : 'fail'}`}>
@@ -58,7 +57,7 @@ export default function EvaluationPage() {
       </div>
 
       <h2>Failure-mode tests</h2>
-      <table>
+      <div className="table-wrap"><table>
         <tbody>
           {report.failure_tests.map((t) => (
             <tr key={t.name}>
@@ -68,7 +67,7 @@ export default function EvaluationPage() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table></div>
 
       {report.classifier && (
         <>
@@ -133,6 +132,6 @@ export default function EvaluationPage() {
           </div>
         </details>
       )}
-    </section>
+    </>
   )
 }

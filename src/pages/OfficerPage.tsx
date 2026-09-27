@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Status, UrgencyBadge } from '../components/ui.tsx'
+import { IconDownload } from '../components/icons.tsx'
+import { PageHeader, Status, UrgencyBadge } from '../components/ui.tsx'
 import { DEPARTMENTS } from '../lib/nlp/departments.ts'
 import type { TriageResult } from '../lib/nlp/triage.ts'
 
@@ -57,9 +58,10 @@ export default function OfficerPage() {
   const counts = URGENCIES.map((u) => [u, filtered.filter((r) => r.urgency === u).length] as const)
 
   return (
-    <section>
-      <h1>Officer dashboard</h1>
-      <p className="muted">{rows.length} synthetic complaints triaged by the pipeline. Repeats are grouped under the earlier complaint.</p>
+    <>
+      <PageHeader eyebrow="For officers" title="Officer dashboard">
+        {rows.length} synthetic complaints triaged by the pipeline, highest urgency first. Repeats are grouped under the complaint they repeat.
+      </PageHeader>
       <div className="toolbar">
         <label>
           Department{' '}
@@ -80,17 +82,27 @@ export default function OfficerPage() {
           </select>
         </label>
         <button onClick={exportCsv} disabled={!filtered.length}>
-          Export CSV ({filtered.length})
+          <IconDownload /> Export CSV ({filtered.length})
         </button>
       </div>
-      <p className="small">
+      <div className="stat-row">
+        <div className="stat">
+          <div className="stat-value">{filtered.length}</div>
+          <div className="stat-label">Complaints shown</div>
+        </div>
         {counts.map(([u, n]) => (
-          <span key={u} className="count">
-            <UrgencyBadge level={u} /> {n}
-          </span>
+          <div key={u} className="stat">
+            <div className="stat-value">{n}</div>
+            <div className="stat-label">
+              <UrgencyBadge level={u} />
+            </div>
+          </div>
         ))}
-        <span className="count">repeats: {filtered.filter((r) => r.duplicate_of).length}</span>
-      </p>
+        <div className="stat">
+          <div className="stat-value">{filtered.filter((r) => r.duplicate_of).length}</div>
+          <div className="stat-label">Possible repeats</div>
+        </div>
+      </div>
       {filtered.length === 0 ? (
         <Status kind="empty">No complaints match these filters.</Status>
       ) : (
@@ -114,7 +126,7 @@ export default function OfficerPage() {
           </table>
         </div>
       )}
-    </section>
+    </>
   )
 }
 
@@ -129,7 +141,7 @@ function FragmentRows({ row, repeats }: { row: Row; repeats: Row[] }) {
       <td>{r.ward ?? '—'}</td>
       <td>{r.issue ?? '—'}</td>
       <td>
-        {repeat && <span className="flag">repeat of {r.duplicate_of} ({r.similarity.toFixed(2)})</span>} {r.masked_text}
+        {repeat && <span className="pill pill-warn">repeat of {r.duplicate_of} ({r.similarity.toFixed(2)})</span>} {r.masked_text}
       </td>
     </tr>
   )

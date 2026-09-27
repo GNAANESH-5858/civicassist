@@ -122,3 +122,27 @@ describe('lexical support', () => {
     expect(llm.mock.calls.map((c) => c[0])).toEqual(['rewrite'])
   })
 })
+
+describe('section matching', () => {
+  it('requires a match in complaint domains or matching signals, and reports matched words per section', async () => {
+    const { lexicalSupport, matchBreakdown, topicTerms, normalizeCompounds } = await import('./retrieve.ts')
+    const rec = { ...mk(41, 'SLNP', 'urban'), complaint_domains: 'Street lighting', matching_signals: 'Non-functioning streetlights', what_it_does: 'LED replacement programme' }
+    expect(normalizeCompounds('streetlights broken')).toBe('street lights broken')
+    expect(lexicalSupport(topicTerms('street lights not working'), rec)).toBe(true)
+    // "LED" appears only in what_it_does: not enough on its own.
+    expect(lexicalSupport(topicTerms('LED'), rec)).toBe(false)
+    const b = matchBreakdown('streetlight not working, want LED', rec)
+    expect(b.complaint_domains).toEqual(['street', 'light'])
+    expect(b.matching_signals).toEqual(['street', 'light'])
+    expect(b.what_it_does).toEqual(['led'])
+  })
+})
+
+describe('generic words', () => {
+  it('negations and filler never count as a topical match', async () => {
+    const { topicTerms, matchBreakdown } = await import('./retrieve.ts')
+    expect([...topicTerms('not working for many days near my place')]).toEqual(['work'])
+    const rec = { ...mk(81, 'Charter', 'urban'), what_it_does: 'Service standards; not a scheme.' }
+    expect(matchBreakdown('streetlight not working', rec).what_it_does).toEqual([])
+  })
+})

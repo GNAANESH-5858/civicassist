@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T07:45:32.261Z",
+  "generated_at": "2026-09-27T08:13:46.262Z",
   "llm_available": false,
   "counts": {
     "questions": 30,
@@ -343,8 +343,7 @@
       "expected_id": 93,
       "retrieved": [
         93,
-        85,
-        98
+        85
       ],
       "found": true,
       "hit": true,
