@@ -11,7 +11,7 @@ console.log(`Mode: ${http ? 'HTTP POST http://localhost:8888/api/triage' : 'func
 console.log('ok  complaint                             department                   urgency  issue')
 for (const a of ACCEPTANCE) {
   const r: TriageResult = http
-    ? await (await fetch('http://localhost:8888/api/triage', { method: 'POST', body: JSON.stringify({ text: a.text }) })).json()
+    ? await (await fetch('http://localhost:8888/api/triage', { method: 'POST', body: JSON.stringify({ text: a.text }) })).json() as TriageResult
     : runTriage({ text: a.text })
   const ok = r.department === a.department
   if (ok) correct++

@@ -50,6 +50,21 @@ export function lexicalSupport(queryTerms: Set<string>, r: SchemeRecord): boolea
   return false
 }
 
+/**
+ * Retrieves 2k candidates and keeps the top k that have lexical support in `supportText`
+ * (defaults to the query). Used by the advisory and the letter so both pick records the same way.
+ */
+export async function retrieveSupported(
+  query: string,
+  deps: RetrieveDeps,
+  opts: { k?: number; supportText?: string; ruralText?: string } = {},
+): Promise<Retrieved[]> {
+  const k = opts.k ?? TOP_K
+  const terms = topicTerms(opts.supportText ?? query)
+  const candidates = await retrieve(query, deps, { k: k * 2, ruralText: opts.ruralText ?? query })
+  return candidates.filter((h) => lexicalSupport(terms, h.record)).slice(0, k)
+}
+
 export async function retrieve(
   query: string,
   deps: RetrieveDeps,

@@ -1,5 +1,5 @@
 import nlp from 'compromise'
-import { removeStopWords, tokenise } from './preprocess.ts'
+import { removeStopWords, STOP_WORDS, tokenise } from './preprocess.ts'
 
 export const MAX_WARD = 200
 
@@ -11,7 +11,7 @@ export function extractWard(text: string): string | null {
   return n >= 1 && n <= MAX_WARD ? `Ward ${n}` : null
 }
 
-const NOISE = /\b(ward|sir|madam|days?|weeks?|months?|hours?|times?|area|street|road|people|someone|please|number|no\.?)\b/gi
+const NOISE = /\b(ward|sir|madam|respected|dear|officer|hello|hi|kindly|pls|plz|whole|days?|weeks?|months?|hours?|times?|area|street|road|people|someone|please|number|no\.?)\b/gi
 
 /** Picks the main issue as the first meaningful noun phrase (compromise noun-phrase chunking). */
 export function extractIssue(text: string): string | null {
@@ -22,12 +22,20 @@ export function extractIssue(text: string): string | null {
     .out('array')
     .concat(doc.nouns().out('array')) as string[]
   for (const raw of phrases) {
-    const p = clean(raw)
+    const p = trimStopWords(clean(raw))
     if (p.length >= 3 && !/^(i|we|my|our|it|this|that|there)$/.test(p)) return p
   }
   // Fallback for text without a noun chunk (e.g. "flooding and waterlogging"): first content words.
   const words = removeStopWords(tokenise(clean(text))).filter((w) => !/^\d+$/.test(w))
   return words.length ? words.slice(0, 3).join(' ') : null
+}
+
+/** Drops stop words at either end of a phrase ("water supply in" -> "water supply"). */
+function trimStopWords(p: string): string {
+  const words = p.split(' ')
+  while (words.length && STOP_WORDS.has(words[0])) words.shift()
+  while (words.length && STOP_WORDS.has(words[words.length - 1])) words.pop()
+  return words.join(' ')
 }
 
 function clean(s: string): string {

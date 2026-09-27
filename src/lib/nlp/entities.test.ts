@@ -21,6 +21,7 @@ describe('extractWard', () => {
 describe('extractIssue', () => {
   it('finds a noun phrase describing the problem', () => {
     expect(extractIssue('There is a broken streetlight near my house')).toContain('streetlight')
+    expect(extractIssue('No water supply in Ward 12')).toBe('water supply')
     expect(extractIssue('Garbage bins overflowing in Ward 5')).toContain('garbage')
   })
 

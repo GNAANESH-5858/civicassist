@@ -2,7 +2,7 @@
 import { NOT_FOUND_THRESHOLD, TOP_K } from '../config.ts'
 import { NOT_FOUND } from '../prompts/answer.ts'
 import type { ContextRecord } from '../prompts/context.ts'
-import { lexicalSupport, retrieve, topicTerms, type RetrieveDeps } from './retrieve.ts'
+import { retrieveSupported, type RetrieveDeps } from './retrieve.ts'
 
 export type GatewayAction = 'rewrite' | 'answer' | 'letter'
 export type Gateway = (action: GatewayAction, payload: Record<string, unknown>) => Promise<{ text: string }>
@@ -77,12 +77,9 @@ export async function ask(question: string, opts: AskOpts): Promise<AskResult> {
   // 2. Embed and rank; R1 filters rural records unless the citizen mentions a rural setting.
   //    Candidates must share a topical word with the question (lexical support), so a
   //    generic word like "subsidy" cannot pull in an unrelated scheme.
-  const k = opts.k ?? TOP_K
   let hits
   try {
-    const terms = topicTerms(`${q} ${rewritten}`)
-    const candidates = await retrieve(rewritten, opts, { k: k * 2, ruralText: q })
-    hits = candidates.filter((h) => lexicalSupport(terms, h.record)).slice(0, k)
+    hits = await retrieveSupported(rewritten, opts, { k: opts.k ?? TOP_K, supportText: `${q} ${rewritten}`, ruralText: q })
   } catch (e) {
     return { ...base, rewritten_query: rewritten, error: `Search failed: ${(e as Error).message}` }
   }
