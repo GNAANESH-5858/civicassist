@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-27T08:21:26.552Z",
+  "generated_at": "2026-09-27T08:22:17.880Z",
   "records_parsed": 148,
   "complaints_processed": 200,
   "phone_numbers_masked": 8,
   "triage_errors": 0,
   "flagged_repeats": 10,
-  "build_duration_seconds": 21.6
+  "build_duration_seconds": 23.9
 }
