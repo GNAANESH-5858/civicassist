@@ -71,7 +71,7 @@ export function Highlight({ text, words }: { text: string; words: string[] }) {
  * One knowledge-base record as an expandable card. Shows every section, which sections
  * matched the citizen's words, the scheme number, PDF page and official source.
  */
-export function SchemeCard({ n, record, score, match, defaultOpen = false }: { n?: number; record: SchemeRecord; score?: number; match?: MatchBreakdown; defaultOpen?: boolean }) {
+export function SchemeCard({ n, record, score, boost, match, defaultOpen = false }: { n?: number; record: SchemeRecord; score?: number; boost?: number; match?: MatchBreakdown; defaultOpen?: boolean }) {
   const [open, setOpen] = useState(defaultOpen)
   const matchedSections = match ? (Object.keys(SECTION_LABELS) as MatchSection[]).filter((s) => match[s].length) : []
   return (
@@ -146,9 +146,17 @@ export function SchemeCard({ n, record, score, match, defaultOpen = false }: { n
               <div className="section">
                 <div className="section-label">
                   <span className="dot" />
-                  Similarity
+                  Match score
                 </div>
-                <div className="section-text">{score.toFixed(3)}</div>
+                <div className="section-text">
+                  {boost ? (
+                    <>
+                      {score.toFixed(3)} similarity + {boost.toFixed(2)} local boost = <strong>{(score + boost).toFixed(3)}</strong>
+                    </>
+                  ) : (
+                    <>{score.toFixed(3)} similarity</>
+                  )}
+                </div>
               </div>
             )}
           </div>

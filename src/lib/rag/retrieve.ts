@@ -1,7 +1,8 @@
 // Retrieval over the knowledge base. Pure given its inputs, so it runs in the browser and in Node.
-import { EMBED_MODEL, TOP_K } from '../config.ts'
+import { EMBED_MODEL, LOCALITY_BOOST, TOP_K } from '../config.ts'
 import type { SchemeRecord } from '../kb/types.ts'
 import { preprocess } from '../nlp/preprocess.ts'
+import { extractWard } from '../nlp/ward.ts'
 import { rank, type SearchIndex } from '../search/rank.ts'
 
 export interface RetrieveDeps {
@@ -12,12 +13,41 @@ export interface RetrieveDeps {
 
 export interface Retrieved {
   record: SchemeRecord
+  /** Raw cosine similarity. Used for the not-found threshold. */
   score: number
+  /** Locality bonus from the record's applicability, added for ranking only (0 when fixes are off). */
+  boost: number
+  /** score + boost; the value results are ranked by. */
+  final: number
+}
+
+export interface RetrieveOpts {
+  k?: number
+  ruralText?: string
+  /** Self-exclusion filter + locality boost. On by default; off reproduces the original ranking. */
+  precisionFixes?: boolean
+}
+
+/** Locality bonus from a record's applicability (first matching rule wins). */
+export function localityBoost(applicability: string): number {
+  if (/chennai/i.test(applicability)) return LOCALITY_BOOST.chennai
+  if (/tamil nadu/i.test(applicability)) return LOCALITY_BOOST.tamilNadu
+  if (/urban|\bulbs?\b/i.test(applicability)) return LOCALITY_BOOST.urban
+  return LOCALITY_BOOST.other
 }
 
 /** Rule R1: rural programmes are only considered when the user explicitly talks about a rural setting. */
 export function mentionsRural(text: string): boolean {
   return /\b(rural|village|villages|gram|panchayat|farm|farmer|farmers|agricultur\w*)\b/i.test(text)
+}
+
+/**
+ * Whether rural-only and self-excluding records may be returned. A stated Greater Chennai
+ * Corporation ward (1-200) confirms Chennai jurisdiction, so the complaint is never treated as
+ * rural, even if it contains a word like "village" or "farm" (e.g. a locality name).
+ */
+export function allowsRural(text: string): boolean {
+  return mentionsRural(text) && extractWard(text) === null
 }
 
 /** Throws if the index does not belong to these records or this embedding model (stale index). */
@@ -104,25 +134,38 @@ export function lexicalSupport(queryTerms: Set<string>, r: SchemeRecord): boolea
 export async function retrieveSupported(
   query: string,
   deps: RetrieveDeps,
-  opts: { k?: number; supportText?: string; ruralText?: string } = {},
+  opts: { k?: number; supportText?: string; ruralText?: string; precisionFixes?: boolean } = {},
 ): Promise<Retrieved[]> {
   const k = opts.k ?? TOP_K
   const terms = topicTerms(opts.supportText ?? query)
-  const candidates = await retrieve(query, deps, { k: k * 2, ruralText: opts.ruralText ?? query })
+  const candidates = await retrieve(query, deps, { k: k * 2, ruralText: opts.ruralText ?? query, precisionFixes: opts.precisionFixes })
   return candidates.filter((h) => lexicalSupport(terms, h.record)).slice(0, k)
 }
 
-export async function retrieve(
-  query: string,
-  deps: RetrieveDeps,
-  opts: { k?: number; ruralText?: string } = {},
-): Promise<Retrieved[]> {
+export async function retrieve(query: string, deps: RetrieveDeps, opts: RetrieveOpts = {}): Promise<Retrieved[]> {
   checkIndex(deps.records, deps.index)
   const byId = new Map(deps.records.map((r) => [r.id, r]))
-  const includeRural = mentionsRural(opts.ruralText ?? query)
+  const rural = allowsRural(opts.ruralText ?? query)
+  const fixes = opts.precisionFixes ?? true
+  const allow = (id: number) => {
+    const r = byId.get(id)
+    if (!r) return false
+    if (rural) return true
+    // R1: rural programmes are excluded for urban complaints.
+    if (r.geography === 'rural') return false
+    // Fix 1: records that say they do not apply to ordinary city complaints.
+    if (fixes && r.self_excludes_city) return false
+    return true
+  }
   const [q] = await deps.embed([query])
-  return rank(q, deps.index, opts.k ?? TOP_K, (id) => includeRural || byId.get(id)?.geography !== 'rural').map(({ id, score }) => ({
-    record: byId.get(id)!,
-    score,
-  }))
+  // Score every allowed record, then rank by the boosted score.
+  const scored = rank(q, deps.index, deps.index.ids.length, allow).map(({ id, score }) => {
+    const record = byId.get(id)!
+    // CivicAssist serves Greater Chennai Corporation only, so every complaint is a Chennai complaint:
+    // the boost depends on the record's applicability alone, never on the wording of the query.
+    const boost = fixes ? localityBoost(record.applicability) : 0
+    return { record, score, boost, final: score + boost }
+  })
+  scored.sort((a, b) => b.final - a.final)
+  return scored.slice(0, opts.k ?? TOP_K)
 }

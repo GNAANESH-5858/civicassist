@@ -141,7 +141,7 @@ export default function ComplaintPage() {
                   </p>
                   <div className="scheme-list">
                     {relevant.map((r) => (
-                      <SchemeCard key={r.record.id} record={r.record} score={r.score} match={r.match} />
+                      <SchemeCard key={r.record.id} record={r.record} score={r.score} boost={r.boost} match={r.match} />
                     ))}
                   </div>
                 </>

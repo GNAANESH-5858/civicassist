@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T08:13:46.262Z",
+  "generated_at": "2026-09-27T08:53:10.851Z",
   "llm_available": false,
   "counts": {
     "questions": 30,
@@ -13,15 +13,15 @@
       "value": 0.92,
       "threshold": 0.8,
       "pass": true,
-      "note": "Expected scheme in top 4 (25 in-scope questions). Recall over all relevant ids: 0.775."
+      "note": "Expected scheme in top 4 (25 in-scope questions). Recall over all relevant ids: 0.789."
     },
     "precision_at_4": {
-      "value": 0.49,
+      "value": 0.5,
       "threshold": 0.3,
       "pass": true
     },
     "mrr": {
-      "value": 0.873,
+      "value": 0.853,
       "threshold": 0.7,
       "pass": true
     },
@@ -223,10 +223,10 @@
       "question": "Which scheme helps when there is no piped water supply in my city area?",
       "expected_id": 139,
       "retrieved": [
-        139,
         83,
-        141,
-        70
+        139,
+        70,
+        141
       ],
       "found": true,
       "hit": true,
@@ -269,8 +269,8 @@
       "retrieved": [
         86,
         87,
-        91,
-        2
+        2,
+        91
       ],
       "found": true,
       "hit": true,
@@ -315,7 +315,7 @@
         29,
         5,
         122,
-        113
+        110
       ],
       "found": true,
       "hit": true,
@@ -401,8 +401,8 @@
       "expected_id": 10,
       "retrieved": [
         10,
-        95,
         85,
+        95,
         89
       ],
       "found": true,
@@ -447,8 +447,8 @@
       "retrieved": [
         55,
         142,
-        141,
-        11
+        84,
+        141
       ],
       "found": true,
       "hit": true,
@@ -504,9 +504,9 @@
       "expected_id": 24,
       "retrieved": [
         24,
-        12,
-        11,
-        68
+        68,
+        65,
+        11
       ],
       "found": true,
       "hit": true,
@@ -541,9 +541,9 @@
       "expected_id": 41,
       "retrieved": [
         41,
+        142,
         93,
-        40,
-        142
+        81
       ],
       "found": true,
       "hit": true,
@@ -570,8 +570,8 @@
       "retrieved": [
         142,
         55,
-        17,
-        65
+        65,
+        84
       ],
       "found": true,
       "hit": true,

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { deriveGeography, deriveKind, parseEntries } from './parse.ts'
+import { deriveGeography, deriveKind, deriveSelfExcludesCity, parseEntries } from './parse.ts'
 
 describe('deriveKind', () => {
   it.each([
@@ -69,6 +69,7 @@ describe('parseEntries', () => {
       page: 2,
       kind: 'scheme',
       geography: 'urban',
+      self_excludes_city: false,
     })
     expect(records[1].kind).toBe('regulatory')
     expect(records[2]).toMatchObject({ page: 3, geography: 'rural' })
@@ -97,5 +98,25 @@ describe('parseEntries', () => {
     const { errors } = parseEntries([lines], 1, 1)
     expect(errors).toContain('#1: missing field applicability')
     expect(errors.some((e) => e.includes('not a URL'))).toBe(true)
+  })
+})
+
+describe('deriveSelfExcludesCity', () => {
+  it.each([
+    ['Community-led groundwater management; relevant to groundwater stress rather than routine city pipe complaints.', true],
+    ['Rural sanitation/waste complaint, not ordinary city municipal complaint.', true],
+    ['Included as boundary category to prevent false municipal matching.', true],
+    ['Aquifer mapping; not a direct individual complaint benefit.', true],
+  ])('flags complaint-type exclusion: %s', (text, flag) => {
+    expect(deriveSelfExcludesCity(text, '')).toBe(flag)
+  })
+
+  it.each([
+    ['Service framework for Chennai water/sewerage; not a welfare scheme.'],
+    ['Not a scheme: service standards for civic complaints.'],
+    ['Regulatory route for pollution complaints rather than benefit scheme.'],
+    ['Urban water-security mission; not available rather than delayed.'],
+  ])('does NOT flag scheme-type clarification: %s', (text) => {
+    expect(deriveSelfExcludesCity(text, '')).toBe(false)
   })
 })

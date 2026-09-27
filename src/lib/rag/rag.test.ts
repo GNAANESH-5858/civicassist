@@ -17,6 +17,7 @@ const mk = (id: number, name: string, geography: SchemeRecord['geography'], kind
   page: 5 + id,
   kind,
   geography,
+  self_excludes_city: false,
 })
 
 const records = [mk(1, 'Urban water', 'urban'), mk(2, 'Rural water', 'rural'), mk(3, 'Solar', 'both')]
@@ -59,7 +60,7 @@ describe('ask', () => {
     const r = await ask('no water at home', { ...deps, llm: llmOk })
     expect(r.found).toBe(true)
     expect(r.rewritten_query).toBe('water supply')
-    expect(r.sources[0]).toEqual({ n: 1, id: 1, name: 'Urban water', page: 6, official_source: 'https://example.gov.in/1', score: 0.95 })
+    expect(r.sources[0]).toEqual({ n: 1, id: 1, name: 'Urban water', page: 6, official_source: 'https://example.gov.in/1', score: 0.95, boost: 0.03, final: 0.98 })
     expect(r.cited).toEqual([1])
   })
 
@@ -144,5 +145,43 @@ describe('generic words', () => {
     expect([...topicTerms('not working for many days near my place')]).toEqual(['work'])
     const rec = { ...mk(81, 'Charter', 'urban'), what_it_does: 'Service standards; not a scheme.' }
     expect(matchBreakdown('streetlight not working', rec).what_it_does).toEqual([])
+  })
+})
+
+describe('locality boost and the relevance gate', () => {
+  // One Chennai record whose RAW similarity to "gadget" is 0.30 (below the 0.35 gate).
+  // With the +0.08 Chennai boost its final score is 0.38, which would pass if the gate used it.
+  const chennai = { ...mk(84, 'CMWSSB', 'both'), applicability: 'Chennai', complaint_domains: 'gadget repair', matching_signals: 'gadget' }
+  const weakIndex: SearchIndex = { model: 'Xenova/all-MiniLM-L6-v2', dim: 2, ids: [84], vectors: [[0.3, Math.sqrt(1 - 0.09)]] }
+  const weakEmbed = async (t: string[]) => t.map(() => [1, 0])
+  const weak = { records: [chennai], index: weakIndex, embed: weakEmbed }
+
+  it('ranks by the boosted score but a boost can never push a weak record past the gate in ask()', async () => {
+    const llm = vi.fn<Gateway>(async () => ({ text: 'x [1]' }))
+    const r = await ask('gadget', { ...weak, llm, rewriteTimeoutMs: 5 })
+    expect(r.sources[0]).toMatchObject({ id: 84, score: 0.3, boost: 0.08, final: 0.38 })
+    expect(r.found).toBe(false)
+    expect(llm.mock.calls.map((c) => c[0])).not.toContain('answer')
+  })
+
+  it('findRelevant (Complaint and Letter pages) also gates on the raw score', async () => {
+    const { findRelevant } = await import('./relevant.ts')
+    expect(await findRelevant('gadget', weak)).toEqual([])
+  })
+
+  it('applies the boost regardless of query wording, including rural wording', async () => {
+    const { retrieve } = await import('./retrieve.ts')
+    const [a] = await retrieve('gadget', weak, { k: 1 })
+    const [b] = await retrieve('gadget in my village', weak, { k: 1 })
+    expect(a.boost).toBe(0.08)
+    expect(b.boost).toBe(0.08)
+  })
+
+  it('a stated ward (1-200) confirms Chennai, so rural wording does not lift the rural filters', async () => {
+    const { allowsRural } = await import('./retrieve.ts')
+    expect(allowsRural('drinking water problem in my village')).toBe(true)
+    expect(allowsRural('drinking water problem in Nehru village, Ward 12')).toBe(false)
+    expect(allowsRural('farm road broken, ward no 145')).toBe(false)
+    expect(allowsRural('village road, ward 450')).toBe(true) // 450 is not a GCC ward
   })
 })

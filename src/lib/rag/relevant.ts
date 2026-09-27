@@ -4,7 +4,10 @@ import { matchBreakdown, retrieveSupported, type MatchBreakdown, type RetrieveDe
 
 export interface RelevantRecord {
   record: SchemeRecord
+  /** Raw cosine similarity (the threshold is applied to this). */
   score: number
+  boost: number
+  final: number
   match: MatchBreakdown
 }
 

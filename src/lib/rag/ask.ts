@@ -13,7 +13,12 @@ export interface Source {
   name: string
   page: number
   official_source: string
+  /** Raw cosine similarity. */
   score: number
+  /** Locality boost added for ranking. */
+  boost: number
+  /** score + boost (ranking order). */
+  final: number
 }
 
 export interface AskResult {
@@ -90,6 +95,8 @@ export async function ask(question: string, opts: AskOpts): Promise<AskResult> {
     page: h.record.page,
     official_source: h.record.official_source,
     score: Math.round(h.score * 1000) / 1000,
+    boost: h.boost,
+    final: Math.round(h.final * 1000) / 1000,
   }))
 
   // 3. Nothing relevant enough: answer "not in my documents" WITHOUT calling the model.

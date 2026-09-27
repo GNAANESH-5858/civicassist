@@ -8,6 +8,9 @@ export interface LetterPdfInput {
   sources: { id: number; name: string; page: number; official_source: string }[]
 }
 
+/** Printed in grey at the top and foot of every page so the letter cannot pass as official. */
+export const DEMO_LABEL = 'SAMPLE - ACADEMIC DEMONSTRATION, NOT AN OFFICIAL COMMUNICATION'
+
 const A4: [number, number] = [595.28, 841.89]
 const MARGIN = 56
 
@@ -58,12 +61,23 @@ export async function letterPdf(input: LetterPdfInput): Promise<Uint8Array> {
   const font = await doc.embedFont(StandardFonts.Helvetica)
   const bold = await doc.embedFont(StandardFonts.HelveticaBold)
   const width = A4[0] - MARGIN * 2
-  let page = doc.addPage(A4)
+  const grey = rgb(0.5, 0.5, 0.5)
+  const labelSize = 8
+  const labelWidth = bold.widthOfTextAtSize(DEMO_LABEL, labelSize)
+  // Every page gets the demo label at the top (above the letterhead) and at the foot.
+  const addPage = () => {
+    const p = doc.addPage(A4)
+    const x = (A4[0] - labelWidth) / 2
+    p.drawText(DEMO_LABEL, { x, y: A4[1] - 30, size: labelSize, font: bold, color: grey })
+    p.drawText(DEMO_LABEL, { x, y: 24, size: labelSize, font: bold, color: grey })
+    return p
+  }
+  let page = addPage()
   let y = A4[1] - MARGIN
 
   const newPageIfNeeded = (needed: number) => {
     if (y - needed < MARGIN) {
-      page = doc.addPage(A4)
+      page = addPage()
       y = A4[1] - MARGIN
     }
   }

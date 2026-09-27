@@ -330,3 +330,11 @@ main.page { background: transparent; }
   -webkit-mask-image: linear-gradient(to top, #000 55%, transparent 88%);
   mask-image: linear-gradient(to top, #000 55%, transparent 88%);
 }
+
+/* Academic-sample notice on the Letter page (matches the label printed on the PDF). */
+.sample-banner {
+  display: flex; align-items: center; gap: 8px; margin: -8px 0 20px; padding: 10px 14px;
+  border: 1px dashed var(--border-strong); border-radius: var(--radius-sm);
+  background: var(--surface-2); color: var(--muted);
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
+}

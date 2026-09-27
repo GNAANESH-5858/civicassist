@@ -6,7 +6,7 @@ import { makeGateway } from '../lib/browser/gateway.ts'
 import { loadKb } from '../lib/browser/kb.ts'
 import { loadHistory } from '../lib/browser/storage.ts'
 import { draftLetter, lintLetter, type LetterDraft } from '../lib/letter/draft.ts'
-import { letterPdf } from '../lib/letter/pdf.ts'
+import { DEMO_LABEL, letterPdf } from '../lib/letter/pdf.ts'
 import { toContextRecord } from '../lib/rag/ask.ts'
 import { findRelevant, type RelevantRecord } from '../lib/rag/relevant.ts'
 
@@ -63,6 +63,9 @@ export default function LetterPage() {
     return (
       <>
         <PageHeader eyebrow="Step 3 · Acknowledge" title="Acknowledgement letter" />
+        <div className="sample-banner" role="note">
+        <IconAlert /> {DEMO_LABEL}
+      </div>
         <Status kind="empty">
           No complaints in this browser yet. <Link to="/complaint">File a complaint</Link> first, then come back to draft its letter.
         </Status>
@@ -76,6 +79,9 @@ export default function LetterPage() {
         A formal letter drafted for an officer to review, edit and approve. It can only mention schemes that were retrieved from the knowledge base for this
         complaint.
       </PageHeader>
+      <div className="sample-banner" role="note">
+        <IconAlert /> {DEMO_LABEL}
+      </div>
 
       <div className="layout-2">
         <div className="stack">
@@ -181,7 +187,7 @@ export default function LetterPage() {
             ) : relevant.length ? (
               <div className="scheme-list">
                 {relevant.map((r) => (
-                  <SchemeCard key={r.record.id} record={r.record} score={r.score} match={r.match} />
+                  <SchemeCard key={r.record.id} record={r.record} score={r.score} boost={r.boost} match={r.match} />
                 ))}
               </div>
             ) : (

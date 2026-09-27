@@ -2,7 +2,7 @@ import { PDFDocument, StandardFonts } from 'pdf-lib'
 import { describe, expect, it, vi } from 'vitest'
 import type { Gateway } from '../rag/ask.ts'
 import { draftLetter, lintLetter, templateLetter, TEMPLATE_VERSION, wordCount } from './draft.ts'
-import { letterPdf, toWinAnsi, wrap } from './pdf.ts'
+import { DEMO_LABEL, letterPdf, toWinAnsi, wrap } from './pdf.ts'
 
 const scheme = { id: 139, name: 'AMRUT 2.0 Water Supply Coverage', level: 'Central', authority: 'MoHUA', complaint_domains: 'Water', what_it_does: 'x', applicability: 'Urban', official_source: 'https://amrut.mohua.gov.in/', page: 32, kind: 'scheme' as const }
 const rule = { ...scheme, id: 86, name: 'Solid Waste Management Rules, 2016', page: 22, kind: 'regulatory' as const, official_source: 'https://moef.gov.in/' }
@@ -81,5 +81,29 @@ describe('pdf', () => {
     const { width, height } = doc.getPage(0).getSize()
     expect([Math.round(width), Math.round(height)]).toEqual([595, 842])
     expect(doc.getTitle()).toBe('Acknowledgement CMP-1')
+  })
+
+  it('labels every page as an academic sample, top and foot', async () => {
+    const long = templateLetter(input) + '\n\n' + 'Additional paragraph text for length. '.repeat(400)
+    const bytes = await letterPdf({ complaint_id: 'CMP-1', date: new Date('2026-09-27'), body: long, sources: [scheme, rule] })
+    const doc = await PDFDocument.load(bytes)
+    expect(doc.getPageCount()).toBeGreaterThan(1)
+    expect(DEMO_LABEL).toBe('SAMPLE - ACADEMIC DEMONSTRATION, NOT AN OFFICIAL COMMUNICATION')
+    // Standard-font text is stored as hex strings in the content stream; count label occurrences.
+    const hex = Buffer.from(DEMO_LABEL, 'latin1').toString('hex').toUpperCase()
+    const { inflateSync } = await import('node:zlib')
+    let count = 0
+    for (const page of doc.getPages()) {
+      const contents = page.node.Contents()
+      const streams = contents && 'asArray' in contents ? (contents as unknown as { asArray(): unknown[] }).asArray() : [contents]
+      for (const ref of streams) {
+        const stream = doc.context.lookup(ref as never) as unknown as { getContents(): Uint8Array }
+        const raw = Buffer.from(stream.getContents())
+        let text: string
+        try { text = inflateSync(raw).toString('latin1') } catch { text = raw.toString('latin1') }
+        count += text.toUpperCase().split(hex).length - 1
+      }
+    }
+    expect(count).toBe(doc.getPageCount() * 2)
   })
 })

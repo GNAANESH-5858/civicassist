@@ -122,7 +122,7 @@ export default function AdvisoryPage() {
           <div className="scheme-list">
             {result.sources.map((s) => {
               const r = records.get(s.id)
-              return r ? <SchemeCard key={s.id} n={s.n} record={r} score={s.score} match={matchBreakdown(matchText, r)} /> : null
+              return r ? <SchemeCard key={s.id} n={s.n} record={r} score={s.score} boost={s.boost} match={matchBreakdown(matchText, r)} /> : null
             })}
           </div>
         </div>

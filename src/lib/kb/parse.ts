@@ -20,6 +20,28 @@ export function deriveGeography(applicability: string): SchemeRecord['geography'
   return 'both'
 }
 
+/**
+ * Complaint-type exclusion phrases: the record says it does not apply to ordinary city or
+ * municipal complaints. Deliberately a fixed list. Scheme-type clarifications such as
+ * "not a welfare scheme" (#84), "Not a scheme:" (#81) and "rather than benefit scheme" (#85)
+ * mean "not a cash benefit" and must NOT match, so there is no generic "not a" / "rather than" rule.
+ */
+export const CITY_EXCLUSION_PHRASES = [
+  'rather than routine city',
+  'not ordinary city',
+  'not ordinary municipal',
+  'do not route ordinary city complaints',
+  'prevent false municipal matching',
+  'not a direct individual complaint benefit',
+  'boundary case',
+  'boundary category',
+]
+
+export function deriveSelfExcludesCity(whatItDoes: string, matchingSignals: string): boolean {
+  const t = `${whatItDoes} ${matchingSignals}`.toLowerCase()
+  return CITY_EXCLUSION_PHRASES.some((p) => t.includes(p))
+}
+
 type FieldKey = 'level' | 'complaint_domains' | 'what_it_does' | 'matching_signals' | 'applicability' | 'official_source'
 
 const FIELD_LABELS: [string, FieldKey][] = [
@@ -133,6 +155,7 @@ export function parseEntries(pages: string[][], firstPage = 5, lastPage = 34): P
       page: d.page,
       kind: deriveKind(level),
       geography: deriveGeography(applicability),
+      self_excludes_city: deriveSelfExcludesCity(f.what_it_does ?? '', f.matching_signals ?? ''),
     }
   })
 

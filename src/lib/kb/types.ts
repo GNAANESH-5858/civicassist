@@ -13,4 +13,6 @@ export interface SchemeRecord {
   page: number
   kind: 'scheme' | 'regulatory'
   geography: 'urban' | 'rural' | 'both'
+  /** The record itself says it does not apply to ordinary city/municipal complaints. */
+  self_excludes_city: boolean
 }
