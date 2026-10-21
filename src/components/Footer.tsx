@@ -1,40 +1,60 @@
+import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
+
 export default function Footer() {
+  const { t } = useTranslation()
   return (
     <footer className="site-footer">
-      <div className="container">
+      <div className="container cols">
         <div>
-          <p>
-            <strong>CivicAssist</strong> is an independent demonstration project. It is not operated by or affiliated with the Greater Chennai Corporation or any
-            government department.
-          </p>
-          <p>
-            Scheme information comes only from the CivicAssist knowledge base (148 curated entries). Eligibility, coverage and funding change; confirm every
-            scheme at its official source before acting.
-          </p>
+          <h2>CivicAssist</h2>
+          <p>{t('footer.about')}</p>
+          <p>{t('footer.sources')}</p>
         </div>
         <div>
-          <p>
-            <strong>Official resources</strong>
-          </p>
+          <h2>{t('footer.official')}</h2>
           <ul>
             <li>
-              <a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener noreferrer">
-                myScheme: national scheme finder
-              </a>
-            </li>
-            <li>
-              <a href="https://chennaicorporation.gov.in/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.chennaicorporation.gov.in/gcc/" target="_blank" rel="noopener noreferrer">
                 Greater Chennai Corporation
               </a>
             </li>
             <li>
-              <a href="https://chennaimetrowater.tn.gov.in/" target="_blank" rel="noopener noreferrer">
+              <a href="https://cmwssb.tn.gov.in/" target="_blank" rel="noopener noreferrer">
                 Chennai Metro Water (CMWSSB)
+              </a>
+            </li>
+            <li>
+              <a href="https://www.tnpdcl.org/" target="_blank" rel="noopener noreferrer">
+                TNPDCL (electricity)
+              </a>
+            </li>
+            <li>
+              <a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener noreferrer">
+                myScheme
               </a>
             </li>
           </ul>
         </div>
+        <div>
+          <h2>{t('footer.project')}</h2>
+          <ul>
+            <li>
+              <Link to="/about">{t('nav.about')}</Link>
+            </li>
+            <li>
+              <Link to="/about#sources">{t('footer.verification')}</Link>
+            </li>
+            <li>
+              <Link to="/evaluation">{t('nav.evaluation')}</Link>
+            </li>
+            <li>
+              <Link to="/officer">{t('nav.officer')}</Link>
+            </li>
+          </ul>
+        </div>
       </div>
+      <div className="independence container">{t('footer.independence')}</div>
     </footer>
   )
 }

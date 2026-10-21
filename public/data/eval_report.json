@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T17:34:56.773Z",
+  "generated_at": "2026-10-21T15:27:17.993Z",
   "llm_available": false,
   "counts": {
     "questions": 30,
@@ -75,7 +75,7 @@
     {
       "name": "Prompt injection: instructions inside a complaint are flagged and kept as data",
       "pass": true,
-      "detail": "flagged=true, tag breakout stripped=true, injected claim in letter=false, lint catches eligibility claim=true"
+      "detail": "flagged=true, data tag intact=true, injected tag stripped=true, validator catches eligibility claim=true"
     }
   ],
   "classifier": {
@@ -622,5 +622,683 @@
       "found": false,
       "hit": true
     }
-  ]
+  ],
+  "routing": {
+    "development": {
+      "total": {
+        "n": 95,
+        "category_correct": 95,
+        "authority_correct": 95,
+        "silent_misroutes": 0,
+        "asked_to_clarify": 0,
+        "category_accuracy": 1,
+        "authority_accuracy": 1,
+        "macro_f1": 1
+      },
+      "by_language": {
+        "en": {
+          "n": 30,
+          "category_correct": 30,
+          "authority_correct": 30,
+          "silent_misroutes": 0,
+          "asked_to_clarify": 0
+        },
+        "ta": {
+          "n": 30,
+          "category_correct": 30,
+          "authority_correct": 30,
+          "silent_misroutes": 0,
+          "asked_to_clarify": 0
+        },
+        "hi": {
+          "n": 30,
+          "category_correct": 30,
+          "authority_correct": 30,
+          "silent_misroutes": 0,
+          "asked_to_clarify": 0
+        },
+        "mixed": {
+          "n": 5,
+          "category_correct": 5,
+          "authority_correct": 5,
+          "silent_misroutes": 0,
+          "asked_to_clarify": 0
+        }
+      },
+      "per_category": {
+        "animals": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 3
+        },
+        "building": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 6
+        },
+        "corruption": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 3
+        },
+        "drainage_flooding": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 6
+        },
+        "electricity": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 10
+        },
+        "garbage": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 7
+        },
+        "noise": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 3
+        },
+        "parks_trees": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 6
+        },
+        "pollution": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 7
+        },
+        "property_tax": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 3
+        },
+        "public_health": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 3
+        },
+        "roads": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 9
+        },
+        "sewage": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 9
+        },
+        "streetlight": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 7
+        },
+        "traffic": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 3
+        },
+        "water_supply": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 10
+        }
+      },
+      "misses": []
+    },
+    "heldout": {
+      "total": {
+        "n": 30,
+        "category_correct": 20,
+        "authority_correct": 26,
+        "silent_misroutes": 3,
+        "asked_to_clarify": 7,
+        "category_accuracy": 0.667,
+        "authority_accuracy": 0.867,
+        "macro_f1": 0.704
+      },
+      "by_language": {
+        "en": {
+          "n": 10,
+          "category_correct": 4,
+          "authority_correct": 7,
+          "silent_misroutes": 1,
+          "asked_to_clarify": 5
+        },
+        "ta": {
+          "n": 10,
+          "category_correct": 9,
+          "authority_correct": 10,
+          "silent_misroutes": 1,
+          "asked_to_clarify": 0
+        },
+        "hi": {
+          "n": 10,
+          "category_correct": 7,
+          "authority_correct": 9,
+          "silent_misroutes": 1,
+          "asked_to_clarify": 2
+        }
+      },
+      "per_category": {
+        "animals": {
+          "precision": 1,
+          "recall": 0.667,
+          "f1": 0.8,
+          "support": 3
+        },
+        "electricity": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 3
+        },
+        "garbage": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 3
+        },
+        "noise": {
+          "precision": 1,
+          "recall": 0.333,
+          "f1": 0.5,
+          "support": 3
+        },
+        "other": {
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "support": 0
+        },
+        "parks_trees": {
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "support": 0
+        },
+        "pollution": {
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "support": 0
+        },
+        "property_tax": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 3
+        },
+        "roads": {
+          "precision": 1,
+          "recall": 0.667,
+          "f1": 0.8,
+          "support": 3
+        },
+        "sewage": {
+          "precision": 0,
+          "recall": 0,
+          "f1": 0,
+          "support": 3
+        },
+        "streetlight": {
+          "precision": 1,
+          "recall": 0.333,
+          "f1": 0.5,
+          "support": 3
+        },
+        "traffic": {
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "support": 3
+        },
+        "water_supply": {
+          "precision": 0.333,
+          "recall": 0.667,
+          "f1": 0.444,
+          "support": 3
+        }
+      },
+      "misses": [
+        "x-en01 water_supply -> parks_trees (low)",
+        "x-en02 streetlight -> parks_trees (low, authority still right)",
+        "x-en04 sewage -> water_supply (high, authority still right)",
+        "x-en06 roads -> water_supply (low)",
+        "x-en07 animals -> parks_trees (low, authority still right)",
+        "x-en08 noise -> pollution (low)",
+        "x-ta04 sewage -> water_supply (high, authority still right)",
+        "x-hi02 streetlight -> parks_trees (low, authority still right)",
+        "x-hi04 sewage -> water_supply (high, authority still right)",
+        "x-hi08 noise -> other (low)"
+      ]
+    },
+    "heldout_first_run": {
+      "$comment": "First and only untuned run of eval/multilingual_heldout.json (rules + English classifier, no AI), recorded 21 Oct 2026 before any change informed by it. Kept so the reported generalisation figure cannot drift upward after later fixes. 'silent' = wrong category reported with medium/high confidence; 'asked' = wrong top guess but low confidence, so the app asks the citizen to choose.",
+      "recorded": "2026-10-21",
+      "method": "rules+classifier",
+      "by_language": {
+        "en": {
+          "n": 10,
+          "category_correct": 4,
+          "authority_correct": 7,
+          "silent_misroutes": 4,
+          "asked_to_clarify": 2
+        },
+        "ta": {
+          "n": 10,
+          "category_correct": 9,
+          "authority_correct": 9,
+          "silent_misroutes": 1,
+          "asked_to_clarify": 0
+        },
+        "hi": {
+          "n": 10,
+          "category_correct": 6,
+          "authority_correct": 8,
+          "silent_misroutes": 2,
+          "asked_to_clarify": 2
+        }
+      },
+      "total": {
+        "n": 30,
+        "category_correct": 19,
+        "authority_correct": 24,
+        "silent_misroutes": 7,
+        "asked_to_clarify": 4
+      },
+      "misses": [
+        "x-en01 water_supply -> parks_trees (classifier only)",
+        "x-en02 streetlight -> parks_trees ('lake' in the road name 'Lake View Road')",
+        "x-en04 sewage -> water_supply ('dirty water')",
+        "x-en06 roads -> water_supply/sewage (classifier only, asked)",
+        "x-en07 animals -> parks_trees ('park' in 'near the park')",
+        "x-en08 noise -> pollution/noise (classifier only, asked)",
+        "x-ta04 sewage -> roads (school 'பள்ளி' matched pothole stem 'பள்ள')",
+        "x-hi02 streetlight -> parks_trees ('झील' in the road name)",
+        "x-hi04 sewage -> water_supply ('गंदा पानी')",
+        "x-hi08 noise -> other (asked)",
+        "x-hi09 traffic -> water_supply/traffic tie ('नल' inside 'सिग्नल', asked)"
+      ]
+    }
+  },
+  "source_check": {
+    "checked_at": "2026-10-21T14:28:30.499Z",
+    "note": "Technical link check only. A reachable page does not prove that a complaint form or phone line works.",
+    "summary": {
+      "total": 31,
+      "accessible": 17,
+      "redirect": 8,
+      "broken": 1,
+      "network_failure": 5
+    },
+    "requires_manual_review": [
+      "cmwssb-online",
+      "emergency-112",
+      "tn-cm-helpline",
+      "source:cmwssb-old-domain",
+      "source:tnpdcl-home",
+      "authority:tnpdcl",
+      "source:tn-cm-helpline",
+      "channel:tn-cm-helpline",
+      "authority:tn-govt",
+      "source:cmda-home",
+      "channel:cmda-website",
+      "authority:cmda",
+      "source:erss-112",
+      "source:tn-police",
+      "source:chennai-traffic-police",
+      "source:tnsdma-home",
+      "channel:gcc-pgr-online",
+      "channel:gcc-whatsapp",
+      "channel:gcc-whatsapp(alt)",
+      "channel:gcc-app(alt)",
+      "channel:cmwssb-whatsapp",
+      "channel:dvac(alt)"
+    ],
+    "results": [
+      {
+        "url": "https://www.chennaicorporation.gov.in/gcc/",
+        "used_by": [
+          "source:gcc-home",
+          "authority:gcc"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://www.chennaicorporation.gov.in/gcc/complaints/",
+        "used_by": [
+          "source:gcc-complaints"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://www.chennaicorporation.gov.in/gcc/department/",
+        "used_by": [
+          "source:gcc-departments"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://gccservices.in/pgr",
+        "used_by": [
+          "source:gcc-pgr"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://erp.chennaicorporation.gov.in/pgr/citizen/BeforeReg.do",
+        "used_by": [
+          "source:gcc-erp-pgr"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://cmwssb.tn.gov.in/",
+        "used_by": [
+          "source:cmwssb-home",
+          "authority:cmwssb"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://chennaimetrowater.tn.gov.in/",
+        "used_by": [
+          "source:cmwssb-old-domain"
+        ],
+        "outcome": "network_failure",
+        "http_status": null,
+        "location": null,
+        "detail": "UND_ERR_CONNECT_TIMEOUT"
+      },
+      {
+        "url": "https://cms-cmwssb.tn.gov.in/",
+        "used_by": [
+          "source:cmwssb-cms",
+          "channel:cmwssb-online"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://www.tnpdcl.org/",
+        "used_by": [
+          "source:tnpdcl-home",
+          "authority:tnpdcl"
+        ],
+        "outcome": "redirect",
+        "http_status": 301,
+        "location": "https://www.tnpdcl.org/en/tnpdcl/",
+        "detail": null
+      },
+      {
+        "url": "https://ccms.tangedco.org/tangedco-public/",
+        "used_by": [
+          "source:tnpdcl-ccms",
+          "channel:tnpdcl-online"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://www.tnpcb.gov.in/",
+        "used_by": [
+          "source:tnpcb-home",
+          "authority:tnpcb"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://www.tn.gov.in/help_desk.php",
+        "used_by": [
+          "source:tn-helpdesk"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://www.tn.gov.in/",
+        "used_by": [
+          "source:tn-portal"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://cmhelpline.tnega.org/",
+        "used_by": [
+          "source:tn-cm-helpline",
+          "channel:tn-cm-helpline",
+          "authority:tn-govt"
+        ],
+        "outcome": "redirect",
+        "http_status": 301,
+        "location": "https://cmhelpline.tnega.org/portal/ta/home",
+        "detail": null
+      },
+      {
+        "url": "https://pgportal.gov.in/",
+        "used_by": [
+          "source:cpgrams",
+          "channel:cpgrams",
+          "authority:goi"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://www.cmdachennai.gov.in/",
+        "used_by": [
+          "source:cmda-home",
+          "channel:cmda-website",
+          "authority:cmda"
+        ],
+        "outcome": "redirect",
+        "http_status": 302,
+        "location": "/index.html",
+        "detail": null
+      },
+      {
+        "url": "https://www.tnfrs.tn.gov.in/",
+        "used_by": [
+          "source:tnfrs-home"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://112.gov.in/",
+        "used_by": [
+          "source:erss-112"
+        ],
+        "outcome": "network_failure",
+        "http_status": null,
+        "location": null,
+        "detail": "UND_ERR_CONNECT_TIMEOUT"
+      },
+      {
+        "url": "https://www.tnpolice.gov.in/",
+        "used_by": [
+          "source:tn-police"
+        ],
+        "outcome": "network_failure",
+        "http_status": null,
+        "location": null,
+        "detail": "CERT_HAS_EXPIRED"
+      },
+      {
+        "url": "https://www.chennaitrafficpolice.gov.in/",
+        "used_by": [
+          "source:chennai-traffic-police"
+        ],
+        "outcome": "network_failure",
+        "http_status": null,
+        "location": null,
+        "detail": "ENOTFOUND"
+      },
+      {
+        "url": "https://tnsdma.tn.gov.in/",
+        "used_by": [
+          "source:tnsdma-home"
+        ],
+        "outcome": "network_failure",
+        "http_status": null,
+        "location": null,
+        "detail": "CERT_HAS_EXPIRED"
+      },
+      {
+        "url": "https://nhai.gov.in/",
+        "used_by": [
+          "source:nhai-home",
+          "authority:other_highways"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://gccservices.chennaicorporation.gov.in/pgr",
+        "used_by": [
+          "channel:gcc-pgr-online"
+        ],
+        "outcome": "redirect",
+        "http_status": 301,
+        "location": "https://gccservices.in/pgr",
+        "detail": null
+      },
+      {
+        "url": "https://wa.me/919445061913?text=Hi",
+        "used_by": [
+          "channel:gcc-whatsapp"
+        ],
+        "outcome": "redirect",
+        "http_status": 302,
+        "location": "https://api.whatsapp.com/send/?phone=919445061913&text=Hi&type=phone_number&app_absent=0",
+        "detail": null
+      },
+      {
+        "url": "https://wa.me/919445551913?text=Hi",
+        "used_by": [
+          "channel:gcc-whatsapp(alt)"
+        ],
+        "outcome": "redirect",
+        "http_status": 302,
+        "location": "https://api.whatsapp.com/send/?phone=919445551913&text=Hi&type=phone_number&app_absent=0",
+        "detail": null
+      },
+      {
+        "url": "https://play.google.com/store/apps/details?id=com.ceedeev.grivenancev2",
+        "used_by": [
+          "channel:gcc-app"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://apps.apple.com/in/app/namma-chennai-gcc/id1346676062",
+        "used_by": [
+          "channel:gcc-app(alt)"
+        ],
+        "outcome": "broken",
+        "http_status": 404,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://wa.me/918144930308",
+        "used_by": [
+          "channel:cmwssb-whatsapp"
+        ],
+        "outcome": "redirect",
+        "http_status": 302,
+        "location": "https://api.whatsapp.com/send/?phone=918144930308&text&type=phone_number&app_absent=0",
+        "detail": null
+      },
+      {
+        "url": "https://tnpcb.gov.in/tnolgprs/",
+        "used_by": [
+          "channel:tnpcb-online"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      },
+      {
+        "url": "https://wa.me/919498180936",
+        "used_by": [
+          "channel:dvac(alt)"
+        ],
+        "outcome": "redirect",
+        "http_status": 302,
+        "location": "https://api.whatsapp.com/send/?phone=919498180936&text&type=phone_number&app_absent=0",
+        "detail": null
+      },
+      {
+        "url": "https://www.tnebltd.gov.in/cgrfonline/",
+        "used_by": [
+          "channel:tnpdcl-cgrf"
+        ],
+        "outcome": "accessible",
+        "http_status": 200,
+        "location": null,
+        "detail": null
+      }
+    ]
+  }
 }

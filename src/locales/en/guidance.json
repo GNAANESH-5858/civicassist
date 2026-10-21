@@ -1,0 +1,158 @@
+{
+  "reason": {
+    "user_selected": "You chose \"{{category}}\".",
+    "words_matched": "Your description mentions {{words}}, which points to {{category}}.",
+    "classifier": "The text classifier suggests {{category}}; no specific keyword was found.",
+    "no_match": "No specific keyword was found, so this is a general suggestion.",
+    "burning_waste": "Burning of waste is handled by the Corporation's Solid Waste Management department.",
+    "industrial_noise": "Noise from a factory or industry is handled by the Pollution Control Board.",
+    "authority_role": "{{authority}} is responsible for this kind of issue in Chennai."
+  },
+  "uncertain": {
+    "low_confidence": "We are not confident about the issue type. Please confirm or change it.",
+    "two_categories": "This could be either {{a}} or {{b}}.",
+    "private_premises": "The problem may be inside private premises. Authorities usually handle only public lines, drains and land.",
+    "highway": "Highways may be maintained by the State Highways Department or NHAI, not the Corporation.",
+    "road_ownership": "Main roads may be maintained by a different authority than the Corporation. Check the road type.",
+    "outside_gcc": "{{locality}} may be outside Greater Chennai Corporation limits. The local municipality may handle it.",
+    "no_location": "No location was given. Add the street, area or ward so the complaint reaches the right office.",
+    "ward_stated_not_verified": "You mentioned {{ward}}. CivicAssist cannot verify ward boundaries; the official portal will confirm the ward.",
+    "channel_not_verified": "{{channel}} could not be fully verified on the official site. Check it before relying on it.",
+    "no_channel": "No verified complaint channel was found for {{authority}}. Contact the authority through its official website."
+  },
+  "plan": {
+    "safety_first": "If anyone is in danger, call the emergency number shown above first.",
+    "private_premises": "If the problem is inside your property, a private plumber or the building owner may need to fix it.",
+    "confirm_premises": "Check whether the problem is on public land or a public line, not inside private property.",
+    "confirm_road": "Confirm what kind of road it is. Highways and some main roads are maintained by other departments.",
+    "gather": "Note down {{missing}}, and keep ready: {{evidence}}.",
+    "gather_missing": "Note down {{missing}} before you submit.",
+    "gather_evidence": "Keep ready: {{evidence}}.",
+    "gather_generic": "Note the exact place and a nearby landmark before you submit.",
+    "submit": "Submit the complaint to {{authority}} using {{channel}}.",
+    "submit_no_channel": "Contact {{authority}} through its official website or office.",
+    "save_reference": "Write down the complaint or reference number you are given.",
+    "follow_up": "If nothing happens, follow up using {{channel}} and quote your reference number.",
+    "follow_up_generic": "If nothing happens, follow up on the same channel and quote your reference number.",
+    "no_timeline": "Official response times could not be verified, so none is shown here.",
+    "escalate": "If the issue is still not resolved, you can escalate through: {{channels}}."
+  },
+  "question": {
+    "location": {
+      "label": "Where exactly is the problem? (street, area or ward)",
+      "placeholder": "For example: 2nd Cross Street, Kodambakkam",
+      "short": "the location"
+    },
+    "public_private": {
+      "label": "Is the problem on public land or a public line?",
+      "short": "whether it is public or private",
+      "option": { "public": "Public (street, public line)", "private": "Inside private property", "unknown": "Not sure" }
+    },
+    "road_type": {
+      "label": "What kind of road is it?",
+      "short": "the road type",
+      "option": { "residential": "Street or residential road", "main": "Main road", "highway": "Highway", "unknown": "Not sure" }
+    },
+    "pollution_source": {
+      "label": "What is causing the pollution?",
+      "short": "the source of pollution",
+      "option": { "factory": "Factory or industry", "burning_waste": "Burning of waste", "vehicles": "Vehicles", "construction": "Construction work", "other": "Something else" }
+    },
+    "danger": {
+      "label": "Is anyone in immediate danger?",
+      "short": "whether anyone is in danger"
+    },
+    "landmark": {
+      "label": "Is there a nearby landmark?",
+      "placeholder": "For example: opposite the bus stop",
+      "short": "a nearby landmark"
+    },
+    "started": {
+      "label": "Since when has this been happening?",
+      "short": "since when it started",
+      "option": { "today": "Today", "few_days": "A few days", "week": "About a week", "month_plus": "A month or more", "unknown": "Not sure" }
+    },
+    "ongoing": {
+      "label": "Is it still happening?",
+      "short": "whether it is still happening"
+    },
+    "affects_vulnerable": {
+      "label": "Does it affect children, elderly people or patients?",
+      "short": "who is affected"
+    },
+    "previous_complaint": {
+      "label": "Did you complain before? If so, the reference number:",
+      "placeholder": "Earlier complaint number",
+      "short": "the earlier complaint number"
+    },
+    "connection_number": {
+      "label": "Service or connection number, if you have it:",
+      "placeholder": "From your bill",
+      "short": "the connection number"
+    }
+  },
+  "yesno": {
+    "yes": "Yes",
+    "no": "No",
+    "unknown": "Not sure"
+  },
+  "evidence": {
+    "assessment_number": "property tax assessment number",
+    "connection_number": "service or connection number (from your bill)",
+    "photo_problem": "a photo of the problem",
+    "pole_number": "the number painted on the pole",
+    "previous_reference": "any earlier complaint number",
+    "time_of_day": "the time of day it happens",
+    "vehicle_number": "the vehicle number, if relevant"
+  },
+  "channel_kind": {
+    "online_portal": "Online portal",
+    "app": "Mobile app",
+    "whatsapp": "WhatsApp",
+    "phone": "Phone helpline",
+    "email": "Email",
+    "website": "Website"
+  },
+  "channel_action": {
+    "online_portal": "Open the official portal",
+    "app": "Get the official app",
+    "whatsapp": "Open WhatsApp chat",
+    "call": "Call {{value}}",
+    "email": "Write to {{value}}",
+    "website": "Visit the official website",
+    "in_person": "Visit the office"
+  },
+  "requires": {
+    "account": "Needs an account",
+    "app_install": "Needs the app installed",
+    "otp": "Needs an OTP to your phone",
+    "whatsapp": "Needs WhatsApp"
+  },
+  "verification": {
+    "verified": "Verified on official site",
+    "loads": "Page loads; details not confirmed",
+    "unverified": "Not verified"
+  },
+  "portal_language_unknown": "The official portal may be available only in English.",
+  "safety": {
+    "emergency_title": "Get help now if anyone is in danger",
+    "emergency_body": "This may be an emergency. Call the emergency service first, and stay away from the hazard. File the civic complaint afterwards.",
+    "urgent_title": "This may be urgent",
+    "urgent_body": "This could cause harm soon. Report it quickly on the phone helpline, and warn others nearby."
+  },
+  "hazard": {
+    "live_wire": "Fallen or exposed electric wire: keep away and do not touch it or water near it.",
+    "fire": "Fire or smoke: move away and call the fire service.",
+    "gas_leak": "Gas smell: do not switch on lights or flames; open windows and leave.",
+    "collapse": "Building, wall or tree collapse: keep people away from the area.",
+    "injury": "Someone is injured: call an ambulance.",
+    "flood_home": "Water entering homes: move to a higher place and switch off the main power if safe.",
+    "open_manhole": "Open manhole or pit: warn others and mark the spot if you can do it safely.",
+    "contaminated_drinking": "Possibly contaminated drinking water: boil water before drinking or use another source."
+  },
+  "confidence": {
+    "high": "high",
+    "medium": "medium",
+    "low": "low"
+  }
+}

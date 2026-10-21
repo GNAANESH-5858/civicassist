@@ -22,7 +22,8 @@ export function buildPlan(frame: ComplaintFrame, routing: Routing, answers: Answ
   if (!frame.locality && !frame.ward && !answers.location) missing.push('location')
   if (!frame.landmark && !answers.landmark) missing.push('landmark')
   if (!frame.duration && !answers.started) missing.push('started')
-  steps.push({ id: 'gather', key: 'plan.gather', params: { missing: missing.join(','), evidence: cat.evidence.join(',') } })
+  const gatherKey = missing.length && cat.evidence.length ? 'plan.gather' : missing.length ? 'plan.gather_missing' : cat.evidence.length ? 'plan.gather_evidence' : 'plan.gather_generic'
+  steps.push({ id: 'gather', key: gatherKey, params: { missing: missing.join(','), evidence: cat.evidence.join(',') } })
 
   if (routing.primary) {
     steps.push({ id: 'submit', key: 'plan.submit', params: { channel: routing.primary.id, authority: routing.authority.id } })

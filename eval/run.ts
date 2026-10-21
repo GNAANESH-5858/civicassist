@@ -15,6 +15,7 @@ import type { SearchIndex } from '../src/lib/search/rank.ts'
 import { parseCsv } from '../scripts/lib/csv.ts'
 import { runFailureTests } from './failures.ts'
 import { judge } from './judge.ts'
+import { evaluateRouting, type RoutingItem } from './routing.ts'
 import { duplicateScores, mean, precisionAtK, recallAtK, reciprocalRank } from './metrics.ts'
 
 interface Question {
@@ -91,6 +92,21 @@ const dupRows = complaints.map((c) => {
 })
 const dup = duplicateScores(dupRows)
 
+// ---- Multilingual routing (rules + English classifier, no AI) ----
+const loadSet = async (f: string) => (JSON.parse(await readFile(f, 'utf8')) as { items: RoutingItem[] }).items
+const deptOf = (text: string) => triage({ text }, shipped).department
+const routing = {
+  development: evaluateRouting([...(await loadSet('eval/multilingual_routing.json')), ...(await loadSet('eval/multilingual_dev2.json'))], deptOf),
+  heldout: evaluateRouting(await loadSet('eval/multilingual_heldout.json'), deptOf),
+  heldout_first_run: JSON.parse(await readFile('eval/heldout_first_run.json', 'utf8')),
+}
+let sourceCheck: unknown = null
+try {
+  sourceCheck = JSON.parse(await readFile('data/source_check.json', 'utf8'))
+} catch {
+  sourceCheck = null
+}
+
 // ---- Failure-mode tests ----
 const failureTests = await runFailureTests({ records, index, embed, classifier: shipped })
 
@@ -119,10 +135,13 @@ const report = {
   failure_tests: failureTests,
   classifier: { accuracy: deptEval.accuracy, test_size: test.length, labels: deptEval.labels, matrix: deptEval.matrix },
   per_question: perQuestion,
+  routing,
+  source_check: sourceCheck,
 }
 await writeFile('public/data/eval_report.json', JSON.stringify(report, null, 2) + '\n', 'utf8')
 
 console.table(Object.fromEntries(Object.entries(report.metrics).map(([k, m]) => [k, { value: m.value, threshold: m.threshold, pass: m.pass }])))
 console.table(failureTests.map((t) => ({ test: t.name.split(':')[0], pass: t.pass, detail: t.detail.slice(0, 90) })))
 console.log('Misses:', perQuestion.filter((p) => p.hit === false).map((p) => `${p.id} expected ${p.expected_id ?? 'refusal'} got [${p.retrieved.join(',')}]`))
+console.log('Routing (held-out, already seen):', routing.heldout.total)
 console.log('Wrote public/data/eval_report.json')

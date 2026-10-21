@@ -37,6 +37,11 @@ export interface ComplaintFrame {
   pii_masked: boolean
 }
 
+/** Keywords that are often place names or incidental mentions, so they never decide alone. */
+export const WEAK_KEYWORDS = new Set(
+  ['park', 'lake', 'pond', 'tap', 'taps', 'rain', 'rains', 'lamp', 'lamps', 'noise', 'smoke', 'pollution', 'traffic', 'pipeline', 'factory', 'discharge', 'debris', 'park', 'பூங்கா', 'ஏரி', 'குளம்', 'மழை', 'விளக்கு', 'விளக்குகள்', 'சத்தம்', 'புகை', 'குழாய்', 'ஆலை', 'पार्क', 'झील', 'तालाब', 'बारिश', 'बत्ती', 'शोर', 'धुआँ', 'नल', 'प्लांट'].map((w) => normalizeText(w)),
+)
+
 const LATIN_LETTER = /[a-z]/
 const WORD_CHAR = /[a-z0-9஀-௿ऀ-ॿ]/
 
@@ -145,9 +150,10 @@ export function buildFrame(rawText: string, opts: FrameOptions = {}): ComplaintF
   let confidence: Confidence = 'low'
   if (scores.length) {
     const margin = scores[0].score - (scores[1]?.score ?? 0)
-    // One single-word keyword is weak evidence (it may be a place name, "Lake View Road", or
+    // A single ambiguous word is weak evidence (it may be a place name, "Lake View Road", or
     // incidental, "near the park"): ask the citizen to confirm rather than route silently.
-    const singleWeakWord = scores[0].matched.length === 1 && !scores[0].matched[0].includes(' ') && scores[0].score < 2
+    // A single distinctive word ("sewage", "pothole", "garbage") is enough for medium confidence.
+    const singleWeakWord = scores[0].matched.length === 1 && WEAK_KEYWORDS.has(normalizeText(scores[0].matched[0])) && scores[0].score < 2
     confidence = scores[0].score >= 2 && margin >= 1 ? 'high' : scores[0].score >= 1 && margin > 0 && !singleWeakWord ? 'medium' : 'low'
     // Classifier-only guesses are offered pre-selected but always confirmed by the citizen.
     if (classifierOnly) confidence = 'low'

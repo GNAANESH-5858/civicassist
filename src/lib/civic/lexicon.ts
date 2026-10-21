@@ -12,10 +12,10 @@ export interface Locality {
 
 export const LOCALITIES: Locality[] = [
   { name: 'Velachery', forms: ['velachery', 'வேளச்சேரி', 'वेलाचेरी'] },
-  { name: 'Adyar', forms: ['adyar', 'அடையார்', 'अडयार', 'अड्यार'] },
-  { name: 'T. Nagar', forms: ['t. nagar', 't.nagar', 't nagar', 'thyagaraya nagar', 'தி. நகர்', 'தி.நகர்', 'தியாகராய நகர்', 'टी. नगर', 'टी नगर'] },
+  { name: 'Adyar', forms: ['adyar', 'adayar', 'அடையார்', 'அடையாறு', 'अडयार', 'अड्यार'] },
+  { name: 'T. Nagar', forms: ['t. nagar', 't.nagar', 't nagar', 'thyagaraya nagar', 'தி. நகர்', 'தி.நகர்', 'டி. நகர்', 'டி.நகர்', 'தியாகராய நகர்', 'टी. नगर', 'टी नगर'] },
   { name: 'Anna Nagar', forms: ['anna nagar', 'அண்ணா நகர்', 'अन्ना नगर'] },
-  { name: 'Mylapore', forms: ['mylapore', 'மயிலாப்பூர்', 'मयिलापुर', 'मायलापुर'] },
+  { name: 'Mylapore', forms: ['mylapore', 'மயிலாப்பூர்', 'மைலாப்பூர்', 'मयिलापुर', 'मायलापुर'] },
   { name: 'Guindy', forms: ['guindy', 'கிண்டி', 'गिंडी'] },
   { name: 'Egmore', forms: ['egmore', 'எழும்பூர்', 'एग्मोर'] },
   { name: 'Triplicane', forms: ['triplicane', 'திருவல்லிக்கேணி', 'ट्रिप्लिकेन'] },

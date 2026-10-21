@@ -29,3 +29,6 @@ export default async (req: Request): Promise<Response> => {
   const result = runTriage(body)
   return Response.json(result, { status: result.error ? 400 : 200 })
 }
+
+// No rate-limit rule: it calls no model, and the Free plan allows two code-based rules (used by llm and records).
+export const config = { path: '/api/triage' }

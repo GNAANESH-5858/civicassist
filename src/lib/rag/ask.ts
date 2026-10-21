@@ -4,7 +4,7 @@ import { NOT_FOUND } from '../prompts/answer.ts'
 import type { ContextRecord } from '../prompts/context.ts'
 import { retrieveSupported, type RetrieveDeps } from './retrieve.ts'
 
-export type GatewayAction = 'rewrite' | 'answer' | 'letter'
+export type GatewayAction = 'rewrite' | 'answer' | 'extract' | 'polish'
 export type Gateway = (action: GatewayAction, payload: Record<string, unknown>) => Promise<{ text: string }>
 
 export interface Source {

@@ -1,4 +1,6 @@
 import { useState, type ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
+import { sourceById } from '../lib/civic/data.ts'
 import type { SchemeRecord } from '../lib/kb/types.ts'
 import type { MatchBreakdown, MatchSection } from '../lib/rag/retrieve.ts'
 import { IconAlert, IconChevron, IconInfo, IconLink } from './icons.tsx'
@@ -13,47 +15,49 @@ export function PageHeader({ eyebrow, title, children }: { eyebrow?: ReactNode; 
   )
 }
 
-export function UrgencyBadge({ level }: { level: string | null }) {
-  if (!level) return <span className="badge">unknown</span>
-  return <span className={`badge urgency-${level}`}>{level} urgency</span>
-}
-
-export function Status({ kind, children }: { kind: 'loading' | 'error' | 'empty' | 'info'; children: ReactNode }) {
+export function Status({ kind, children }: { kind: 'loading' | 'error' | 'empty' | 'info' | 'warn' | 'ok'; children: ReactNode }) {
   return (
     <div className={`status status-${kind}`} role={kind === 'error' ? 'alert' : 'status'}>
       {kind === 'loading' && <span className="spinner" aria-hidden />}
       {kind === 'error' && <IconAlert />}
-      {kind === 'info' && <IconInfo />}
+      {(kind === 'info' || kind === 'warn') && <IconInfo />}
       <span>{children}</span>
     </div>
   )
 }
 
-const FLAG_LABELS: Record<string, { label: string; tone: 'ok' | 'warn' | 'bad' | '' }> = {
-  phone_masked: { label: 'Phone number hidden', tone: 'ok' },
-  id_masked: { label: 'ID number hidden', tone: 'ok' },
-  email_masked: { label: 'Email hidden', tone: 'ok' },
-  possible_repeat: { label: 'Possible repeat', tone: 'warn' },
-  ward_missing: { label: 'Ward not found', tone: 'warn' },
-  truncated: { label: 'Shortened to 2000 characters', tone: 'warn' },
-  possible_injection: { label: 'Contains instructions: treated as text only', tone: 'bad' },
+export function UrgencyBadge({ level }: { level: string | null }) {
+  const { t } = useTranslation()
+  if (!level) return <span className="badge">{t('common.unknown')}</span>
+  return <span className={`badge urgency-${level}`}>{t(`common.urgency.${level}`)}</span>
 }
 
-export function Flag({ flag }: { flag: string }) {
-  const f = FLAG_LABELS[flag] ?? { label: flag, tone: '' }
-  return <span className={`pill ${f.tone ? `pill-${f.tone}` : ''}`}>{f.label}</span>
+/** Shows whether a fact was verified on an official page, with a link to that page and the check date. */
+export function VerificationBadge({ status, source }: { status: 'verified' | 'loads' | 'unverified'; source?: string }) {
+  const { t } = useTranslation()
+  const s = source ? sourceById.get(source) : undefined
+  const cls = status === 'verified' ? 'badge-ok' : status === 'loads' ? 'badge-warn' : 'badge-bad'
+  return (
+    <span className="meta">
+      <span className={`badge ${cls}`}>{t(`guidance:verification.${status}`)}</span>
+      {s && (
+        <span className="source-line">
+          {t('common.source')}:{' '}
+          <a href={s.url} target="_blank" rel="noopener noreferrer">
+            {s.title}
+          </a>{' '}
+          · {t('common.checked_on', { date: s.checked })}
+        </span>
+      )}
+    </span>
+  )
 }
 
-const SECTION_LABELS: Record<MatchSection, string> = {
-  complaint_domains: 'Complaint domains',
-  matching_signals: 'AI matching signals',
-  what_it_does: 'What it does',
-}
+const SECTIONS: MatchSection[] = ['complaint_domains', 'matching_signals', 'what_it_does']
 
 /** Highlights the matched words inside a section's text. */
 export function Highlight({ text, words }: { text: string; words: string[] }) {
   if (!words.length) return <>{text}</>
-  // Match on a word stem so "lights" also marks "streetlights" and "lighting".
   const stems = words.map((w) => w.toLowerCase().replace(/[^a-z]/g, '').replace(/(ing|ed|es|s)$/, '')).filter((w) => w.length >= 3)
   if (!stems.length) return <>{text}</>
   const re = new RegExp(`[a-z]*(?:${stems.join('|')})[a-z]*`, 'gi')
@@ -68,95 +72,72 @@ export function Highlight({ text, words }: { text: string; words: string[] }) {
 }
 
 /**
- * One knowledge-base record as an expandable card. Shows every section, which sections
- * matched the citizen's words, the scheme number, PDF page and official source.
+ * One knowledge-base record as an expandable card: every section, the sections that matched,
+ * scheme number, PDF page and official source. Record text is the official English corpus.
  */
 export function SchemeCard({ n, record, score, boost, match, defaultOpen = false }: { n?: number; record: SchemeRecord; score?: number; boost?: number; match?: MatchBreakdown; defaultOpen?: boolean }) {
+  const { t } = useTranslation()
   const [open, setOpen] = useState(defaultOpen)
-  const matchedSections = match ? (Object.keys(SECTION_LABELS) as MatchSection[]).filter((s) => match[s].length) : []
+  const matched = match ? SECTIONS.filter((s) => match[s].length) : []
   return (
     <div className={`scheme ${open ? 'open' : ''}`}>
       <button type="button" className="scheme-head" aria-expanded={open} onClick={() => setOpen(!open)}>
         {n !== undefined && <span className="scheme-n">[{n}]</span>}
-        <span className="scheme-title">
-          #{record.id} {record.name} {record.kind === 'regulatory' && <span className="tag-rule">Rule</span>}
+        <span className="scheme-title" lang="en">
+          #{record.id} {record.name} {record.kind === 'regulatory' && <span className="tag-rule">{t('schemes.rule')}</span>}
         </span>
-        <span className="scheme-meta">PDF page {record.page}</span>
+        <span className="scheme-meta">{t('schemes.pdf_page', { page: record.page })}</span>
         <IconChevron />
       </button>
       {match && !open && (
-        <div className="match-summary" style={{ padding: '0 14px 12px' }}>
-          {matchedSections.length ? (
-            matchedSections.map((s) => (
+        <div className="match-summary">
+          {matched.length ? (
+            matched.map((s) => (
               <span key={s} className="pill pill-ok">
-                ✓ {SECTION_LABELS[s]}: {match[s].join(', ')}
+                ✓ {t(`schemes.section.${s}`)}: {match[s].join(', ')}
               </span>
             ))
           ) : (
-            <span className="pill">Matched by meaning</span>
+            <span className="pill">{t('schemes.matched_meaning')}</span>
           )}
         </div>
       )}
       {open && (
         <div className="scheme-body">
           <div className="sections">
-            {(Object.keys(SECTION_LABELS) as MatchSection[]).map((s) => {
+            {SECTIONS.map((s) => {
               const words = match?.[s] ?? []
-              const text = s === 'matching_signals' ? record.matching_signals : s === 'complaint_domains' ? record.complaint_domains : record.what_it_does
               return (
-                <div key={s} className={`section ${words.length ? 'matched' : ''}`}>
-                  <div className="section-label">
-                    <span className="dot" />
-                    {SECTION_LABELS[s]}
-                  </div>
-                  <div className="section-text">
-                    <Highlight text={text} words={words} />
+                <div key={s} className={`section-row ${words.length ? 'matched' : ''}`}>
+                  <div className="label">{t(`schemes.section.${s}`)}</div>
+                  <div lang="en">
+                    <Highlight text={record[s]} words={words} />
                   </div>
                 </div>
               )
             })}
-            <div className="section">
-              <div className="section-label">
-                <span className="dot" />
-                Applicability
-              </div>
-              <div className="section-text">
+            <div className="section-row">
+              <div className="label">{t('schemes.section.applicability')}</div>
+              <div lang="en">
                 {record.applicability} · {record.level} · {record.authority}
               </div>
             </div>
-            <div className="section">
-              <div className="section-label">
-                <span className="dot" />
-                Type
-              </div>
-              <div className="section-text">{record.kind === 'regulatory' ? 'Regulatory reference: a legal rule, not a benefit you can claim' : 'Scheme / programme: may be applicable, subject to eligibility and local verification'}</div>
+            <div className="section-row">
+              <div className="label">{t('schemes.section.type')}</div>
+              <div>{t(record.kind === 'regulatory' ? 'schemes.type_rule' : 'schemes.type_scheme')}</div>
             </div>
-            <div className="section">
-              <div className="section-label">
-                <span className="dot" />
-                Official source
-              </div>
-              <div className="section-text">
+            <div className="section-row">
+              <div className="label">{t('schemes.section.official_source')}</div>
+              <div>
                 <a href={record.official_source} target="_blank" rel="noopener noreferrer">
                   <IconLink size={13} /> {record.official_source}
                 </a>
               </div>
             </div>
             {score !== undefined && (
-              <div className="section">
-                <div className="section-label">
-                  <span className="dot" />
-                  Match score
-                </div>
-                <div className="section-text">
-                  {boost ? (
-                    <>
-                      {score.toFixed(3)} similarity + {boost.toFixed(2)} local boost = <strong>{(score + boost).toFixed(3)}</strong>
-                    </>
-                  ) : (
-                    <>{score.toFixed(3)} similarity</>
-                  )}
-                </div>
+              <div className="section-row">
+                <div className="label">{t('schemes.section.score')}</div>
+                <div>{boost ? t('schemes.score_boost', { score: score.toFixed(3), boost: boost.toFixed(2), final: (score + boost).toFixed(3) }) : t('schemes.score', { score: score.toFixed(3) })}</div>
               </div>
             )}
           </div>

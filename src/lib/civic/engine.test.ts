@@ -29,6 +29,7 @@ describe('lexicon', () => {
   it('finds localities in all three scripts and flags ones that may be outside GCC', () => {
     expect(findLocality('pothole in Velachery near the bus stop')?.name).toBe('Velachery')
     expect(findLocality('வேளச்சேரியில் பள்ளம்')?.name).toBe('Velachery')
+    expect(findLocality('அடையாறு 3வது பிரதான சாலையில் தெருவிளக்கு எரியவில்லை')?.name).toBe('Adyar')
     expect(findLocality('वेलाचेरी में गड्ढा')?.name).toBe('Velachery')
     expect(findLocality('garbage in Tambaram')?.maybe_outside_gcc).toBe(true)
     expect(findLocality('no water')).toBeNull()
