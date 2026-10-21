@@ -1,0 +1,215 @@
+{
+  "$comment": "SYNTHETIC second development set. It was written as a held-out set, but its errors were then used to broaden the lexicon (21 Oct 2026), so it no longer measures generalisation. The true held-out set is multilingual_heldout.json. Tamil/Hindi need native-speaker review.",
+  "items": [
+    {
+      "id": "h-en01",
+      "lang": "en",
+      "text": "Our tap has been running dry every morning this week in Royapettah.",
+      "category": "water_supply",
+      "authority": "cmwssb"
+    },
+    {
+      "id": "h-en02",
+      "lang": "en",
+      "text": "The lamp opposite our gate on 2nd Street has been dead since Diwali.",
+      "category": "streetlight",
+      "authority": "gcc"
+    },
+    {
+      "id": "h-en03",
+      "lang": "en",
+      "text": "Bins near the bus depot are overflowing and crows are spreading the waste everywhere.",
+      "category": "garbage",
+      "authority": "gcc"
+    },
+    {
+      "id": "h-en04",
+      "lang": "en",
+      "text": "Foul black water is gushing out of the drain cover in front of the temple.",
+      "category": "sewage",
+      "authority": "cmwssb"
+    },
+    {
+      "id": "h-en05",
+      "lang": "en",
+      "text": "No current in our flats since 6 pm, the whole block is in darkness.",
+      "category": "electricity",
+      "authority": "tnpdcl"
+    },
+    {
+      "id": "h-en06",
+      "lang": "en",
+      "text": "The road near the railway gate has caved in and there is a deep hole.",
+      "category": "roads",
+      "authority": "gcc"
+    },
+    {
+      "id": "h-en07",
+      "lang": "en",
+      "text": "Knee-deep water on our street every time it rains, nothing drains away.",
+      "category": "drainage_flooding",
+      "authority": "gcc"
+    },
+    {
+      "id": "h-en08",
+      "lang": "en",
+      "text": "A wire from the pole has fallen on the road and is sparking.",
+      "category": "electricity",
+      "authority": "tnpdcl"
+    },
+    {
+      "id": "h-en09",
+      "lang": "en",
+      "text": "The chemical unit behind our colony lets out coloured water into the canal.",
+      "category": "pollution",
+      "authority": "tnpcb"
+    },
+    {
+      "id": "h-en10",
+      "lang": "en",
+      "text": "Someone has put up a shed on the footpath and pedestrians have to walk on the road.",
+      "category": "building",
+      "authority": "gcc"
+    },
+    {
+      "id": "h-ta01",
+      "lang": "ta",
+      "text": "ராயப்பேட்டையில் இந்த வாரம் முழுவதும் காலையில் குழாயில் தண்ணீர் வருவதில்லை.",
+      "category": "water_supply",
+      "authority": "cmwssb"
+    },
+    {
+      "id": "h-ta02",
+      "lang": "ta",
+      "text": "எங்கள் வீட்டு வாசலுக்கு எதிரே உள்ள விளக்கு தீபாவளி முதல் எரியவில்லை.",
+      "category": "streetlight",
+      "authority": "gcc"
+    },
+    {
+      "id": "h-ta03",
+      "lang": "ta",
+      "text": "பேருந்து நிலையம் அருகே குப்பைத் தொட்டிகள் நிரம்பி வழிகின்றன.",
+      "category": "garbage",
+      "authority": "gcc"
+    },
+    {
+      "id": "h-ta04",
+      "lang": "ta",
+      "text": "கோயில் முன் சாக்கடை மூடியிலிருந்து கருப்பு நீர் பொங்கி வருகிறது.",
+      "category": "sewage",
+      "authority": "cmwssb"
+    },
+    {
+      "id": "h-ta05",
+      "lang": "ta",
+      "text": "மாலை 6 மணி முதல் எங்கள் குடியிருப்பில் கரண்ட் இல்லை.",
+      "category": "electricity",
+      "authority": "tnpdcl"
+    },
+    {
+      "id": "h-ta06",
+      "lang": "ta",
+      "text": "ரயில்வே கேட் அருகே சாலை உள்வாங்கி ஆழமான குழி ஏற்பட்டுள்ளது.",
+      "category": "roads",
+      "authority": "gcc"
+    },
+    {
+      "id": "h-ta07",
+      "lang": "ta",
+      "text": "ஒவ்வொரு மழைக்கும் எங்கள் தெருவில் முழங்கால் அளவு தண்ணீர் தேங்குகிறது.",
+      "category": "drainage_flooding",
+      "authority": "gcc"
+    },
+    {
+      "id": "h-ta08",
+      "lang": "ta",
+      "text": "கம்பத்திலிருந்து மின் கம்பி அறுந்து சாலையில் விழுந்து தீப்பொறி வருகிறது.",
+      "category": "electricity",
+      "authority": "tnpdcl"
+    },
+    {
+      "id": "h-ta09",
+      "lang": "ta",
+      "text": "குடியிருப்புக்குப் பின்னால் உள்ள ரசாயன ஆலை கால்வாயில் வண்ண நீரை விடுகிறது.",
+      "category": "pollution",
+      "authority": "tnpcb"
+    },
+    {
+      "id": "h-ta10",
+      "lang": "ta",
+      "text": "நடைபாதையில் யாரோ கொட்டகை போட்டுள்ளனர், மக்கள் சாலையில் நடக்க வேண்டியுள்ளது.",
+      "category": "building",
+      "authority": "gcc"
+    },
+    {
+      "id": "h-hi01",
+      "lang": "hi",
+      "text": "रोयापेट्टा में इस पूरे हफ़्ते सुबह नल सूखा रहता है।",
+      "category": "water_supply",
+      "authority": "cmwssb"
+    },
+    {
+      "id": "h-hi02",
+      "lang": "hi",
+      "text": "हमारे गेट के सामने वाली बत्ती दिवाली से बंद है।",
+      "category": "streetlight",
+      "authority": "gcc"
+    },
+    {
+      "id": "h-hi03",
+      "lang": "hi",
+      "text": "बस डिपो के पास कूड़ेदान भरकर बाहर गिर रहे हैं।",
+      "category": "garbage",
+      "authority": "gcc"
+    },
+    {
+      "id": "h-hi04",
+      "lang": "hi",
+      "text": "मंदिर के सामने नाली के ढक्कन से काला बदबूदार पानी निकल रहा है।",
+      "category": "sewage",
+      "authority": "cmwssb"
+    },
+    {
+      "id": "h-hi05",
+      "lang": "hi",
+      "text": "शाम 6 बजे से हमारे फ्लैट्स में लाइट नहीं है।",
+      "category": "electricity",
+      "authority": "tnpdcl"
+    },
+    {
+      "id": "h-hi06",
+      "lang": "hi",
+      "text": "रेलवे फाटक के पास सड़क धँस गई है और गहरा गड्ढा बन गया है।",
+      "category": "roads",
+      "authority": "gcc"
+    },
+    {
+      "id": "h-hi07",
+      "lang": "hi",
+      "text": "हर बारिश में हमारी गली में घुटनों तक पानी भर जाता है।",
+      "category": "drainage_flooding",
+      "authority": "gcc"
+    },
+    {
+      "id": "h-hi08",
+      "lang": "hi",
+      "text": "खंभे से बिजली का तार टूटकर सड़क पर गिरा है और चिंगारी निकल रही है।",
+      "category": "electricity",
+      "authority": "tnpdcl"
+    },
+    {
+      "id": "h-hi09",
+      "lang": "hi",
+      "text": "कॉलोनी के पीछे वाला केमिकल प्लांट नहर में रंगीन पानी छोड़ता है।",
+      "category": "pollution",
+      "authority": "tnpcb"
+    },
+    {
+      "id": "h-hi10",
+      "lang": "hi",
+      "text": "किसी ने फुटपाथ पर शेड बना लिया है, लोगों को सड़क पर चलना पड़ता है।",
+      "category": "building",
+      "authority": "gcc"
+    }
+  ]
+}

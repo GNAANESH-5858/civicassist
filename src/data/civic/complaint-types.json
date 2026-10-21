@@ -3,263 +3,1244 @@
   "categories": [
     {
       "id": "water_supply",
-      "label": { "en": "Water supply", "ta": "குடிநீர் வழங்கல்", "hi": "जल आपूर्ति" },
-      "triage_departments": ["Water Supply & Sewerage"],
+      "label": {
+        "en": "Water supply",
+        "ta": "குடிநீர் வழங்கல்",
+        "hi": "जल आपूर्ति"
+      },
+      "triage_departments": [
+        "Water Supply & Sewerage"
+      ],
       "keywords": {
-        "en": ["no water", "water supply", "drinking water", "tap water", "taps are dry", "taps dry", "pipeline", "low pressure", "water pressure", "water leak", "pipe leak", "leaking pipe", "contaminated water", "dirty water", "muddy water", "yellow water", "smelly water", "metro water", "water connection", "water tanker", "water lorry", "water not coming", "sump"],
-        "ta": ["தண்ணீர் வர", "தண்ணீர் இல்லை", "குடிநீர்", "குழாய்", "நீர் வரவில்லை", "மெட்ரோ வாட்டர்", "நீர் கசிவு", "கலங்கல்", "அழுக்கு நீர்", "தண்ணீர் லாரி", "குடிநீர் இணைப்பு"],
-        "hi": ["पानी नहीं", "पानी की आपूर्ति", "पेयजल", "पीने का पानी", "नल", "पाइपलाइन", "गंदा पानी", "पानी का रिसाव", "पानी लीक", "मेट्रो वॉटर", "पानी का कनेक्शन", "पानी कम", "टैंकर"]
+        "en": [
+          "no water",
+          "water supply",
+          "drinking water",
+          "tap water",
+          "taps are dry",
+          "taps dry",
+          "pipeline",
+          "low pressure",
+          "water pressure",
+          "water leak",
+          "pipe leak",
+          "leaking pipe",
+          "contaminated water",
+          "dirty water",
+          "muddy water",
+          "yellow water",
+          "smelly water",
+          "metro water",
+          "water connection",
+          "water tanker",
+          "water lorry",
+          "water not coming",
+          "sump",
+          "tap",
+          "taps",
+          "running dry",
+          "no supply",
+          "water not supplied",
+          "supply has stopped",
+          "water problem",
+          "overhead tank",
+          "water is not coming",
+          "pipe burst",
+          "burst pipe"
+        ],
+        "ta": [
+          "தண்ணீர் வர",
+          "தண்ணீர் இல்லை",
+          "குடிநீர்",
+          "குழாய்",
+          "நீர் வரவில்லை",
+          "மெட்ரோ வாட்டர்",
+          "நீர் கசிவு",
+          "கலங்கல்",
+          "அழுக்கு நீர்",
+          "தண்ணீர் லாரி",
+          "குடிநீர் இணைப்பு",
+          "தண்ணீர் வருவதில்லை",
+          "தண்ணீர் வரல",
+          "குழாயில்",
+          "தண்ணீர் பிரச்சினை",
+          "குடிநீர் பிரச்சினை"
+        ],
+        "hi": [
+          "पानी नहीं",
+          "पानी की आपूर्ति",
+          "पेयजल",
+          "पीने का पानी",
+          "नल",
+          "पाइपलाइन",
+          "गंदा पानी",
+          "पानी का रिसाव",
+          "पानी लीक",
+          "मेट्रो वॉटर",
+          "पानी का कनेक्शन",
+          "पानी कम",
+          "टैंकर",
+          "नल सूख",
+          "पानी नहीं आता",
+          "पानी की समस्या",
+          "पानी की सप्लाई",
+          "पाइप फट"
+        ]
       },
       "primary_authority": "cmwssb",
       "alternatives": [],
-      "jurisdiction_note": { "en": "If the problem is inside your building (internal pipes, overhead tank, motor), it is usually the owner's responsibility.", "ta": "பிரச்சினை உங்கள் கட்டடத்திற்குள் இருந்தால் (உள் குழாய்கள், மேல்நிலைத் தொட்டி, மோட்டார்), அது பொதுவாக உரிமையாளரின் பொறுப்பு.", "hi": "यदि समस्या आपकी इमारत के अंदर है (भीतरी पाइप, ओवरहेड टैंक, मोटर), तो यह आमतौर पर मालिक की ज़िम्मेदारी है।" },
-      "questions": ["location", "landmark", "started", "ongoing", "public_private", "connection_number", "previous_complaint"],
-      "evidence": ["photo_problem", "connection_number", "previous_reference"],
-      "requested_action": { "en": "restore a regular water supply and repair the cause of the problem", "ta": "சீரான குடிநீர் வழங்கலை மீட்டெடுத்து, பிரச்சினையின் காரணத்தைச் சரிசெய்ய", "hi": "नियमित जल आपूर्ति बहाल करें और समस्या के कारण की मरम्मत करें" }
+      "jurisdiction_note": {
+        "en": "If the problem is inside your building (internal pipes, overhead tank, motor), it is usually the owner's responsibility.",
+        "ta": "பிரச்சினை உங்கள் கட்டடத்திற்குள் இருந்தால் (உள் குழாய்கள், மேல்நிலைத் தொட்டி, மோட்டார்), அது பொதுவாக உரிமையாளரின் பொறுப்பு.",
+        "hi": "यदि समस्या आपकी इमारत के अंदर है (भीतरी पाइप, ओवरहेड टैंक, मोटर), तो यह आमतौर पर मालिक की ज़िम्मेदारी है।"
+      },
+      "questions": [
+        "location",
+        "landmark",
+        "started",
+        "ongoing",
+        "public_private",
+        "connection_number",
+        "previous_complaint"
+      ],
+      "evidence": [
+        "photo_problem",
+        "connection_number",
+        "previous_reference"
+      ],
+      "requested_action": {
+        "en": "restore a regular water supply and repair the cause of the problem",
+        "ta": "சீரான குடிநீர் வழங்கலை மீட்டெடுத்து, பிரச்சினையின் காரணத்தைச் சரிசெய்ய",
+        "hi": "नियमित जल आपूर्ति बहाल करें और समस्या के कारण की मरम्मत करें"
+      }
     },
     {
       "id": "sewage",
-      "label": { "en": "Sewage and manholes", "ta": "கழிவுநீர் மற்றும் மேன்ஹோல்", "hi": "सीवेज और मैनहोल" },
-      "triage_departments": ["Water Supply & Sewerage"],
+      "label": {
+        "en": "Sewage and manholes",
+        "ta": "கழிவுநீர் மற்றும் மேன்ஹோல்",
+        "hi": "सीवेज और मैनहोल"
+      },
+      "triage_departments": [
+        "Water Supply & Sewerage"
+      ],
       "keywords": {
-        "en": ["sewage", "sewer", "manhole", "septic", "underground drainage", "ugd", "toilet waste", "drainage water overflowing", "drainage overflow", "sewage smell"],
-        "ta": ["கழிவுநீர்", "கழிவு நீர்", "சாக்கடை", "மேன்ஹோல்", "பாதாள சாக்கடை", "செப்டிக்"],
-        "hi": ["सीवर", "सीवेज", "मैनहोल", "गटर", "सेप्टिक", "गंदा पानी बह"]
+        "en": [
+          "sewage",
+          "sewer",
+          "manhole",
+          "septic",
+          "underground drainage",
+          "ugd",
+          "toilet waste",
+          "drainage water overflowing",
+          "drainage overflow",
+          "sewage smell",
+          "drain cover",
+          "black water",
+          "foul water",
+          "gutter",
+          "overflowing drain",
+          "stinking water",
+          "sewage water",
+          "drainage water"
+        ],
+        "ta": [
+          "கழிவுநீர்",
+          "கழிவு நீர்",
+          "சாக்கடை",
+          "மேன்ஹோல்",
+          "பாதாள சாக்கடை",
+          "செப்டிக்",
+          "சாக்கடை நீர்",
+          "கருப்பு நீர்",
+          "துர்நாற்ற நீர்"
+        ],
+        "hi": [
+          "सीवर",
+          "सीवेज",
+          "मैनहोल",
+          "गटर",
+          "सेप्टिक",
+          "गंदा पानी बह",
+          "नाली के ढक्कन",
+          "काला पानी",
+          "बदबूदार पानी",
+          "नाली से गंदा पानी",
+          "गटर का पानी"
+        ]
       },
       "primary_authority": "cmwssb",
-      "alternatives": [{ "authority": "gcc", "when": { "en": "if the water is in an open storm water drain rather than the sewer line", "ta": "நீர் கழிவுநீர் குழாயில் அல்லாமல் திறந்த மழைநீர் வடிகாலில் இருந்தால்", "hi": "यदि पानी सीवर लाइन के बजाय खुले बरसाती नाले में है" } }],
-      "jurisdiction_note": { "en": "Sewer lines and manholes on public roads are Metro Water's. A blocked septic tank or pipe inside private premises is usually the owner's responsibility.", "ta": "பொதுச் சாலைகளில் உள்ள கழிவுநீர் குழாய்களும் மேன்ஹோல்களும் மெட்ரோ வாட்டருடையவை. தனியார் வளாகத்திற்குள் அடைபட்ட செப்டிக் தொட்டி அல்லது குழாய் பொதுவாக உரிமையாளரின் பொறுப்பு.", "hi": "सार्वजनिक सड़कों पर सीवर लाइनें और मैनहोल मेट्रो वॉटर के हैं। निजी परिसर के अंदर बंद सेप्टिक टैंक या पाइप आमतौर पर मालिक की ज़िम्मेदारी है।" },
-      "questions": ["location", "landmark", "started", "ongoing", "public_private", "affects_vulnerable", "previous_complaint"],
-      "evidence": ["photo_problem", "previous_reference"],
-      "requested_action": { "en": "clear the blockage, stop the overflow and disinfect the affected area", "ta": "அடைப்பை நீக்கி, வழிந்தோடுவதை நிறுத்தி, பாதிக்கப்பட்ட பகுதியைச் சுத்திகரிக்க", "hi": "रुकावट हटाएँ, बहाव रोकें और प्रभावित क्षेत्र को कीटाणुरहित करें" }
+      "alternatives": [
+        {
+          "authority": "gcc",
+          "when": {
+            "en": "if the water is in an open storm water drain rather than the sewer line",
+            "ta": "நீர் கழிவுநீர் குழாயில் அல்லாமல் திறந்த மழைநீர் வடிகாலில் இருந்தால்",
+            "hi": "यदि पानी सीवर लाइन के बजाय खुले बरसाती नाले में है"
+          }
+        }
+      ],
+      "jurisdiction_note": {
+        "en": "Sewer lines and manholes on public roads are Metro Water's. A blocked septic tank or pipe inside private premises is usually the owner's responsibility.",
+        "ta": "பொதுச் சாலைகளில் உள்ள கழிவுநீர் குழாய்களும் மேன்ஹோல்களும் மெட்ரோ வாட்டருடையவை. தனியார் வளாகத்திற்குள் அடைபட்ட செப்டிக் தொட்டி அல்லது குழாய் பொதுவாக உரிமையாளரின் பொறுப்பு.",
+        "hi": "सार्वजनिक सड़कों पर सीवर लाइनें और मैनहोल मेट्रो वॉटर के हैं। निजी परिसर के अंदर बंद सेप्टिक टैंक या पाइप आमतौर पर मालिक की ज़िम्मेदारी है।"
+      },
+      "questions": [
+        "location",
+        "landmark",
+        "started",
+        "ongoing",
+        "public_private",
+        "affects_vulnerable",
+        "previous_complaint"
+      ],
+      "evidence": [
+        "photo_problem",
+        "previous_reference"
+      ],
+      "requested_action": {
+        "en": "clear the blockage, stop the overflow and disinfect the affected area",
+        "ta": "அடைப்பை நீக்கி, வழிந்தோடுவதை நிறுத்தி, பாதிக்கப்பட்ட பகுதியைச் சுத்திகரிக்க",
+        "hi": "रुकावट हटाएँ, बहाव रोकें और प्रभावित क्षेत्र को कीटाणुरहित करें"
+      }
     },
     {
       "id": "garbage",
-      "label": { "en": "Garbage and street cleaning", "ta": "குப்பை மற்றும் தெரு சுத்தம்", "hi": "कचरा और सड़क सफ़ाई" },
-      "triage_departments": ["Solid Waste Management"],
+      "label": {
+        "en": "Garbage and street cleaning",
+        "ta": "குப்பை மற்றும் தெரு சுத்தம்",
+        "hi": "कचरा और सड़क सफ़ाई"
+      },
+      "triage_departments": [
+        "Solid Waste Management"
+      ],
       "keywords": {
-        "en": ["garbage", "trash", "rubbish", "waste not collected", "not collected", "dustbin", "garbage bin", "dumping", "dumped", "litter", "conservancy", "debris", "street cleaning", "sweeping"],
-        "ta": ["குப்பை", "குப்பைத் தொட்டி", "கொட்டப்", "தெரு சுத்தம்", "கட்டுமானக் கழிவு"],
-        "hi": ["कचरा", "कूड़ा", "कूड़ेदान", "गंदगी", "कचरे का ढेर", "मलबा", "सफ़ाई नहीं"]
+        "en": [
+          "garbage",
+          "trash",
+          "rubbish",
+          "waste not collected",
+          "not collected",
+          "dustbin",
+          "garbage bin",
+          "dumping",
+          "dumped",
+          "litter",
+          "conservancy",
+          "debris",
+          "street cleaning",
+          "sweeping",
+          "bins",
+          "overflowing bin",
+          "waste everywhere",
+          "rotting waste",
+          "stinking waste",
+          "pile of waste"
+        ],
+        "ta": [
+          "குப்பை",
+          "குப்பைத் தொட்டி",
+          "கொட்டப்",
+          "தெரு சுத்தம்",
+          "கட்டுமானக் கழிவு",
+          "குப்பைகள்",
+          "குப்பை மேடு"
+        ],
+        "hi": [
+          "कचरा",
+          "कूड़ा",
+          "कूड़ेदान",
+          "गंदगी",
+          "कचरे का ढेर",
+          "मलबा",
+          "सफ़ाई नहीं",
+          "कूड़े का ढेर",
+          "कचरे के डिब्बे",
+          "कूड़ा पड़ा"
+        ]
       },
       "primary_authority": "gcc",
       "gcc_department": "Solid Waste Management",
       "alternatives": [],
-      "questions": ["location", "landmark", "started", "previous_complaint"],
-      "evidence": ["photo_problem", "previous_reference"],
-      "requested_action": { "en": "clear the garbage and ensure regular collection", "ta": "குப்பையை அகற்றி, முறையான சேகரிப்பை உறுதிசெய்ய", "hi": "कचरा हटाएँ और नियमित संग्रह सुनिश्चित करें" }
+      "questions": [
+        "location",
+        "landmark",
+        "started",
+        "previous_complaint"
+      ],
+      "evidence": [
+        "photo_problem",
+        "previous_reference"
+      ],
+      "requested_action": {
+        "en": "clear the garbage and ensure regular collection",
+        "ta": "குப்பையை அகற்றி, முறையான சேகரிப்பை உறுதிசெய்ய",
+        "hi": "कचरा हटाएँ और नियमित संग्रह सुनिश्चित करें"
+      }
     },
     {
       "id": "roads",
-      "label": { "en": "Roads and potholes", "ta": "சாலைகள் மற்றும் பள்ளங்கள்", "hi": "सड़कें और गड्ढे" },
-      "triage_departments": ["Roads & Storm Water Drains"],
+      "label": {
+        "en": "Roads and potholes",
+        "ta": "சாலைகள் மற்றும் பள்ளங்கள்",
+        "hi": "सड़कें और गड्ढे"
+      },
+      "triage_departments": [
+        "Roads & Storm Water Drains"
+      ],
       "keywords": {
-        "en": ["pothole", "road damage", "damaged road", "broken road", "road is broken", "road cut", "dug up", "speed breaker", "footpath", "pavement", "uneven road"],
-        "ta": ["பள்ள", "சாலை சேத", "சாலை உடை", "குண்டும் குழியும்", "நடைபாதை", "வேகத்தடை"],
-        "hi": ["गड्ढ", "टूटी सड़क", "सड़क खराब", "सड़क टूट", "फुटपाथ", "स्पीड ब्रेकर", "खुदी सड़क"]
+        "en": [
+          "pothole",
+          "road damage",
+          "damaged road",
+          "broken road",
+          "road is broken",
+          "road cut",
+          "dug up",
+          "speed breaker",
+          "footpath",
+          "pavement",
+          "uneven road",
+          "caved in",
+          "hole in the road",
+          "deep hole",
+          "road has sunk",
+          "crater",
+          "road broken",
+          "damaged footpath"
+        ],
+        "ta": [
+          "சாலை சேத",
+          "சாலை உடை",
+          "குண்டும் குழியும்",
+          "நடைபாதை",
+          "வேகத்தடை",
+          "குழி",
+          "சாலை உள்வாங்",
+          "சாலை பழுது",
+          "பள்ளம்",
+          "பள்ளத்",
+          "பள்ளங்கள்"
+        ],
+        "hi": [
+          "गड्ढ",
+          "टूटी सड़क",
+          "सड़क खराब",
+          "सड़क टूट",
+          "फुटपाथ",
+          "स्पीड ब्रेकर",
+          "खुदी सड़क",
+          "धँस",
+          "धंस",
+          "सड़क में गड्ढा",
+          "सड़क धँस"
+        ]
       },
       "primary_authority": "gcc",
       "gcc_department": "Roads & Storm Water Drains",
-      "alternatives": [{ "authority": "other_highways", "when": { "en": "if it is a national or state highway (for example a major arterial road), which may be maintained by the Highways Department or NHAI; CivicAssist has not verified their complaint channels", "ta": "அது தேசிய அல்லது மாநில நெடுஞ்சாலையாக இருந்தால் (எ.கா. பெரிய முதன்மைச் சாலை), நெடுஞ்சாலைத் துறை அல்லது NHAI பராமரிக்கக்கூடும்; அவற்றின் புகார் வழிகளை CivicAssist சரிபார்க்கவில்லை", "hi": "यदि यह राष्ट्रीय या राज्य राजमार्ग है (जैसे कोई बड़ी मुख्य सड़क), जिसका रखरखाव राजमार्ग विभाग या NHAI कर सकता है; CivicAssist ने उनके शिकायत माध्यम सत्यापित नहीं किए हैं" } }],
-      "jurisdiction_note": { "en": "GCC maintains interior roads and bus-route roads within its limits. Who maintains a particular major road depends on the road and could not be determined automatically.", "ta": "மாநகராட்சி தனது எல்லைக்குள் உள் சாலைகளையும் பேருந்து வழித்தடச் சாலைகளையும் பராமரிக்கிறது. ஒரு குறிப்பிட்ட பெரிய சாலையை யார் பராமரிக்கிறார்கள் என்பது சாலையைப் பொறுத்தது; அதைத் தானாகக் கண்டறிய முடியவில்லை.", "hi": "GCC अपनी सीमा के भीतर अंदरूनी सड़कों और बस-मार्ग सड़कों का रखरखाव करता है। किसी विशेष बड़ी सड़क का रखरखाव कौन करता है, यह सड़क पर निर्भर करता है और स्वचालित रूप से तय नहीं हो सका।" },
-      "questions": ["location", "landmark", "road_type", "started", "affects_vulnerable", "previous_complaint"],
-      "evidence": ["photo_problem", "previous_reference"],
-      "requested_action": { "en": "repair the road surface safely and mark the hazard until it is repaired", "ta": "சாலையைப் பாதுகாப்பாகச் சரிசெய்து, சரிசெய்யும் வரை ஆபத்தைக் குறியிட", "hi": "सड़क की सतह की सुरक्षित मरम्मत करें और मरम्मत होने तक खतरे को चिह्नित करें" }
+      "alternatives": [
+        {
+          "authority": "other_highways",
+          "when": {
+            "en": "if it is a national or state highway (for example a major arterial road), which may be maintained by the Highways Department or NHAI; CivicAssist has not verified their complaint channels",
+            "ta": "அது தேசிய அல்லது மாநில நெடுஞ்சாலையாக இருந்தால் (எ.கா. பெரிய முதன்மைச் சாலை), நெடுஞ்சாலைத் துறை அல்லது NHAI பராமரிக்கக்கூடும்; அவற்றின் புகார் வழிகளை CivicAssist சரிபார்க்கவில்லை",
+            "hi": "यदि यह राष्ट्रीय या राज्य राजमार्ग है (जैसे कोई बड़ी मुख्य सड़क), जिसका रखरखाव राजमार्ग विभाग या NHAI कर सकता है; CivicAssist ने उनके शिकायत माध्यम सत्यापित नहीं किए हैं"
+          }
+        }
+      ],
+      "jurisdiction_note": {
+        "en": "GCC maintains interior roads and bus-route roads within its limits. Who maintains a particular major road depends on the road and could not be determined automatically.",
+        "ta": "மாநகராட்சி தனது எல்லைக்குள் உள் சாலைகளையும் பேருந்து வழித்தடச் சாலைகளையும் பராமரிக்கிறது. ஒரு குறிப்பிட்ட பெரிய சாலையை யார் பராமரிக்கிறார்கள் என்பது சாலையைப் பொறுத்தது; அதைத் தானாகக் கண்டறிய முடியவில்லை.",
+        "hi": "GCC अपनी सीमा के भीतर अंदरूनी सड़कों और बस-मार्ग सड़कों का रखरखाव करता है। किसी विशेष बड़ी सड़क का रखरखाव कौन करता है, यह सड़क पर निर्भर करता है और स्वचालित रूप से तय नहीं हो सका।"
+      },
+      "questions": [
+        "location",
+        "landmark",
+        "road_type",
+        "started",
+        "affects_vulnerable",
+        "previous_complaint"
+      ],
+      "evidence": [
+        "photo_problem",
+        "previous_reference"
+      ],
+      "requested_action": {
+        "en": "repair the road surface safely and mark the hazard until it is repaired",
+        "ta": "சாலையைப் பாதுகாப்பாகச் சரிசெய்து, சரிசெய்யும் வரை ஆபத்தைக் குறியிட",
+        "hi": "सड़क की सतह की सुरक्षित मरम्मत करें और मरम्मत होने तक खतरे को चिह्नित करें"
+      }
     },
     {
       "id": "streetlight",
-      "label": { "en": "Street lights", "ta": "தெருவிளக்குகள்", "hi": "स्ट्रीट लाइट" },
-      "triage_departments": ["Street Lighting"],
+      "label": {
+        "en": "Street lights",
+        "ta": "தெருவிளக்குகள்",
+        "hi": "स्ट्रीट लाइट"
+      },
+      "triage_departments": [
+        "Street Lighting"
+      ],
       "keywords": {
-        "en": ["street light", "streetlight", "street lamp", "lamp post", "lamppost", "light not working", "lights not working", "dark street", "street is dark", "lights are off"],
-        "ta": ["தெருவிளக்கு", "தெரு விளக்கு", "விளக்கு எரிய", "விளக்குகள் எரிய", "இருட்டாக"],
-        "hi": ["स्ट्रीट लाइट", "स्ट्रीटलाइट", "सड़क की बत्ती", "बत्ती नहीं", "लाइट नहीं जल", "अंधेरा"]
+        "en": [
+          "street light",
+          "streetlight",
+          "street lamp",
+          "lamp post",
+          "lamppost",
+          "light not working",
+          "lights not working",
+          "dark street",
+          "street is dark",
+          "lights are off",
+          "lamp",
+          "lamps",
+          "light pole",
+          "lights off",
+          "light is off",
+          "street bulb",
+          "bulb fused"
+        ],
+        "ta": [
+          "தெருவிளக்கு",
+          "தெரு விளக்கு",
+          "விளக்கு எரிய",
+          "விளக்குகள் எரிய",
+          "இருட்டாக",
+          "விளக்கு",
+          "விளக்குகள்"
+        ],
+        "hi": [
+          "स्ट्रीट लाइट",
+          "स्ट्रीटलाइट",
+          "सड़क की बत्ती",
+          "बत्ती नहीं",
+          "लाइट नहीं जल",
+          "अंधेरा",
+          "बत्ती",
+          "खंभे की लाइट",
+          "गली की लाइट"
+        ]
       },
       "primary_authority": "gcc",
       "gcc_department": "Street Lighting",
-      "extra_channels": ["gcc-streetlight-cell"],
+      "extra_channels": [
+        "gcc-streetlight-cell"
+      ],
       "alternatives": [],
-      "jurisdiction_note": { "en": "Street lights are maintained by GCC's Electrical department, not by the electricity board.", "ta": "தெருவிளக்குகள் மாநகராட்சியின் மின் துறையால் பராமரிக்கப்படுகின்றன, மின் வாரியத்தால் அல்ல.", "hi": "स्ट्रीट लाइटों का रखरखाव GCC का विद्युत विभाग करता है, बिजली बोर्ड नहीं।" },
-      "questions": ["location", "landmark", "started", "affects_vulnerable", "previous_complaint"],
-      "evidence": ["pole_number", "photo_problem", "previous_reference"],
-      "requested_action": { "en": "repair or replace the street light", "ta": "தெருவிளக்கைச் சரிசெய்ய அல்லது மாற்ற", "hi": "स्ट्रीट लाइट की मरम्मत करें या बदलें" }
+      "jurisdiction_note": {
+        "en": "Street lights are maintained by GCC's Electrical department, not by the electricity board.",
+        "ta": "தெருவிளக்குகள் மாநகராட்சியின் மின் துறையால் பராமரிக்கப்படுகின்றன, மின் வாரியத்தால் அல்ல.",
+        "hi": "स्ट्रीट लाइटों का रखरखाव GCC का विद्युत विभाग करता है, बिजली बोर्ड नहीं।"
+      },
+      "questions": [
+        "location",
+        "landmark",
+        "started",
+        "affects_vulnerable",
+        "previous_complaint"
+      ],
+      "evidence": [
+        "pole_number",
+        "photo_problem",
+        "previous_reference"
+      ],
+      "requested_action": {
+        "en": "repair or replace the street light",
+        "ta": "தெருவிளக்கைச் சரிசெய்ய அல்லது மாற்ற",
+        "hi": "स्ट्रीट लाइट की मरम्मत करें या बदलें"
+      }
     },
     {
       "id": "drainage_flooding",
-      "label": { "en": "Flooding and storm water drains", "ta": "வெள்ளம் மற்றும் மழைநீர் வடிகால்", "hi": "जलभराव और बरसाती नाले" },
-      "triage_departments": ["Roads & Storm Water Drains"],
+      "label": {
+        "en": "Flooding and storm water drains",
+        "ta": "வெள்ளம் மற்றும் மழைநீர் வடிகால்",
+        "hi": "जलभराव और बरसाती नाले"
+      },
+      "triage_departments": [
+        "Roads & Storm Water Drains"
+      ],
       "keywords": {
-        "en": ["flood", "flooding", "waterlogging", "water logging", "waterlogged", "stagnant water", "stagnating", "rain water", "rainwater", "storm water", "drain blocked", "blocked drain", "clogged drain", "knee deep", "inundated"],
-        "ta": ["வெள்ள", "மழைநீர்", "மழை நீர்", "தேங்கி", "வடிகால்", "கால்வாய் அடைப்"],
-        "hi": ["बाढ़", "जलभराव", "जल भराव", "बारिश का पानी", "पानी भर", "नाला", "नाली जाम", "नाली बंद"]
+        "en": [
+          "flood",
+          "flooding",
+          "waterlogging",
+          "water logging",
+          "waterlogged",
+          "stagnant water",
+          "stagnating",
+          "rain water",
+          "rainwater",
+          "storm water",
+          "drain blocked",
+          "blocked drain",
+          "clogged drain",
+          "knee deep",
+          "inundated",
+          "knee-deep",
+          "water does not drain",
+          "nothing drains",
+          "every time it rains",
+          "rains",
+          "rain",
+          "water stagnation"
+        ],
+        "ta": [
+          "வெள்ள",
+          "மழைநீர்",
+          "மழை நீர்",
+          "தேங்கி",
+          "வடிகால்",
+          "கால்வாய் அடைப்",
+          "முழங்கால் அளவு",
+          "மழைக்கும்",
+          "மழை",
+          "நீர் தேக்கம்"
+        ],
+        "hi": [
+          "बाढ़",
+          "जलभराव",
+          "जल भराव",
+          "बारिश का पानी",
+          "पानी भर",
+          "नाला",
+          "नाली जाम",
+          "नाली बंद",
+          "बारिश",
+          "घुटनों तक पानी",
+          "पानी जमा"
+        ]
       },
       "primary_authority": "gcc",
       "gcc_department": "Roads & Storm Water Drains",
-      "alternatives": [{ "authority": "emergency", "when": { "en": "if water is entering homes or people are stranded", "ta": "வீடுகளுக்குள் தண்ணீர் புகுந்தால் அல்லது மக்கள் சிக்கியிருந்தால்", "hi": "यदि घरों में पानी घुस रहा है या लोग फँसे हैं" } }],
-      "questions": ["location", "landmark", "started", "ongoing", "danger", "previous_complaint"],
-      "evidence": ["photo_problem", "previous_reference"],
-      "requested_action": { "en": "clear the storm water drain and remove the stagnant water", "ta": "மழைநீர் வடிகாலைச் சுத்தம் செய்து, தேங்கிய நீரை அகற்ற", "hi": "बरसाती नाले को साफ़ करें और जमा पानी हटाएँ" }
+      "alternatives": [
+        {
+          "authority": "emergency",
+          "when": {
+            "en": "if water is entering homes or people are stranded",
+            "ta": "வீடுகளுக்குள் தண்ணீர் புகுந்தால் அல்லது மக்கள் சிக்கியிருந்தால்",
+            "hi": "यदि घरों में पानी घुस रहा है या लोग फँसे हैं"
+          }
+        }
+      ],
+      "questions": [
+        "location",
+        "landmark",
+        "started",
+        "ongoing",
+        "danger",
+        "previous_complaint"
+      ],
+      "evidence": [
+        "photo_problem",
+        "previous_reference"
+      ],
+      "requested_action": {
+        "en": "clear the storm water drain and remove the stagnant water",
+        "ta": "மழைநீர் வடிகாலைச் சுத்தம் செய்து, தேங்கிய நீரை அகற்ற",
+        "hi": "बरसाती नाले को साफ़ करें और जमा पानी हटाएँ"
+      }
     },
     {
       "id": "electricity",
-      "label": { "en": "Electricity supply", "ta": "மின் வழங்கல்", "hi": "बिजली आपूर्ति" },
+      "label": {
+        "en": "Electricity supply",
+        "ta": "மின் வழங்கல்",
+        "hi": "बिजली आपूर्ति"
+      },
       "triage_departments": [],
       "keywords": {
-        "en": ["power cut", "no power", "power failure", "no electricity", "electricity", "current not", "voltage", "transformer", "electricity meter", "eb office", "eb bill", "power outage", "electric pole", "power supply"],
-        "ta": ["மின்சாரம்", "மின்வெட்டு", "மின் தடை", "கரண்ட்", "மின்மாற்றி", "மின் மீட்டர்", "மின் கம்பம்"],
-        "hi": ["बिजली", "बिजली कटौती", "बिजली नहीं", "वोल्टेज", "ट्रांसफार्मर", "बिजली का मीटर", "बिजली का खंभा"]
+        "en": [
+          "power cut",
+          "no power",
+          "power failure",
+          "no electricity",
+          "electricity",
+          "current not",
+          "voltage",
+          "transformer",
+          "electricity meter",
+          "eb office",
+          "eb bill",
+          "power outage",
+          "electric pole",
+          "power supply",
+          "no current",
+          "current cut",
+          "power off",
+          "power is off",
+          "no power supply",
+          "electric wire",
+          "wire from the pole",
+          "power line",
+          "load shedding",
+          "no electricity supply"
+        ],
+        "ta": [
+          "மின்சாரம்",
+          "மின்வெட்டு",
+          "மின் தடை",
+          "கரண்ட்",
+          "மின்மாற்றி",
+          "மின் மீட்டர்",
+          "மின் கம்பம்",
+          "மின் கம்பி",
+          "மின்கம்பி",
+          "மின்கம்பம்",
+          "கரண்ட் இல்லை",
+          "மின்சாரம் இல்லை"
+        ],
+        "hi": [
+          "बिजली",
+          "बिजली कटौती",
+          "बिजली नहीं",
+          "वोल्टेज",
+          "ट्रांसफार्मर",
+          "बिजली का मीटर",
+          "बिजली का खंभा",
+          "बिजली का तार",
+          "लाइट नहीं",
+          "लाइट गई",
+          "लाइट चली",
+          "बिजली गई",
+          "बिजली चली"
+        ]
       },
       "primary_authority": "tnpdcl",
-      "alternatives": [{ "authority": "gcc", "when": { "en": "if it is only a street light that is not working", "ta": "தெருவிளக்கு மட்டும் எரியவில்லை என்றால்", "hi": "यदि केवल स्ट्रीट लाइट नहीं जल रही है" } }],
-      "questions": ["location", "started", "ongoing", "danger", "connection_number", "previous_complaint"],
-      "evidence": ["connection_number", "previous_reference"],
-      "requested_action": { "en": "restore the electricity supply and fix the fault", "ta": "மின் வழங்கலை மீட்டெடுத்து, பழுதைச் சரிசெய்ய", "hi": "बिजली आपूर्ति बहाल करें और खराबी ठीक करें" }
+      "alternatives": [
+        {
+          "authority": "gcc",
+          "when": {
+            "en": "if it is only a street light that is not working",
+            "ta": "தெருவிளக்கு மட்டும் எரியவில்லை என்றால்",
+            "hi": "यदि केवल स्ट्रीट लाइट नहीं जल रही है"
+          }
+        }
+      ],
+      "questions": [
+        "location",
+        "started",
+        "ongoing",
+        "danger",
+        "connection_number",
+        "previous_complaint"
+      ],
+      "evidence": [
+        "connection_number",
+        "previous_reference"
+      ],
+      "requested_action": {
+        "en": "restore the electricity supply and fix the fault",
+        "ta": "மின் வழங்கலை மீட்டெடுத்து, பழுதைச் சரிசெய்ய",
+        "hi": "बिजली आपूर्ति बहाल करें और खराबी ठीक करें"
+      }
     },
     {
       "id": "traffic",
-      "label": { "en": "Traffic and road safety", "ta": "போக்குவரத்து மற்றும் சாலைப் பாதுகாப்பு", "hi": "यातायात और सड़क सुरक्षा" },
+      "label": {
+        "en": "Traffic and road safety",
+        "ta": "போக்குவரத்து மற்றும் சாலைப் பாதுகாப்பு",
+        "hi": "यातायात और सड़क सुरक्षा"
+      },
       "triage_departments": [],
       "keywords": {
-        "en": ["traffic", "signal not working", "traffic signal", "illegal parking", "wrong parking", "wrong side", "rash driving", "speeding", "road safety", "accident prone"],
-        "ta": ["போக்குவரத்து", "சிக்னல்", "பார்க்கிங்", "தவறான பக்க", "வேகமாக ஓட்ட"],
-        "hi": ["ट्रैफिक", "ट्रैफ़िक", "सिग्नल", "अवैध पार्किंग", "गलत पार्किंग", "गलत साइड", "तेज़ रफ़्तार"]
+        "en": [
+          "traffic",
+          "signal not working",
+          "traffic signal",
+          "illegal parking",
+          "wrong parking",
+          "wrong side",
+          "rash driving",
+          "speeding",
+          "road safety",
+          "accident prone",
+          "parked",
+          "parking on",
+          "no parking",
+          "blocking the road",
+          "traffic jam",
+          "congestion"
+        ],
+        "ta": [
+          "போக்குவரத்து",
+          "சிக்னல்",
+          "பார்க்கிங்",
+          "தவறான பக்க",
+          "வேகமாக ஓட்ட",
+          "போக்குவரத்து நெரிசல்"
+        ],
+        "hi": [
+          "ट्रैफिक",
+          "ट्रैफ़िक",
+          "सिग्नल",
+          "अवैध पार्किंग",
+          "गलत पार्किंग",
+          "गलत साइड",
+          "तेज़ रफ़्तार",
+          "खड़ी गाड़ियाँ",
+          "पार्क की गई",
+          "ट्रैफिक जाम"
+        ]
       },
       "primary_authority": "police",
-      "alternatives": [{ "authority": "gcc", "when": { "en": "if the problem is the road itself (damage, markings, footpath)", "ta": "பிரச்சினை சாலையிலேயே இருந்தால் (சேதம், குறியீடுகள், நடைபாதை)", "hi": "यदि समस्या स्वयं सड़क की है (क्षति, निशान, फुटपाथ)" } }],
-      "jurisdiction_note": { "en": "Traffic enforcement is a police function. CivicAssist could not verify an online Chennai Traffic Police complaint channel; for urgent situations call 100.", "ta": "போக்குவரத்து அமலாக்கம் காவல்துறையின் பணி. சென்னை போக்குவரத்து காவல் இணைய புகார் வழியை CivicAssist சரிபார்க்க முடியவில்லை; அவசர நிலைகளில் 100-ஐ அழைக்கவும்.", "hi": "यातायात प्रवर्तन पुलिस का कार्य है। CivicAssist चेन्नई ट्रैफ़िक पुलिस का ऑनलाइन शिकायत माध्यम सत्यापित नहीं कर सका; आपात स्थिति में 100 पर कॉल करें।" },
-      "questions": ["location", "landmark", "started", "danger"],
-      "evidence": ["photo_problem", "vehicle_number"],
-      "requested_action": { "en": "take enforcement action and make the location safe", "ta": "அமலாக்க நடவடிக்கை எடுத்து, அந்த இடத்தைப் பாதுகாப்பாக்க", "hi": "प्रवर्तन कार्रवाई करें और स्थान को सुरक्षित बनाएँ" }
+      "alternatives": [
+        {
+          "authority": "gcc",
+          "when": {
+            "en": "if the problem is the road itself (damage, markings, footpath)",
+            "ta": "பிரச்சினை சாலையிலேயே இருந்தால் (சேதம், குறியீடுகள், நடைபாதை)",
+            "hi": "यदि समस्या स्वयं सड़क की है (क्षति, निशान, फुटपाथ)"
+          }
+        }
+      ],
+      "jurisdiction_note": {
+        "en": "Traffic enforcement is a police function. CivicAssist could not verify an online Chennai Traffic Police complaint channel; for urgent situations call 100.",
+        "ta": "போக்குவரத்து அமலாக்கம் காவல்துறையின் பணி. சென்னை போக்குவரத்து காவல் இணைய புகார் வழியை CivicAssist சரிபார்க்க முடியவில்லை; அவசர நிலைகளில் 100-ஐ அழைக்கவும்.",
+        "hi": "यातायात प्रवर्तन पुलिस का कार्य है। CivicAssist चेन्नई ट्रैफ़िक पुलिस का ऑनलाइन शिकायत माध्यम सत्यापित नहीं कर सका; आपात स्थिति में 100 पर कॉल करें।"
+      },
+      "questions": [
+        "location",
+        "landmark",
+        "started",
+        "danger"
+      ],
+      "evidence": [
+        "photo_problem",
+        "vehicle_number"
+      ],
+      "requested_action": {
+        "en": "take enforcement action and make the location safe",
+        "ta": "அமலாக்க நடவடிக்கை எடுத்து, அந்த இடத்தைப் பாதுகாப்பாக்க",
+        "hi": "प्रवर्तन कार्रवाई करें और स्थान को सुरक्षित बनाएँ"
+      }
     },
     {
       "id": "animals",
-      "label": { "en": "Stray animals", "ta": "தெரு விலங்குகள்", "hi": "आवारा पशु" },
-      "triage_departments": ["Public Health & Sanitation"],
+      "label": {
+        "en": "Stray animals",
+        "ta": "தெரு விலங்குகள்",
+        "hi": "आवारा पशु"
+      },
+      "triage_departments": [
+        "Public Health & Sanitation"
+      ],
       "keywords": {
-        "en": ["stray dog", "stray dogs", "dog bite", "dogs chasing", "cattle", "cows on road", "monkey", "stray animal"],
-        "ta": ["தெருநாய்", "தெரு நாய்", "நாய் கடி", "நாய்கள்", "மாடு", "குரங்கு"],
-        "hi": ["आवारा कुत्त", "कुत्ते", "कुत्ता काट", "गाय", "मवेशी", "बंदर"]
+        "en": [
+          "stray dog",
+          "stray dogs",
+          "dog bite",
+          "dogs chasing",
+          "cattle",
+          "cows on road",
+          "monkey",
+          "stray animal"
+        ],
+        "ta": [
+          "தெருநாய்",
+          "தெரு நாய்",
+          "நாய் கடி",
+          "நாய்கள்",
+          "மாடு",
+          "குரங்கு"
+        ],
+        "hi": [
+          "आवारा कुत्त",
+          "कुत्ते",
+          "कुत्ता काट",
+          "गाय",
+          "मवेशी",
+          "बंदर"
+        ]
       },
       "primary_authority": "gcc",
       "gcc_department": "Public Health & Sanitation",
       "alternatives": [],
-      "questions": ["location", "landmark", "started", "affects_vulnerable"],
-      "evidence": ["photo_problem"],
-      "requested_action": { "en": "take action on the stray animals as per the applicable rules", "ta": "பொருந்தும் விதிகளின்படி தெரு விலங்குகள் மீது நடவடிக்கை எடுக்க", "hi": "लागू नियमों के अनुसार आवारा पशुओं पर कार्रवाई करें" }
+      "questions": [
+        "location",
+        "landmark",
+        "started",
+        "affects_vulnerable"
+      ],
+      "evidence": [
+        "photo_problem"
+      ],
+      "requested_action": {
+        "en": "take action on the stray animals as per the applicable rules",
+        "ta": "பொருந்தும் விதிகளின்படி தெரு விலங்குகள் மீது நடவடிக்கை எடுக்க",
+        "hi": "लागू नियमों के अनुसार आवारा पशुओं पर कार्रवाई करें"
+      }
     },
     {
       "id": "public_health",
-      "label": { "en": "Public health and sanitation", "ta": "பொது சுகாதாரம்", "hi": "सार्वजनिक स्वास्थ्य और स्वच्छता" },
-      "triage_departments": ["Public Health & Sanitation", "Health Services"],
+      "label": {
+        "en": "Public health and sanitation",
+        "ta": "பொது சுகாதாரம்",
+        "hi": "सार्वजनिक स्वास्थ्य और स्वच्छता"
+      },
+      "triage_departments": [
+        "Public Health & Sanitation",
+        "Health Services"
+      ],
       "keywords": {
-        "en": ["mosquito", "dengue", "malaria", "fogging", "public toilet", "community toilet", "open defecation", "dead animal", "carcass", "rats", "health centre", "uphc", "dispensary"],
-        "ta": ["கொசு", "டெங்கு", "பொதுக் கழிப்பறை", "கழிப்பறை", "இறந்த விலங்கு", "சுகாதார நிலைய"],
-        "hi": ["मच्छर", "डेंगू", "मलेरिया", "सार्वजनिक शौचालय", "शौचालय", "मरा हुआ जानवर", "स्वास्थ्य केंद्र"]
+        "en": [
+          "mosquito",
+          "dengue",
+          "malaria",
+          "fogging",
+          "public toilet",
+          "community toilet",
+          "open defecation",
+          "dead animal",
+          "carcass",
+          "rats",
+          "health centre",
+          "uphc",
+          "dispensary"
+        ],
+        "ta": [
+          "கொசு",
+          "டெங்கு",
+          "பொதுக் கழிப்பறை",
+          "கழிப்பறை",
+          "இறந்த விலங்கு",
+          "சுகாதார நிலைய"
+        ],
+        "hi": [
+          "मच्छर",
+          "डेंगू",
+          "मलेरिया",
+          "सार्वजनिक शौचालय",
+          "शौचालय",
+          "मरा हुआ जानवर",
+          "स्वास्थ्य केंद्र"
+        ]
       },
       "primary_authority": "gcc",
       "gcc_department": "Public Health & Sanitation",
       "alternatives": [],
-      "questions": ["location", "landmark", "started", "affects_vulnerable", "previous_complaint"],
-      "evidence": ["photo_problem"],
-      "requested_action": { "en": "inspect the location and take the necessary public-health measures", "ta": "இடத்தை ஆய்வு செய்து, தேவையான பொது சுகாதார நடவடிக்கைகளை எடுக்க", "hi": "स्थान का निरीक्षण करें और आवश्यक जन-स्वास्थ्य उपाय करें" }
+      "questions": [
+        "location",
+        "landmark",
+        "started",
+        "affects_vulnerable",
+        "previous_complaint"
+      ],
+      "evidence": [
+        "photo_problem"
+      ],
+      "requested_action": {
+        "en": "inspect the location and take the necessary public-health measures",
+        "ta": "இடத்தை ஆய்வு செய்து, தேவையான பொது சுகாதார நடவடிக்கைகளை எடுக்க",
+        "hi": "स्थान का निरीक्षण करें और आवश्यक जन-स्वास्थ्य उपाय करें"
+      }
     },
     {
       "id": "building",
-      "label": { "en": "Building violations and encroachment", "ta": "கட்டட விதிமீறல் மற்றும் ஆக்கிரமிப்பு", "hi": "भवन उल्लंघन और अतिक्रमण" },
-      "triage_departments": ["Buildings & Town Planning"],
+      "label": {
+        "en": "Building violations and encroachment",
+        "ta": "கட்டட விதிமீறல் மற்றும் ஆக்கிரமிப்பு",
+        "hi": "भवन उल्लंघन और अतिक्रमण"
+      },
+      "triage_departments": [
+        "Buildings & Town Planning"
+      ],
       "keywords": {
-        "en": ["illegal construction", "unauthorised construction", "unauthorized construction", "without approval", "encroachment", "encroaching", "setback", "extra floor", "building violation", "dilapidated", "about to collapse"],
-        "ta": ["சட்டவிரோத கட்டுமான", "அனுமதியற்ற", "அனுமதி இல்லாமல்", "ஆக்கிரமிப்", "இடிந்து விழ"],
-        "hi": ["अवैध निर्माण", "अनधिकृत निर्माण", "बिना अनुमति", "अतिक्रमण", "जर्जर", "गिरने वाली"]
+        "en": [
+          "illegal construction",
+          "unauthorised construction",
+          "unauthorized construction",
+          "without approval",
+          "encroachment",
+          "encroaching",
+          "setback",
+          "extra floor",
+          "building violation",
+          "dilapidated",
+          "about to collapse",
+          "shed on the footpath",
+          "put up a shed",
+          "structure on the footpath",
+          "encroach",
+          "blocking the footpath",
+          "occupied the footpath",
+          "unauthorised structure"
+        ],
+        "ta": [
+          "சட்டவிரோத கட்டுமான",
+          "அனுமதியற்ற",
+          "அனுமதி இல்லாமல்",
+          "ஆக்கிரமிப்",
+          "இடிந்து விழ",
+          "கொட்டகை",
+          "ஆக்கிரமி",
+          "நடைபாதை ஆக்கிரமிப்பு"
+        ],
+        "hi": [
+          "अवैध निर्माण",
+          "अनधिकृत निर्माण",
+          "बिना अनुमति",
+          "अतिक्रमण",
+          "जर्जर",
+          "गिरने वाली",
+          "शेड",
+          "कब्ज़ा",
+          "कब्जा",
+          "फुटपाथ पर कब्जा"
+        ]
       },
       "primary_authority": "gcc",
       "gcc_department": "Buildings & Town Planning",
-      "alternatives": [{ "authority": "cmda", "when": { "en": "for larger developments that need CMDA planning permission", "ta": "CMDA திட்ட அனுமதி தேவைப்படும் பெரிய கட்டுமானங்களுக்கு", "hi": "CMDA योजना अनुमति की आवश्यकता वाले बड़े निर्माणों के लिए" } }],
-      "jurisdiction_note": { "en": "Whether GCC or CMDA acts depends on the type of building and approval. This could not be determined automatically.", "ta": "மாநகராட்சியா CMDA-வா என்பது கட்டட வகை மற்றும் அனுமதியைப் பொறுத்தது. இதைத் தானாகக் கண்டறிய முடியவில்லை.", "hi": "GCC या CMDA कार्रवाई करेगा, यह भवन के प्रकार और अनुमति पर निर्भर करता है। यह स्वचालित रूप से तय नहीं हो सका।" },
-      "questions": ["location", "landmark", "started", "danger", "previous_complaint"],
-      "evidence": ["photo_problem", "previous_reference"],
-      "requested_action": { "en": "inspect the construction and take action against any violation", "ta": "கட்டுமானத்தை ஆய்வு செய்து, விதிமீறல் இருந்தால் நடவடிக்கை எடுக்க", "hi": "निर्माण का निरीक्षण करें और किसी भी उल्लंघन पर कार्रवाई करें" }
+      "alternatives": [
+        {
+          "authority": "cmda",
+          "when": {
+            "en": "for larger developments that need CMDA planning permission",
+            "ta": "CMDA திட்ட அனுமதி தேவைப்படும் பெரிய கட்டுமானங்களுக்கு",
+            "hi": "CMDA योजना अनुमति की आवश्यकता वाले बड़े निर्माणों के लिए"
+          }
+        }
+      ],
+      "jurisdiction_note": {
+        "en": "Whether GCC or CMDA acts depends on the type of building and approval. This could not be determined automatically.",
+        "ta": "மாநகராட்சியா CMDA-வா என்பது கட்டட வகை மற்றும் அனுமதியைப் பொறுத்தது. இதைத் தானாகக் கண்டறிய முடியவில்லை.",
+        "hi": "GCC या CMDA कार्रवाई करेगा, यह भवन के प्रकार और अनुमति पर निर्भर करता है। यह स्वचालित रूप से तय नहीं हो सका।"
+      },
+      "questions": [
+        "location",
+        "landmark",
+        "started",
+        "danger",
+        "previous_complaint"
+      ],
+      "evidence": [
+        "photo_problem",
+        "previous_reference"
+      ],
+      "requested_action": {
+        "en": "inspect the construction and take action against any violation",
+        "ta": "கட்டுமானத்தை ஆய்வு செய்து, விதிமீறல் இருந்தால் நடவடிக்கை எடுக்க",
+        "hi": "निर्माण का निरीक्षण करें और किसी भी उल्लंघन पर कार्रवाई करें"
+      }
     },
     {
       "id": "pollution",
-      "label": { "en": "Air and industrial pollution", "ta": "காற்று மற்றும் தொழிற்சாலை மாசு", "hi": "वायु और औद्योगिक प्रदूषण" },
-      "triage_departments": ["Pollution Control"],
+      "label": {
+        "en": "Air and industrial pollution",
+        "ta": "காற்று மற்றும் தொழிற்சாலை மாசு",
+        "hi": "वायु और औद्योगिक प्रदूषण"
+      },
+      "triage_departments": [
+        "Pollution Control"
+      ],
       "keywords": {
-        "en": ["air pollution", "pollution", "smoke", "fumes", "burning waste", "burning garbage", "burning plastic", "factory", "effluent", "chemical", "dust from"],
-        "ta": ["காற்று மாசு", "மாசு", "புகை", "எரிக்", "தொழிற்சாலை", "ரசாயன"],
-        "hi": ["वायु प्रदूषण", "प्रदूषण", "धुआँ", "धुआं", "जला", "फैक्ट्री", "कारखान", "रसायन"]
+        "en": [
+          "air pollution",
+          "pollution",
+          "smoke",
+          "fumes",
+          "burning waste",
+          "burning garbage",
+          "burning plastic",
+          "factory",
+          "effluent",
+          "chemical",
+          "dust from",
+          "chemical unit",
+          "coloured water",
+          "colored water",
+          "discharge",
+          "industrial waste",
+          "chimney"
+        ],
+        "ta": [
+          "காற்று மாசு",
+          "மாசு",
+          "புகை",
+          "எரிக்",
+          "தொழிற்சாலை",
+          "ரசாயன",
+          "ரசாயன ஆலை",
+          "வண்ண நீர்",
+          "ஆலை"
+        ],
+        "hi": [
+          "वायु प्रदूषण",
+          "प्रदूषण",
+          "धुआँ",
+          "धुआं",
+          "जला",
+          "फैक्ट्री",
+          "कारखान",
+          "रसायन",
+          "केमिकल",
+          "रंगीन पानी",
+          "प्लांट",
+          "चिमनी"
+        ]
       },
       "primary_authority": "tnpcb",
-      "alternatives": [{ "authority": "gcc", "when": { "en": "if the source is garbage being burnt in the street (GCC Solid Waste Management)", "ta": "மூலம் தெருவில் குப்பை எரிப்பதாக இருந்தால் (மாநகராட்சி திடக்கழிவு மேலாண்மை)", "hi": "यदि स्रोत सड़क पर कचरा जलाना है (GCC ठोस अपशिष्ट प्रबंधन)" } }],
-      "questions": ["location", "landmark", "pollution_source", "started", "ongoing"],
-      "evidence": ["photo_problem", "time_of_day"],
-      "requested_action": { "en": "inspect the source and take action to stop the pollution", "ta": "மாசின் மூலத்தை ஆய்வு செய்து, மாசை நிறுத்த நடவடிக்கை எடுக்க", "hi": "स्रोत का निरीक्षण करें और प्रदूषण रोकने के लिए कार्रवाई करें" }
+      "alternatives": [
+        {
+          "authority": "gcc",
+          "when": {
+            "en": "if the source is garbage being burnt in the street (GCC Solid Waste Management)",
+            "ta": "மூலம் தெருவில் குப்பை எரிப்பதாக இருந்தால் (மாநகராட்சி திடக்கழிவு மேலாண்மை)",
+            "hi": "यदि स्रोत सड़क पर कचरा जलाना है (GCC ठोस अपशिष्ट प्रबंधन)"
+          }
+        }
+      ],
+      "questions": [
+        "location",
+        "landmark",
+        "pollution_source",
+        "started",
+        "ongoing"
+      ],
+      "evidence": [
+        "photo_problem",
+        "time_of_day"
+      ],
+      "requested_action": {
+        "en": "inspect the source and take action to stop the pollution",
+        "ta": "மாசின் மூலத்தை ஆய்வு செய்து, மாசை நிறுத்த நடவடிக்கை எடுக்க",
+        "hi": "स्रोत का निरीक्षण करें और प्रदूषण रोकने के लिए कार्रवाई करें"
+      }
     },
     {
       "id": "noise",
-      "label": { "en": "Noise", "ta": "ஒலி இரைச்சல்", "hi": "शोर" },
-      "triage_departments": ["Pollution Control"],
+      "label": {
+        "en": "Noise",
+        "ta": "ஒலி இரைச்சல்",
+        "hi": "शोर"
+      },
+      "triage_departments": [
+        "Pollution Control"
+      ],
       "keywords": {
-        "en": ["loud noise", "noise", "loudspeaker", "loud music", "music at night", "horn", "noisy"],
-        "ta": ["சத்தம்", "ஒலிபெருக்கி", "இரைச்சல்"],
-        "hi": ["शोर", "लाउडस्पीकर", "तेज़ आवाज़", "तेज आवाज", "तेज़ संगीत"]
+        "en": [
+          "loud noise",
+          "noise",
+          "loudspeaker",
+          "loud music",
+          "music at night",
+          "horn",
+          "noisy"
+        ],
+        "ta": [
+          "சத்தம்",
+          "ஒலிபெருக்கி",
+          "இரைச்சல்"
+        ],
+        "hi": [
+          "शोर",
+          "लाउडस्पीकर",
+          "तेज़ आवाज़",
+          "तेज आवाज",
+          "तेज़ संगीत"
+        ]
       },
       "primary_authority": "police",
-      "alternatives": [{ "authority": "tnpcb", "when": { "en": "if the noise comes from a factory or industrial unit", "ta": "சத்தம் தொழிற்சாலை அல்லது தொழில் நிறுவனத்திலிருந்து வந்தால்", "hi": "यदि शोर किसी कारखाने या औद्योगिक इकाई से आ रहा है" } }],
-      "questions": ["location", "landmark", "started", "ongoing"],
-      "evidence": ["time_of_day"],
-      "requested_action": { "en": "take action to stop the noise disturbance", "ta": "ஒலி இரைச்சலை நிறுத்த நடவடிக்கை எடுக்க", "hi": "शोर की परेशानी रोकने के लिए कार्रवाई करें" }
+      "alternatives": [
+        {
+          "authority": "tnpcb",
+          "when": {
+            "en": "if the noise comes from a factory or industrial unit",
+            "ta": "சத்தம் தொழிற்சாலை அல்லது தொழில் நிறுவனத்திலிருந்து வந்தால்",
+            "hi": "यदि शोर किसी कारखाने या औद्योगिक इकाई से आ रहा है"
+          }
+        }
+      ],
+      "questions": [
+        "location",
+        "landmark",
+        "started",
+        "ongoing"
+      ],
+      "evidence": [
+        "time_of_day"
+      ],
+      "requested_action": {
+        "en": "take action to stop the noise disturbance",
+        "ta": "ஒலி இரைச்சலை நிறுத்த நடவடிக்கை எடுக்க",
+        "hi": "शोर की परेशानी रोकने के लिए कार्रवाई करें"
+      }
     },
     {
       "id": "parks_trees",
-      "label": { "en": "Parks, trees and water bodies", "ta": "பூங்காக்கள், மரங்கள், நீர்நிலைகள்", "hi": "पार्क, पेड़ और जलाशय" },
-      "triage_departments": ["Parks & Water Bodies"],
+      "label": {
+        "en": "Parks, trees and water bodies",
+        "ta": "பூங்காக்கள், மரங்கள், நீர்நிலைகள்",
+        "hi": "पार्क, पेड़ और जलाशय"
+      },
+      "triage_departments": [
+        "Parks & Water Bodies"
+      ],
       "keywords": {
-        "en": ["park", "playground", "tree fell", "fallen tree", "tree branch", "tree fallen", "water body", "lake", "pond", "temple tank"],
-        "ta": ["பூங்கா", "மரம் விழு", "மரக்கிளை", "ஏரி", "குளம்"],
-        "hi": ["पार्क", "पेड़ गिर", "पेड़ की डाल", "झील", "तालाब"]
+        "en": [
+          "park",
+          "playground",
+          "tree fell",
+          "fallen tree",
+          "tree branch",
+          "tree fallen",
+          "water body",
+          "lake",
+          "pond",
+          "temple tank"
+        ],
+        "ta": [
+          "பூங்கா",
+          "மரம் விழு",
+          "மரக்கிளை",
+          "ஏரி",
+          "குளம்"
+        ],
+        "hi": [
+          "पार्क",
+          "पेड़ गिर",
+          "पेड़ की डाल",
+          "झील",
+          "तालाब"
+        ]
       },
       "primary_authority": "gcc",
       "gcc_department": "Parks & Water Bodies",
       "alternatives": [],
-      "jurisdiction_note": { "en": "Some lakes are managed by state departments rather than GCC; this depends on the water body.", "ta": "சில ஏரிகள் மாநகராட்சியால் அல்லாமல் மாநிலத் துறைகளால் நிர்வகிக்கப்படுகின்றன; இது நீர்நிலையைப் பொறுத்தது.", "hi": "कुछ झीलों का प्रबंधन GCC के बजाय राज्य विभाग करते हैं; यह जलाशय पर निर्भर करता है।" },
-      "questions": ["location", "landmark", "started", "danger"],
-      "evidence": ["photo_problem"],
-      "requested_action": { "en": "inspect and restore the park, tree or water body", "ta": "பூங்கா, மரம் அல்லது நீர்நிலையை ஆய்வு செய்து சீரமைக்க", "hi": "पार्क, पेड़ या जलाशय का निरीक्षण करें और उसे ठीक करें" }
+      "jurisdiction_note": {
+        "en": "Some lakes are managed by state departments rather than GCC; this depends on the water body.",
+        "ta": "சில ஏரிகள் மாநகராட்சியால் அல்லாமல் மாநிலத் துறைகளால் நிர்வகிக்கப்படுகின்றன; இது நீர்நிலையைப் பொறுத்தது.",
+        "hi": "कुछ झीलों का प्रबंधन GCC के बजाय राज्य विभाग करते हैं; यह जलाशय पर निर्भर करता है।"
+      },
+      "questions": [
+        "location",
+        "landmark",
+        "started",
+        "danger"
+      ],
+      "evidence": [
+        "photo_problem"
+      ],
+      "requested_action": {
+        "en": "inspect and restore the park, tree or water body",
+        "ta": "பூங்கா, மரம் அல்லது நீர்நிலையை ஆய்வு செய்து சீரமைக்க",
+        "hi": "पार्क, पेड़ या जलाशय का निरीक्षण करें और उसे ठीक करें"
+      }
     },
     {
       "id": "property_tax",
-      "label": { "en": "Property tax", "ta": "சொத்து வரி", "hi": "संपत्ति कर" },
+      "label": {
+        "en": "Property tax",
+        "ta": "சொத்து வரி",
+        "hi": "संपत्ति कर"
+      },
       "triage_departments": [],
-      "keywords": { "en": ["property tax", "tax bill", "tax assessment", "half yearly tax"], "ta": ["சொத்து வரி", "வரி மதிப்பீ"], "hi": ["संपत्ति कर", "प्रॉपर्टी टैक्स", "कर निर्धारण"] },
+      "keywords": {
+        "en": [
+          "property tax",
+          "tax bill",
+          "tax assessment",
+          "half yearly tax"
+        ],
+        "ta": [
+          "சொத்து வரி",
+          "வரி மதிப்பீ"
+        ],
+        "hi": [
+          "संपत्ति कर",
+          "प्रॉपर्टी टैक्स",
+          "कर निर्धारण"
+        ]
+      },
       "primary_authority": "gcc",
       "gcc_department": "Revenue",
       "alternatives": [],
-      "questions": ["location", "previous_complaint"],
-      "evidence": ["assessment_number", "previous_reference"],
-      "requested_action": { "en": "review the property tax matter and correct it if required", "ta": "சொத்து வரி விவகாரத்தை மறுபரிசீலனை செய்து, தேவைப்பட்டால் திருத்த", "hi": "संपत्ति कर मामले की समीक्षा करें और आवश्यक होने पर सुधार करें" }
+      "questions": [
+        "location",
+        "previous_complaint"
+      ],
+      "evidence": [
+        "assessment_number",
+        "previous_reference"
+      ],
+      "requested_action": {
+        "en": "review the property tax matter and correct it if required",
+        "ta": "சொத்து வரி விவகாரத்தை மறுபரிசீலனை செய்து, தேவைப்பட்டால் திருத்த",
+        "hi": "संपत्ति कर मामले की समीक्षा करें और आवश्यक होने पर सुधार करें"
+      }
     },
     {
       "id": "corruption",
-      "label": { "en": "Corruption or bribery", "ta": "லஞ்சம் அல்லது ஊழல்", "hi": "भ्रष्टाचार या रिश्वत" },
+      "label": {
+        "en": "Corruption or bribery",
+        "ta": "லஞ்சம் அல்லது ஊழல்",
+        "hi": "भ्रष्टाचार या रिश्वत"
+      },
       "triage_departments": [],
-      "keywords": { "en": ["bribe", "bribery", "corruption", "asked for money", "demanded money"], "ta": ["லஞ்ச", "ஊழல்"], "hi": ["रिश्वत", "भ्रष्टाचार", "पैसे माँग"] },
+      "keywords": {
+        "en": [
+          "bribe",
+          "bribery",
+          "corruption",
+          "asked for money",
+          "demanded money"
+        ],
+        "ta": [
+          "லஞ்ச",
+          "ஊழல்"
+        ],
+        "hi": [
+          "रिश्वत",
+          "भ्रष्टाचार",
+          "पैसे माँग"
+        ]
+      },
       "primary_authority": "dvac",
       "alternatives": [],
-      "questions": ["location", "started"],
+      "questions": [
+        "location",
+        "started"
+      ],
       "evidence": [],
-      "requested_action": { "en": "investigate the matter", "ta": "இந்த விவகாரத்தை விசாரிக்க", "hi": "मामले की जाँच करें" }
+      "requested_action": {
+        "en": "investigate the matter",
+        "ta": "இந்த விவகாரத்தை விசாரிக்க",
+        "hi": "मामले की जाँच करें"
+      }
     },
     {
       "id": "other",
-      "label": { "en": "Other civic issue", "ta": "பிற குடிமைப் பிரச்சினை", "hi": "अन्य नागरिक समस्या" },
-      "triage_departments": ["Social Welfare"],
-      "keywords": { "en": [], "ta": [], "hi": [] },
+      "label": {
+        "en": "Other civic issue",
+        "ta": "பிற குடிமைப் பிரச்சினை",
+        "hi": "अन्य नागरिक समस्या"
+      },
+      "triage_departments": [
+        "Social Welfare"
+      ],
+      "keywords": {
+        "en": [],
+        "ta": [],
+        "hi": []
+      },
       "primary_authority": "gcc",
       "alternatives": [],
-      "questions": ["location", "landmark", "started", "previous_complaint"],
-      "evidence": ["photo_problem"],
-      "requested_action": { "en": "look into the matter and take the necessary action", "ta": "இந்த விவகாரத்தைப் பரிசீலித்து, தேவையான நடவடிக்கை எடுக்க", "hi": "मामले को देखें और आवश्यक कार्रवाई करें" }
+      "questions": [
+        "location",
+        "landmark",
+        "started",
+        "previous_complaint"
+      ],
+      "evidence": [
+        "photo_problem"
+      ],
+      "requested_action": {
+        "en": "look into the matter and take the necessary action",
+        "ta": "இந்த விவகாரத்தைப் பரிசீலித்து, தேவையான நடவடிக்கை எடுக்க",
+        "hi": "मामले को देखें और आवश्यक कार्रवाई करें"
+      }
     }
   ]
 }

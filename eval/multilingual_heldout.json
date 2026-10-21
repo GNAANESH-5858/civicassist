@@ -1,0 +1,37 @@
+{
+  "$comment": "SYNTHETIC held-out set, written on 21 Oct 2026 AFTER all lexicon tuning and never used to change the lexicon or rules. This is the honest measure of how well routing generalises to new phrasing. Tamil/Hindi need native-speaker review.",
+  "items": [
+    { "id": "x-en01", "lang": "en", "text": "Since Sunday the corporation water hasn't reached our tank in Purasawalkam.", "category": "water_supply", "authority": "cmwssb" },
+    { "id": "x-en02", "lang": "en", "text": "Half the lights along Lake View Road stay off at night and women are scared to walk.", "category": "streetlight", "authority": "gcc" },
+    { "id": "x-en03", "lang": "en", "text": "Nobody has come to pick up the rubbish from our lane for days, it's piling up near the gate.", "category": "garbage", "authority": "gcc" },
+    { "id": "x-en04", "lang": "en", "text": "Dirty water from the underground line is bubbling up in front of the school.", "category": "sewage", "authority": "cmwssb" },
+    { "id": "x-en05", "lang": "en", "text": "Our area gets hourly power cuts every evening and the fans stop.", "category": "electricity", "authority": "tnpdcl" },
+    { "id": "x-en06", "lang": "en", "text": "The new road they laid last month already has cracks and big holes.", "category": "roads", "authority": "gcc" },
+    { "id": "x-en07", "lang": "en", "text": "A dog bit my son near the park, there are many street dogs here.", "category": "animals", "authority": "gcc" },
+    { "id": "x-en08", "lang": "en", "text": "The wedding hall next door plays music on speakers till 2 am.", "category": "noise", "authority": "police" },
+    { "id": "x-en09", "lang": "en", "text": "The traffic signal at the junction has been blinking yellow for a week and vehicles crash into each other.", "category": "traffic", "authority": "police" },
+    { "id": "x-en10", "lang": "en", "text": "I was charged property tax twice for the same half-year.", "category": "property_tax", "authority": "gcc" },
+
+    { "id": "x-ta01", "lang": "ta", "text": "ஞாயிற்றுக்கிழமை முதல் எங்கள் தொட்டிக்கு மாநகராட்சி தண்ணீர் வரவில்லை.", "category": "water_supply", "authority": "cmwssb" },
+    { "id": "x-ta02", "lang": "ta", "text": "ஏரிக்கரை சாலையில் பாதி விளக்குகள் இரவில் எரிவதில்லை.", "category": "streetlight", "authority": "gcc" },
+    { "id": "x-ta03", "lang": "ta", "text": "பல நாட்களாக எங்கள் சந்தில் குப்பை எடுக்க யாரும் வரவில்லை.", "category": "garbage", "authority": "gcc" },
+    { "id": "x-ta04", "lang": "ta", "text": "பள்ளிக்கு முன்னால் பாதாளக் குழாயிலிருந்து அழுக்கு நீர் பொங்குகிறது.", "category": "sewage", "authority": "cmwssb" },
+    { "id": "x-ta05", "lang": "ta", "text": "தினமும் மாலையில் ஒரு மணி நேரம் மின்வெட்டு ஏற்படுகிறது.", "category": "electricity", "authority": "tnpdcl" },
+    { "id": "x-ta06", "lang": "ta", "text": "கடந்த மாதம் போட்ட புதிய சாலையில் ஏற்கனவே விரிசல்களும் குழிகளும் உள்ளன.", "category": "roads", "authority": "gcc" },
+    { "id": "x-ta07", "lang": "ta", "text": "பூங்கா அருகே என் மகனை ஒரு நாய் கடித்தது, இங்கு நிறைய தெருநாய்கள் உள்ளன.", "category": "animals", "authority": "gcc" },
+    { "id": "x-ta08", "lang": "ta", "text": "பக்கத்து திருமண மண்டபத்தில் இரவு 2 மணி வரை ஒலிபெருக்கியில் பாட்டு போடுகிறார்கள்.", "category": "noise", "authority": "police" },
+    { "id": "x-ta09", "lang": "ta", "text": "சந்திப்பில் உள்ள சிக்னல் ஒரு வாரமாக வேலை செய்யவில்லை.", "category": "traffic", "authority": "police" },
+    { "id": "x-ta10", "lang": "ta", "text": "ஒரே அரையாண்டுக்கு இரண்டு முறை சொத்து வரி வசூலித்துள்ளனர்.", "category": "property_tax", "authority": "gcc" },
+
+    { "id": "x-hi01", "lang": "hi", "text": "रविवार से हमारी टंकी में कॉरपोरेशन का पानी नहीं पहुँचा है।", "category": "water_supply", "authority": "cmwssb" },
+    { "id": "x-hi02", "lang": "hi", "text": "झील वाली सड़क पर आधी बत्तियाँ रात में बंद रहती हैं।", "category": "streetlight", "authority": "gcc" },
+    { "id": "x-hi03", "lang": "hi", "text": "कई दिनों से हमारी गली से कूड़ा उठाने कोई नहीं आया।", "category": "garbage", "authority": "gcc" },
+    { "id": "x-hi04", "lang": "hi", "text": "स्कूल के सामने भूमिगत लाइन से गंदा पानी ऊपर आ रहा है।", "category": "sewage", "authority": "cmwssb" },
+    { "id": "x-hi05", "lang": "hi", "text": "हर शाम एक घंटे की बिजली कटौती होती है।", "category": "electricity", "authority": "tnpdcl" },
+    { "id": "x-hi06", "lang": "hi", "text": "पिछले महीने बनी नई सड़क में अभी से दरारें और गड्ढे हैं।", "category": "roads", "authority": "gcc" },
+    { "id": "x-hi07", "lang": "hi", "text": "पार्क के पास एक कुत्ते ने मेरे बेटे को काट लिया, यहाँ बहुत आवारा कुत्ते हैं।", "category": "animals", "authority": "gcc" },
+    { "id": "x-hi08", "lang": "hi", "text": "बगल के शादी हॉल में रात 2 बजे तक स्पीकर पर गाने बजते हैं।", "category": "noise", "authority": "police" },
+    { "id": "x-hi09", "lang": "hi", "text": "चौराहे का सिग्नल एक हफ़्ते से खराब है।", "category": "traffic", "authority": "police" },
+    { "id": "x-hi10", "lang": "hi", "text": "एक ही छमाही के लिए दो बार संपत्ति कर लिया गया।", "category": "property_tax", "authority": "gcc" }
+  ]
+}

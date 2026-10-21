@@ -1,0 +1,24 @@
+{
+  "$comment": "First and only untuned run of eval/multilingual_heldout.json (rules + English classifier, no AI), recorded 21 Oct 2026 before any change informed by it. Kept so the reported generalisation figure cannot drift upward after later fixes. 'silent' = wrong category reported with medium/high confidence; 'asked' = wrong top guess but low confidence, so the app asks the citizen to choose.",
+  "recorded": "2026-10-21",
+  "method": "rules+classifier",
+  "by_language": {
+    "en": { "n": 10, "category_correct": 4, "authority_correct": 7, "silent_misroutes": 4, "asked_to_clarify": 2 },
+    "ta": { "n": 10, "category_correct": 9, "authority_correct": 9, "silent_misroutes": 1, "asked_to_clarify": 0 },
+    "hi": { "n": 10, "category_correct": 6, "authority_correct": 8, "silent_misroutes": 2, "asked_to_clarify": 2 }
+  },
+  "total": { "n": 30, "category_correct": 19, "authority_correct": 24, "silent_misroutes": 7, "asked_to_clarify": 4 },
+  "misses": [
+    "x-en01 water_supply -> parks_trees (classifier only)",
+    "x-en02 streetlight -> parks_trees ('lake' in the road name 'Lake View Road')",
+    "x-en04 sewage -> water_supply ('dirty water')",
+    "x-en06 roads -> water_supply/sewage (classifier only, asked)",
+    "x-en07 animals -> parks_trees ('park' in 'near the park')",
+    "x-en08 noise -> pollution/noise (classifier only, asked)",
+    "x-ta04 sewage -> roads (school 'பள்ளி' matched pothole stem 'பள்ள')",
+    "x-hi02 streetlight -> parks_trees ('झील' in the road name)",
+    "x-hi04 sewage -> water_supply ('गंदा पानी')",
+    "x-hi08 noise -> other (asked)",
+    "x-hi09 traffic -> water_supply/traffic tie ('नल' inside 'सिग्नल', asked)"
+  ]
+}
