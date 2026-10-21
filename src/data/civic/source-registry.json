@@ -1,0 +1,270 @@
+{
+  "$comment": "Every official page opened to build the Chennai civic knowledge base. status: 'verified' = page loaded and stated the fact; 'loads' = page loaded but the specific function (e.g. a JavaScript form) could not be confirmed; 'unreachable' = could not be opened (reason recorded). Re-check with scripts/validate-civic-sources.ts and docs/SOURCE_MAINTENANCE.md.",
+  "sources": [
+    {
+      "id": "gcc-home",
+      "url": "https://www.chennaicorporation.gov.in/gcc/",
+      "title": "Greater Chennai Corporation (official website)",
+      "publisher": "Greater Chennai Corporation",
+      "checked": "2026-10-21",
+      "status": "verified",
+      "findings": [
+        "Header: COMPLAINT NUMBER - 1913",
+        "WhatsApp chatbot: +91 94450 61913 and +91 94455 51913",
+        "ONLINE PUBLIC GRIEVANCE link: https://gccservices.chennaicorporation.gov.in/pgr",
+        "Namma Chennai GCC app: Google Play com.ceedeev.grivenancev2, App Store id1346676062",
+        "Corruption complaints: Directorate of Vigilance and Anti-corruption, No.293, MKN Road, Alandur, Chennai - 600 016, dvac@nic.in",
+        "Headquarters postal address not shown on the pages checked"
+      ]
+    },
+    {
+      "id": "gcc-complaints",
+      "url": "https://www.chennaicorporation.gov.in/gcc/complaints/",
+      "title": "Greater Chennai Corporation: Enquiry / Complaints",
+      "publisher": "Greater Chennai Corporation",
+      "checked": "2026-10-21",
+      "status": "verified",
+      "findings": [
+        "Non-burning of street lights: complaint cell 25384530 / 25384670; Superintending Engineer (Electrical) / Divisional Engineer (Electrical) 25383694",
+        "Cleaning of roads and streets: Deputy Commissioner (Health & SWM) 25383734; Superintending Engineer (SWM) 25367821",
+        "Road maintenance: Chief Engineer (General) 25383692; Superintending Engineer (Bus Route Roads) 25360556",
+        "Building permission: City Engineer 25383928",
+        "Removal of wind-fallen trees: Superintendent of Parks, EPBX 25384510 Ext. 389",
+        "Property tax: Revenue Officer 25619258",
+        "Hospitals and maternity centres: District Family Welfare Medical Officer 25383736",
+        "Corruption: DVAC WhatsApp 94981 80936, dvac@nic.in",
+        "No published response times, service standards or escalation steps on this page"
+      ]
+    },
+    {
+      "id": "gcc-departments",
+      "url": "https://www.chennaicorporation.gov.in/gcc/department/",
+      "title": "Greater Chennai Corporation: Departments",
+      "publisher": "Greater Chennai Corporation",
+      "checked": "2026-10-21",
+      "status": "verified",
+      "findings": [
+        "Departments: Health, Revenue, Education, Town Planning, Electrical, Roads, Bridges, Parks, Buildings, Solid Waste Management, Storm Water Drain, Mechanical Engineering, Special Projects, Finance, Land & Estates, Legal Cell, Small Saving, Gender & Policy Lab",
+        "Water supply and sewerage are NOT listed as GCC departments"
+      ]
+    },
+    {
+      "id": "gcc-pgr",
+      "url": "https://gccservices.in/pgr",
+      "title": "Public Grievance and Redressal System",
+      "publisher": "Greater Chennai Corporation (portal provided by Bonton Software Private Limited, per page footer)",
+      "checked": "2026-10-21",
+      "status": "verified",
+      "findings": [
+        "Official GCC link https://gccservices.chennaicorporation.gov.in/pgr redirects here (HTTP 301)",
+        "Offers 'Register Complaints Via Internet'",
+        "Phone registration: 1913",
+        "Whether login or OTP is required was not shown on the landing page"
+      ]
+    },
+    {
+      "id": "gcc-erp-pgr",
+      "url": "https://erp.chennaicorporation.gov.in/pgr/citizen/BeforeReg.do",
+      "title": "GCC ERP public grievance registration (older link)",
+      "publisher": "Greater Chennai Corporation",
+      "checked": "2026-10-21",
+      "status": "unreachable",
+      "reason": "TLS error (self-signed certificate in chain) when fetched for verification on 21 Oct 2026; a later automated check from Node.js returned HTTP 200. Not offered to citizens until manually re-verified."
+    },
+    {
+      "id": "cmwssb-home",
+      "url": "https://cmwssb.tn.gov.in/",
+      "title": "Chennai Metropolitan Water Supply and Sewerage Board (official website)",
+      "publisher": "CMWSSB (Chennai Metro Water)",
+      "checked": "2026-10-21",
+      "status": "verified",
+      "findings": [
+        "Complaint Cell: 044-4567 4567 (24x7)",
+        "Toll free: 1916 / 044 45674567",
+        "WhatsApp: +91 8144930308",
+        "Register Your Complaints: https://cms-cmwssb.tn.gov.in/",
+        "CHENNAI KUDINEER mobile app (Android): com.interlace.cmwssb",
+        "General email: cmwssb@tn.gov.in",
+        "Head office: No.1, Pumping Station Road, Chintadripet, Chennai-02",
+        "Designation for correspondence not shown"
+      ]
+    },
+    {
+      "id": "cmwssb-old-domain",
+      "url": "https://chennaimetrowater.tn.gov.in/",
+      "title": "Chennai Metro Water (older domain, used in the scheme knowledge-base PDF)",
+      "publisher": "CMWSSB",
+      "checked": "2026-10-21",
+      "status": "unreachable",
+      "reason": "Connection refused. The current official site is cmwssb.tn.gov.in."
+    },
+    {
+      "id": "cmwssb-cms",
+      "url": "https://cms-cmwssb.tn.gov.in/",
+      "title": "CMWSSB GMS (complaint management system)",
+      "publisher": "CMWSSB",
+      "checked": "2026-10-21",
+      "status": "loads",
+      "reason": "JavaScript application: the splash screen loads; the registration form could not be inspected automatically."
+    },
+    {
+      "id": "tnpdcl-home",
+      "url": "https://www.tnpdcl.org/",
+      "title": "Tamil Nadu Power Distribution Corporation Limited (official website)",
+      "publisher": "TNPDCL",
+      "checked": "2026-10-21",
+      "status": "verified",
+      "findings": [
+        "FOR COMPLAINTS: 94987 94987 (Minnagam), customer care 24x7, 365 days",
+        "Consumer Complaints: https://ccms.tangedco.org/tangedco-public/",
+        "Consumer Grievance Redressal Forum: https://www.tnebltd.gov.in/cgrfonline/",
+        "Misuse of power: https://www.tnebltd.gov.in/theftonline/petitionentry.xhtml",
+        "Email: cpro@tnebnet.org",
+        "Android app: com.tneb.tangedco",
+        "1912 is not listed on this page"
+      ]
+    },
+    {
+      "id": "tnpdcl-ccms",
+      "url": "https://ccms.tangedco.org/tangedco-public/",
+      "title": "TNPDCL Consumer Complaint Management System",
+      "publisher": "TNPDCL",
+      "checked": "2026-10-21",
+      "status": "verified",
+      "findings": [
+        "Register Service Oriented and General Complaints",
+        "Requires registration (name, mobile number, email, password) and login with mobile number, captcha and OTP"
+      ]
+    },
+    {
+      "id": "tnpcb-home",
+      "url": "https://www.tnpcb.gov.in/",
+      "title": "Tamil Nadu Pollution Control Board (official website)",
+      "publisher": "TNPCB",
+      "checked": "2026-10-21",
+      "status": "verified",
+      "findings": [
+        "Online Grievance Petition Redressal System (OLGPRS): https://tnpcb.gov.in/tnolgprs/",
+        "Complaint email: complaint@tnpcb.gov.in",
+        "Head office: 76, Mount Salai, Guindy, Chennai - 600 032; phone 044-22353134-139",
+        "No toll-free number or WhatsApp listed"
+      ]
+    },
+    {
+      "id": "tn-helpdesk",
+      "url": "https://www.tn.gov.in/help_desk.php",
+      "title": "Government of Tamil Nadu: Help line Numbers",
+      "publisher": "Government of Tamil Nadu",
+      "checked": "2026-10-21",
+      "status": "verified",
+      "findings": [
+        "Page last updated December 06, 2024",
+        "Chennai Corporation related complaints: 1913 (toll free, 24x7)",
+        "Chennai MetroWater complaints: 044-45674567 (24x7)",
+        "Electricity failure related complaints (TANGEDCO): 1912 (toll free, 24x7)",
+        "Police complaints / crime reporting: 100",
+        "Ambulance services: 108",
+        "Disaster management helpline: 1070 (state), 1077 (district)"
+      ]
+    },
+    {
+      "id": "tn-portal",
+      "url": "https://www.tn.gov.in/",
+      "title": "Government of Tamil Nadu portal",
+      "publisher": "Government of Tamil Nadu",
+      "checked": "2026-10-21",
+      "status": "verified",
+      "findings": [
+        "Footer links to the CM Helpline at https://cmhelpline.tnega.org/"
+      ]
+    },
+    {
+      "id": "tn-cm-helpline",
+      "url": "https://cmhelpline.tnega.org/",
+      "title": "Mudhalvarin Mugavari (Chief Minister's Helpline)",
+      "publisher": "Government of Tamil Nadu",
+      "checked": "2026-10-21",
+      "status": "loads",
+      "reason": "Page title loads ('Mudhalvarin Mugavari'); the registration procedure could not be read automatically."
+    },
+    {
+      "id": "cpgrams",
+      "url": "https://pgportal.gov.in/",
+      "title": "CPGRAMS: Centralized Public Grievance Redress and Monitoring System",
+      "publisher": "Department of Administrative Reforms & Public Grievances, Government of India",
+      "checked": "2026-10-21",
+      "status": "verified",
+      "findings": [
+        "A single portal connected to all Ministries/Departments of the Government of India and States",
+        "Register / Login and Lodge Grievance pages; a registration number is issued for status tracking"
+      ]
+    },
+    {
+      "id": "cmda-home",
+      "url": "https://www.cmdachennai.gov.in/",
+      "title": "Chennai Metropolitan Development Authority",
+      "publisher": "CMDA",
+      "checked": "2026-10-21",
+      "status": "verified",
+      "findings": [
+        "Planning permission applications are handled online",
+        "No complaint channel for unauthorised construction was shown on the home page",
+        "The division of enforcement between CMDA and GCC is not stated on the home page"
+      ]
+    },
+    {
+      "id": "tnfrs-home",
+      "url": "https://www.tnfrs.tn.gov.in/",
+      "title": "Tamil Nadu Fire and Rescue Services",
+      "publisher": "Government of Tamil Nadu",
+      "checked": "2026-10-21",
+      "status": "loads",
+      "reason": "Official site loads but the emergency number was not shown in the page content."
+    },
+    {
+      "id": "erss-112",
+      "url": "https://112.gov.in/",
+      "title": "Emergency Response Support System (112)",
+      "publisher": "Government of India",
+      "checked": "2026-10-21",
+      "status": "unreachable",
+      "reason": "Connection refused. 112 is therefore shown as 'not verified by CivicAssist'."
+    },
+    {
+      "id": "tn-police",
+      "url": "https://www.tnpolice.gov.in/",
+      "title": "Tamil Nadu Police",
+      "publisher": "Tamil Nadu Police",
+      "checked": "2026-10-21",
+      "status": "unreachable",
+      "reason": "TLS error: certificate has expired. eservices.tnpolice.gov.in returned the same error."
+    },
+    {
+      "id": "chennai-traffic-police",
+      "url": "https://www.chennaitrafficpolice.gov.in/",
+      "title": "Greater Chennai Traffic Police (guessed address)",
+      "publisher": "Greater Chennai Police",
+      "checked": "2026-10-21",
+      "status": "unreachable",
+      "reason": "Domain does not resolve. No verified online traffic complaint channel."
+    },
+    {
+      "id": "tnsdma-home",
+      "url": "https://tnsdma.tn.gov.in/",
+      "title": "Tamil Nadu State Disaster Management Authority",
+      "publisher": "Government of Tamil Nadu",
+      "checked": "2026-10-21",
+      "status": "unreachable",
+      "reason": "TLS error: unable to verify the first certificate. Disaster helplines are taken from tn-helpdesk instead."
+    },
+    {
+      "id": "nhai-home",
+      "url": "https://nhai.gov.in/",
+      "title": "National Highways Authority of India",
+      "publisher": "NHAI",
+      "checked": "2026-10-21",
+      "status": "loads",
+      "reason": "Page loads but no highway helpline or complaint link was shown in the content."
+    }
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "checked_at": "2026-10-21T14:28:30.499Z",
+  "note": "Technical link check only. A reachable page does not prove that a complaint form or phone line works.",
+  "summary": {
+    "total": 31,
+    "accessible": 17,
+    "redirect": 8,
+    "broken": 1,
+    "network_failure": 5
+  },
+  "requires_manual_review": [
+    "cmwssb-online",
+    "emergency-112",
+    "tn-cm-helpline",
+    "source:cmwssb-old-domain",
+    "source:tnpdcl-home",
+    "authority:tnpdcl",
+    "source:tn-cm-helpline",
+    "channel:tn-cm-helpline",
+    "authority:tn-govt",
+    "source:cmda-home",
+    "channel:cmda-website",
+    "authority:cmda",
+    "source:erss-112",
+    "source:tn-police",
+    "source:chennai-traffic-police",
+    "source:tnsdma-home",
+    "channel:gcc-pgr-online",
+    "channel:gcc-whatsapp",
+    "channel:gcc-whatsapp(alt)",
+    "channel:gcc-app(alt)",
+    "channel:cmwssb-whatsapp",
+    "channel:dvac(alt)"
+  ],
+  "results": [
+    {
+      "url": "https://www.chennaicorporation.gov.in/gcc/",
+      "used_by": [
+        "source:gcc-home",
+        "authority:gcc"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://www.chennaicorporation.gov.in/gcc/complaints/",
+      "used_by": [
+        "source:gcc-complaints"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://www.chennaicorporation.gov.in/gcc/department/",
+      "used_by": [
+        "source:gcc-departments"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://gccservices.in/pgr",
+      "used_by": [
+        "source:gcc-pgr"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://erp.chennaicorporation.gov.in/pgr/citizen/BeforeReg.do",
+      "used_by": [
+        "source:gcc-erp-pgr"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://cmwssb.tn.gov.in/",
+      "used_by": [
+        "source:cmwssb-home",
+        "authority:cmwssb"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://chennaimetrowater.tn.gov.in/",
+      "used_by": [
+        "source:cmwssb-old-domain"
+      ],
+      "outcome": "network_failure",
+      "http_status": null,
+      "location": null,
+      "detail": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+      "url": "https://cms-cmwssb.tn.gov.in/",
+      "used_by": [
+        "source:cmwssb-cms",
+        "channel:cmwssb-online"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://www.tnpdcl.org/",
+      "used_by": [
+        "source:tnpdcl-home",
+        "authority:tnpdcl"
+      ],
+      "outcome": "redirect",
+      "http_status": 301,
+      "location": "https://www.tnpdcl.org/en/tnpdcl/",
+      "detail": null
+    },
+    {
+      "url": "https://ccms.tangedco.org/tangedco-public/",
+      "used_by": [
+        "source:tnpdcl-ccms",
+        "channel:tnpdcl-online"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://www.tnpcb.gov.in/",
+      "used_by": [
+        "source:tnpcb-home",
+        "authority:tnpcb"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://www.tn.gov.in/help_desk.php",
+      "used_by": [
+        "source:tn-helpdesk"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://www.tn.gov.in/",
+      "used_by": [
+        "source:tn-portal"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://cmhelpline.tnega.org/",
+      "used_by": [
+        "source:tn-cm-helpline",
+        "channel:tn-cm-helpline",
+        "authority:tn-govt"
+      ],
+      "outcome": "redirect",
+      "http_status": 301,
+      "location": "https://cmhelpline.tnega.org/portal/ta/home",
+      "detail": null
+    },
+    {
+      "url": "https://pgportal.gov.in/",
+      "used_by": [
+        "source:cpgrams",
+        "channel:cpgrams",
+        "authority:goi"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://www.cmdachennai.gov.in/",
+      "used_by": [
+        "source:cmda-home",
+        "channel:cmda-website",
+        "authority:cmda"
+      ],
+      "outcome": "redirect",
+      "http_status": 302,
+      "location": "/index.html",
+      "detail": null
+    },
+    {
+      "url": "https://www.tnfrs.tn.gov.in/",
+      "used_by": [
+        "source:tnfrs-home"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://112.gov.in/",
+      "used_by": [
+        "source:erss-112"
+      ],
+      "outcome": "network_failure",
+      "http_status": null,
+      "location": null,
+      "detail": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+      "url": "https://www.tnpolice.gov.in/",
+      "used_by": [
+        "source:tn-police"
+      ],
+      "outcome": "network_failure",
+      "http_status": null,
+      "location": null,
+      "detail": "CERT_HAS_EXPIRED"
+    },
+    {
+      "url": "https://www.chennaitrafficpolice.gov.in/",
+      "used_by": [
+        "source:chennai-traffic-police"
+      ],
+      "outcome": "network_failure",
+      "http_status": null,
+      "location": null,
+      "detail": "ENOTFOUND"
+    },
+    {
+      "url": "https://tnsdma.tn.gov.in/",
+      "used_by": [
+        "source:tnsdma-home"
+      ],
+      "outcome": "network_failure",
+      "http_status": null,
+      "location": null,
+      "detail": "CERT_HAS_EXPIRED"
+    },
+    {
+      "url": "https://nhai.gov.in/",
+      "used_by": [
+        "source:nhai-home",
+        "authority:other_highways"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://gccservices.chennaicorporation.gov.in/pgr",
+      "used_by": [
+        "channel:gcc-pgr-online"
+      ],
+      "outcome": "redirect",
+      "http_status": 301,
+      "location": "https://gccservices.in/pgr",
+      "detail": null
+    },
+    {
+      "url": "https://wa.me/919445061913?text=Hi",
+      "used_by": [
+        "channel:gcc-whatsapp"
+      ],
+      "outcome": "redirect",
+      "http_status": 302,
+      "location": "https://api.whatsapp.com/send/?phone=919445061913&text=Hi&type=phone_number&app_absent=0",
+      "detail": null
+    },
+    {
+      "url": "https://wa.me/919445551913?text=Hi",
+      "used_by": [
+        "channel:gcc-whatsapp(alt)"
+      ],
+      "outcome": "redirect",
+      "http_status": 302,
+      "location": "https://api.whatsapp.com/send/?phone=919445551913&text=Hi&type=phone_number&app_absent=0",
+      "detail": null
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.ceedeev.grivenancev2",
+      "used_by": [
+        "channel:gcc-app"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://apps.apple.com/in/app/namma-chennai-gcc/id1346676062",
+      "used_by": [
+        "channel:gcc-app(alt)"
+      ],
+      "outcome": "broken",
+      "http_status": 404,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://wa.me/918144930308",
+      "used_by": [
+        "channel:cmwssb-whatsapp"
+      ],
+      "outcome": "redirect",
+      "http_status": 302,
+      "location": "https://api.whatsapp.com/send/?phone=918144930308&text&type=phone_number&app_absent=0",
+      "detail": null
+    },
+    {
+      "url": "https://tnpcb.gov.in/tnolgprs/",
+      "used_by": [
+        "channel:tnpcb-online"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    },
+    {
+      "url": "https://wa.me/919498180936",
+      "used_by": [
+        "channel:dvac(alt)"
+      ],
+      "outcome": "redirect",
+      "http_status": 302,
+      "location": "https://api.whatsapp.com/send/?phone=919498180936&text&type=phone_number&app_absent=0",
+      "detail": null
+    },
+    {
+      "url": "https://www.tnebltd.gov.in/cgrfonline/",
+      "used_by": [
+        "channel:tnpdcl-cgrf"
+      ],
+      "outcome": "accessible",
+      "http_status": 200,
+      "location": null,
+      "detail": null
+    }
+  ]
+}

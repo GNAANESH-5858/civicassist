@@ -1,0 +1,43 @@
+{
+  "$comment": "Follow-up and escalation guidance per authority. No official response timelines could be verified for any authority on 21 Oct 2026, so none are stated. Steps reference channel ids in submission-channels.json. Step text is CivicAssist guidance.",
+  "response_timelines_verified": false,
+  "general_follow_up": {
+    "en": ["Keep the complaint number, the date and the channel you used.", "If nothing happens, follow up on the same channel and quote the complaint number.", "Note every follow-up (date, who you spoke to, what was said)."],
+    "ta": ["புகார் எண், தேதி, பயன்படுத்திய வழி ஆகியவற்றைக் குறித்து வைத்திருக்கவும்.", "எதுவும் நடக்கவில்லை என்றால், அதே வழியில் புகார் எண்ணைக் குறிப்பிட்டுத் தொடர்ந்து கேட்கவும்.", "ஒவ்வொரு தொடர்தலையும் (தேதி, யாரிடம் பேசினீர்கள், என்ன சொல்லப்பட்டது) குறித்து வைக்கவும்."],
+    "hi": ["शिकायत नंबर, तारीख और उपयोग किया गया माध्यम संभाल कर रखें।", "यदि कुछ नहीं होता है तो उसी माध्यम पर शिकायत नंबर बताकर फ़ॉलो-अप करें।", "हर फ़ॉलो-अप (तारीख, किससे बात हुई, क्या कहा गया) नोट करें।"]
+  },
+  "timeline_note": {
+    "en": "CivicAssist could not find a published response time for this authority, so it cannot tell you how long to wait before escalating.",
+    "ta": "இந்த அமைப்புக்கான வெளியிடப்பட்ட பதில் கால அளவை CivicAssist கண்டறிய முடியவில்லை; எனவே மேல்முறையீட்டிற்கு முன் எவ்வளவு காலம் காத்திருக்க வேண்டும் என்று கூற முடியாது.",
+    "hi": "CivicAssist को इस प्राधिकरण के लिए कोई प्रकाशित प्रतिक्रिया समय नहीं मिला, इसलिए वह यह नहीं बता सकता कि शिकायत आगे बढ़ाने से पहले कितना इंतज़ार करें।"
+  },
+  "rules": {
+    "gcc": [
+      { "channel": "gcc-1913", "text": { "en": "Follow up by calling 1913 with your complaint number.", "ta": "புகார் எண்ணுடன் 1913-ஐ அழைத்துத் தொடரவும்.", "hi": "शिकायत नंबर के साथ 1913 पर कॉल करके फ़ॉलो-अप करें।" } },
+      { "channel": "tn-cm-helpline", "text": { "en": "If still unresolved, raise it on the state CM Helpline portal, quoting the GCC complaint number.", "ta": "இன்னும் தீர்க்கப்படவில்லை என்றால், மாநகராட்சி புகார் எண்ணைக் குறிப்பிட்டு முதல்வர் உதவி இணையதளத்தில் தெரிவிக்கவும்.", "hi": "यदि अभी भी हल नहीं हुआ, तो GCC शिकायत नंबर बताकर राज्य CM हेल्पलाइन पोर्टल पर उठाएँ।" } },
+      { "channel": "cpgrams", "text": { "en": "CPGRAMS, the national grievance portal, is also connected to state governments.", "ta": "தேசிய குறைதீர் இணையதளமான CPGRAMS மாநில அரசுகளுடனும் இணைக்கப்பட்டுள்ளது.", "hi": "राष्ट्रीय शिकायत पोर्टल CPGRAMS राज्य सरकारों से भी जुड़ा है।" } }
+    ],
+    "cmwssb": [
+      { "channel": "cmwssb-phone", "text": { "en": "Follow up with the Metro Water complaint cell (044-4567 4567) using your complaint number.", "ta": "புகார் எண்ணுடன் மெட்ரோ வாட்டர் புகார் பிரிவில் (044-4567 4567) தொடரவும்.", "hi": "शिकायत नंबर के साथ मेट्रो वॉटर शिकायत सेल (044-4567 4567) से फ़ॉलो-अप करें।" } },
+      { "channel": "tn-cm-helpline", "text": { "en": "If still unresolved, raise it on the state CM Helpline portal.", "ta": "இன்னும் தீர்க்கப்படவில்லை என்றால் முதல்வர் உதவி இணையதளத்தில் தெரிவிக்கவும்.", "hi": "यदि अभी भी हल नहीं हुआ तो राज्य CM हेल्पलाइन पोर्टल पर उठाएँ।" } }
+    ],
+    "tnpdcl": [
+      { "channel": "tnpdcl-phone", "text": { "en": "Follow up with Minnagam (94987 94987) using your complaint number.", "ta": "புகார் எண்ணுடன் மின்னகத்தில் (94987 94987) தொடரவும்.", "hi": "शिकायत नंबर के साथ मिन्नगम (94987 94987) से फ़ॉलो-अप करें।" } },
+      { "channel": "tnpdcl-cgrf", "text": { "en": "If unresolved, you can approach the Consumer Grievance Redressal Forum.", "ta": "தீர்க்கப்படவில்லை என்றால் நுகர்வோர் குறைதீர் மன்றத்தை அணுகலாம்.", "hi": "यदि हल नहीं हुआ तो उपभोक्ता शिकायत निवारण मंच से संपर्क कर सकते हैं।" } }
+    ],
+    "tnpcb": [
+      { "channel": "tnpcb-email", "text": { "en": "Follow up by email to complaint@tnpcb.gov.in quoting your petition number.", "ta": "மனு எண்ணைக் குறிப்பிட்டு complaint@tnpcb.gov.in-க்கு மின்னஞ்சலில் தொடரவும்.", "hi": "याचिका नंबर बताकर complaint@tnpcb.gov.in पर ईमेल से फ़ॉलो-अप करें।" } },
+      { "channel": "tn-cm-helpline", "text": { "en": "If still unresolved, raise it on the state CM Helpline portal.", "ta": "இன்னும் தீர்க்கப்படவில்லை என்றால் முதல்வர் உதவி இணையதளத்தில் தெரிவிக்கவும்.", "hi": "यदि अभी भी हल नहीं हुआ तो राज्य CM हेल्पलाइन पोर्टल पर उठाएँ।" } }
+    ],
+    "police": [
+      { "channel": "police-100", "text": { "en": "For an ongoing problem, call 100. CivicAssist could not verify an online police follow-up channel.", "ta": "நடந்துகொண்டிருக்கும் பிரச்சினைக்கு 100-ஐ அழைக்கவும். இணைய வழி காவல் தொடர்தல் வழியை CivicAssist சரிபார்க்க முடியவில்லை.", "hi": "चल रही समस्या के लिए 100 पर कॉल करें। CivicAssist ऑनलाइन पुलिस फ़ॉलो-अप माध्यम सत्यापित नहीं कर सका।" } }
+    ],
+    "cmda": [
+      { "channel": "gcc-1913", "text": { "en": "Building violations can also be reported to GCC on 1913.", "ta": "கட்டட விதிமீறல்களை 1913-இல் மாநகராட்சியிடமும் தெரிவிக்கலாம்.", "hi": "भवन उल्लंघन की सूचना 1913 पर GCC को भी दी जा सकती है।" } }
+    ],
+    "dvac": [],
+    "other_highways": [
+      { "channel": "gcc-1913", "text": { "en": "If you are not sure who maintains the road, register with GCC on 1913 and ask them to forward it.", "ta": "சாலையை யார் பராமரிக்கிறார்கள் என்று உறுதியாகத் தெரியவில்லை என்றால், 1913-இல் மாநகராட்சியில் பதிவுசெய்து அனுப்பிவைக்கக் கேட்கவும்.", "hi": "यदि आप निश्चित नहीं हैं कि सड़क का रखरखाव कौन करता है, तो 1913 पर GCC में दर्ज करें और आगे भेजने के लिए कहें।" } }
+    ]
+  }
+}
