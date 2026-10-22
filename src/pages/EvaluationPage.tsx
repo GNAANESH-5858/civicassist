@@ -104,7 +104,7 @@ export default function EvaluationPage() {
       </div>
 
       {report.routing && (
-        <section>
+        <section className="eval-section">
           <h2>{t('evaluation.routing_title')}</h2>
           <p className="hint">{t('evaluation.routing_intro')}</p>
           <RoutingTable
@@ -144,7 +144,7 @@ export default function EvaluationPage() {
       )}
 
       {report.source_check && (
-        <section>
+        <section className="eval-section">
           <h2>{t('evaluation.sources_title')}</h2>
           <p className="hint">{t('evaluation.sources_intro', { date: report.source_check.checked_at.slice(0, 10) })}</p>
           <div className="stat-row">

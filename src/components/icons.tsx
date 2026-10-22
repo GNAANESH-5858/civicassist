@@ -126,3 +126,75 @@ export const IconSave = ({ size }: P) => (
     <path d="M5 3h11l3 3v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8 3v5h7V3M7 21v-7h10v7" />
   </svg>
 )
+export const IconArrow = ({ size, className }: P & { className?: string }) => (
+  <svg {...base(size)} className={className}>
+    <path d="M5 12h14M13 6l6 6-6 6" />
+  </svg>
+)
+export const IconRoad = ({ size }: P) => (
+  <svg {...base(size)}>
+    <path d="M8 3 4 21M16 3l4 18M12 4v3M12 11v3M12 18v2" />
+  </svg>
+)
+export const IconTrash = ({ size }: P) => (
+  <svg {...base(size)}>
+    <path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" />
+  </svg>
+)
+export const IconDroplet = ({ size }: P) => (
+  <svg {...base(size)}>
+    <path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z" />
+  </svg>
+)
+export const IconWaves = ({ size }: P) => (
+  <svg {...base(size)}>
+    <path d="M2 8c2.5-2 4.5-2 7 0s4.5 2 7 0 4.5-2 6 0M2 14c2.5-2 4.5-2 7 0s4.5 2 7 0 4.5-2 6 0M2 20c2.5-2 4.5-2 7 0s4.5 2 7 0 4.5-2 6 0" />
+  </svg>
+)
+export const IconBulb = ({ size }: P) => (
+  <svg {...base(size)}>
+    <path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z" />
+  </svg>
+)
+export const IconBolt = ({ size }: P) => (
+  <svg {...base(size)}>
+    <path d="M13 2 4 14h7l-1 8 9-12h-7z" />
+  </svg>
+)
+export const IconSparkle = ({ size }: P) => (
+  <svg {...base(size)}>
+    <path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6" />
+  </svg>
+)
+export const IconBuilding = ({ size }: P) => (
+  <svg {...base(size)}>
+    <path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-5h6v5M9 11h.01M15 11h.01" />
+  </svg>
+)
+export const IconPin = ({ size }: P) => (
+  <svg {...base(size)}>
+    <path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z" />
+    <circle cx="12" cy="9" r="2.5" />
+  </svg>
+)
+export const IconClock = ({ size }: P) => (
+  <svg {...base(size)}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 7v5l3 2" />
+  </svg>
+)
+export const IconSend = ({ size }: P) => (
+  <svg {...base(size)}>
+    <path d="M21 3 10 14M21 3l-7 18-4-7-7-4z" />
+  </svg>
+)
+export const IconList = ({ size }: P) => (
+  <svg {...base(size)}>
+    <path d="M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01" />
+  </svg>
+)
+export const IconRefresh = ({ size }: P) => (
+  <svg {...base(size)}>
+    <path d="M20 11a8 8 0 0 0-14.6-4.5M4 4v4h4M4 13a8 8 0 0 0 14.6 4.5M20 20v-4h-4" />
+  </svg>
+)

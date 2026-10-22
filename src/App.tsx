@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'motion/react'
+import { motion } from 'motion/react'
 import { lazy, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
@@ -31,8 +31,8 @@ export default function App() {
       <main className="page" id="main" tabIndex={-1}>
         <div className="container">
           <Suspense fallback={<Status kind="loading">{t('common.loading_page')}</Status>}>
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div key={location.pathname} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.16 }}>
+            {/* Enter-only transition: navigation never waits on an exit animation (which stalls in background tabs). */}
+            <motion.div key={location.pathname} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.28, ease: [0.2, 0.7, 0.2, 1] }}>
                 <Routes location={location}>
                   <Route path="/" element={<HomePage />} />
                   <Route path="/report" element={<ReportPage />} />
@@ -47,8 +47,7 @@ export default function App() {
                   <Route path="/evaluation" element={<EvaluationPage />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
-              </motion.div>
-            </AnimatePresence>
+            </motion.div>
           </Suspense>
         </div>
       </main>

@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import { IconLogo } from './icons.tsx'
 
 export default function Footer() {
   const { t } = useTranslation()
@@ -7,9 +8,16 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container cols">
         <div>
-          <h2>CivicAssist</h2>
-          <p>{t('footer.about')}</p>
-          <p>{t('footer.sources')}</p>
+          <Link to="/" className="brand" aria-label={t('brand.home_label')} style={{ marginBottom: 12 }}>
+            <span className="brand-mark" aria-hidden>
+              <IconLogo size={18} />
+            </span>
+            <span className="brand-name">CivicAssist</span>
+          </Link>
+          <p style={{ maxWidth: 420 }}>{t('footer.blurb')}</p>
+          <p>
+            <Link to="/about#sources">{t('footer.sources')}</Link>
+          </p>
         </div>
         <div>
           <h2>{t('footer.official')}</h2>
@@ -41,6 +49,9 @@ export default function Footer() {
           <ul>
             <li>
               <Link to="/about">{t('nav.about')}</Link>
+            </li>
+            <li>
+              <Link to="/letter">{t('footer.letter')}</Link>
             </li>
             <li>
               <Link to="/about#sources">{t('footer.verification')}</Link>

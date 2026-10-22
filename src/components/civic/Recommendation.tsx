@@ -47,7 +47,7 @@ export default function Recommendation({ frame, answers, onChangeCategory }: { f
     <div className="stack">
       <SafetyPanel frame={frame} answers={answers} />
 
-      <motion.section className="card" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
+      <motion.section className="card authority-card" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
         <div className="authority-head">
           <div>
             <div className="eyebrow">{t('report.likely_authority')}</div>

@@ -58,7 +58,7 @@ export function CategoryPicker({ candidates, selected, onPick }: { candidates: s
       {order.map((id) => {
         const c = CATEGORIES.find((x) => x.id === id)!
         return (
-          <button key={id} type="button" className="chip" aria-pressed={selected === id} onClick={() => onPick(id)} style={candidates.includes(id) ? { borderColor: 'var(--brand)' } : undefined}>
+          <button key={id} type="button" aria-pressed={selected === id} onClick={() => onPick(id)} className={candidates.includes(id) ? 'chip suggested' : 'chip'}>
             {pick(c.label, lang)}
           </button>
         )

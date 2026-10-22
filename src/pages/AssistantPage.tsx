@@ -5,7 +5,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import ChannelCard from '../components/civic/ChannelCard.tsx'
 import { CategoryPicker, QuestionField } from '../components/civic/QuestionField.tsx'
 import { SafetyPanel } from '../components/civic/Recommendation.tsx'
-import { IconChat } from '../components/icons.tsx'
+import { IconLogo, IconRefresh, IconSend } from '../components/icons.tsx'
+import { AutoTextarea, TypingIndicator } from '../components/kit.tsx'
+import { nextQuestions } from '../lib/civic/questions.ts'
 import SchemeAnswer from '../components/schemes/SchemeAnswer.tsx'
 import { PageHeader, Status } from '../components/ui.tsx'
 import i18n, { currentLang, LANG_KEY, LANGUAGES } from '../i18n.ts'
@@ -113,61 +115,95 @@ export default function AssistantPage() {
           </button>
         </Status>
       )}
-      <section className="card chat" aria-label={t('assistant.title')}>
-        <div className="chat-log" ref={logRef} aria-live="polite">
-          <AnimatePresence initial={false}>
-            {state.turns.map((turn, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className={`msg ${turn.role}`}>
-                {turn.role === 'user' ? (
-                  turn.text
-                ) : (
-                  <>
-                    <div className="label">CivicAssist Guide</div>
-                    <div className="bubble">
-                      <BotTurn turn={turn} state={state} active={i === lastPendingIndex} dispatch={dispatch} onOpenReport={openReport} gateway={gateway} aiAvailable={aiAvailable} />
-                    </div>
-                  </>
-                )}
-              </motion.div>
-            ))}
-          </AnimatePresence>
-          {thinking && <Status kind="loading">{t('assistant.thinking')}</Status>}
-        </div>
-        <form
-          className="chat-input"
-          onSubmit={(e) => {
-            e.preventDefault()
-            void send()
-          }}
-        >
-          <label htmlFor="chat-text" className="sr-only">
-            {t('assistant.input_label')}
-          </label>
-          <textarea
-            id="chat-text"
-            value={input}
-            maxLength={2000}
-            placeholder={t('assistant.input_placeholder')}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault()
-                void send()
-              }
+      <div className="chat-shell">
+        <section className="card chat" aria-label={t('assistant.title')}>
+          <div className="chat-head">
+            <span className="avatar" aria-hidden>
+              <IconLogo size={16} />
+            </span>
+            <div>
+              <div className="who">{t('assistant.guide_label')}</div>
+              <div className="sub">{t('assistant.guide_sub')}</div>
+            </div>
+            <span className="spacer" />
+            <button className="btn-ghost" onClick={() => dispatch({ type: 'restart' })}>
+              <IconRefresh /> {t('assistant.restart')}
+            </button>
+          </div>
+          <div className="chat-log" ref={logRef} aria-live="polite">
+            <AnimatePresence initial={false}>
+              {state.turns.map((turn, i) => (
+                <motion.div key={i} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25, ease: [0.2, 0.7, 0.2, 1] }} className={`msg ${turn.role}`}>
+                  {turn.role === 'user' ? (
+                    turn.text
+                  ) : (
+                    <>
+                      <span className="avatar sm" aria-hidden>
+                        <IconLogo size={13} />
+                      </span>
+                      <div className="bubble">
+                        <BotTurn turn={turn} state={state} active={i === lastPendingIndex} dispatch={dispatch} onOpenReport={openReport} gateway={gateway} aiAvailable={aiAvailable} />
+                      </div>
+                    </>
+                  )}
+                </motion.div>
+              ))}
+            </AnimatePresence>
+            {thinking && (
+              <div className="msg bot">
+                <span className="avatar sm" aria-hidden>
+                  <IconLogo size={13} />
+                </span>
+                <TypingIndicator label={t('assistant.thinking')} />
+              </div>
+            )}
+          </div>
+          <form
+            className="chat-input"
+            onSubmit={(e) => {
+              e.preventDefault()
+              void send()
             }}
-          />
-          <button type="submit" disabled={!input.trim() || thinking} aria-label={t('assistant.send')}>
-            <IconChat /> <span className="sr-only">{t('assistant.send')}</span>
-          </button>
-        </form>
-      </section>
-      <div className="actions">
-        <button className="btn-ghost" onClick={() => dispatch({ type: 'restart' })}>
-          {t('assistant.restart')}
-        </button>
-        <Link to="/report" className="btn btn-ghost">
-          {t('assistant.use_form')}
-        </Link>
+          >
+            <label htmlFor="chat-text" className="sr-only">
+              {t('assistant.input_label')}
+            </label>
+            <AutoTextarea
+              id="chat-text"
+              value={input}
+              maxLength={2000}
+              placeholder={t('assistant.input_placeholder')}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) {
+                  e.preventDefault()
+                  void send()
+                }
+              }}
+            />
+            <button type="submit" disabled={!input.trim() || thinking} aria-label={t('assistant.send')}>
+              <IconSend />
+            </button>
+          </form>
+        </section>
+        <aside className="chat-side stack">
+          <div className="card subtle">
+            <h2>{t('assistant.side_title')}</h2>
+            <div className="stack" style={{ gap: 8 }}>
+              {[t('home.demo.example'), ...((t('schemes.examples', { returnObjects: true }) as string[]) ?? []).slice(0, 2)].map((q) => (
+                <button key={q} type="button" className="chip" style={{ textAlign: 'left', justifyContent: 'flex-start', borderRadius: 12, padding: '10px 12px' }} onClick={() => setInput(q)}>
+                  {q}
+                </button>
+              ))}
+            </div>
+            <p className="hint" style={{ margin: '14px 0 0' }}>
+              {t('assistant.side_note')}
+            </p>
+          </div>
+          <Link to="/report" className="btn btn-secondary">
+            {t('assistant.use_form')}
+          </Link>
+        </aside>
       </div>
     </>
   )
@@ -242,11 +278,21 @@ function BotTurn({
     case 'recommendation': {
       if (!f) return null
       const r = route(f, state.answers)
+      const missing = nextQuestions(f, state.answers, 3).map((q) => t(`guidance:question.${q.id}.short`))
       return (
-        <div className="stack">
-          <div>
-            <div className="eyebrow">{t('report.likely_authority')}</div>
-            <strong lang="en">{r.authority.name}</strong>
+        <div>
+          <div className="guide-section">
+            <h4>{t('assistant.sec_understanding')}</h4>
+            <p style={{ margin: 0 }}>
+              {t('assistant.understood', { category: categoryLabel(f.category, lang) })}
+              {f.locality && ` ${t('assistant.understood_place', { place: f.locality.name })}`}
+            </p>
+          </div>
+          <div className="guide-section accent">
+            <h4>{t('assistant.sec_authority')}</h4>
+            <strong lang="en" style={{ color: 'var(--text)' }}>
+              {r.authority.name}
+            </strong>
             {r.department && (
               <span className="hint" lang="en">
                 {' '}
@@ -256,14 +302,26 @@ function BotTurn({
             <p className="hint" style={{ margin: '4px 0 0' }}>
               {renderMessage(r.reasons[0], lang, t)}
             </p>
+            {r.uncertainties.slice(0, 2).map((u, i) => (
+              <p key={i} className="hint" style={{ margin: '4px 0 0' }}>
+                {renderMessage(u, lang, t)}
+              </p>
+            ))}
           </div>
-          {r.uncertainties.slice(0, 2).map((u, i) => (
-            <p key={i} className="hint" style={{ margin: 0 }}>
-              ⚠ {renderMessage(u, lang, t)}
-            </p>
-          ))}
-          {r.primary && <ChannelCard channel={r.primary} primary />}
-          {r.fallback && <ChannelCard channel={r.fallback} showInstructions={false} />}
+          {missing.length > 0 && (
+            <div className="guide-section">
+              <h4>{t('assistant.sec_missing')}</h4>
+              <p style={{ margin: 0 }}>{missing.join(', ')}</p>
+            </div>
+          )}
+          <div className="guide-section">
+            <h4>{t('assistant.sec_links')}</h4>
+            <div className="stack" style={{ gap: 10 }}>
+              {r.primary && <ChannelCard channel={r.primary} primary />}
+              {r.fallback && <ChannelCard channel={r.fallback} showInstructions={false} />}
+              {!r.primary && <p style={{ margin: 0 }}>{t('guidance:uncertain.no_channel', { authority: r.authority.name })}</p>}
+            </div>
+          </div>
         </div>
       )
     }
@@ -272,13 +330,13 @@ function BotTurn({
       return (
         <>
           <p>{t('assistant.offer_next')}</p>
-          <div className="chips">
-            <button className="chip" onClick={() => onOpenReport('recommend')}>
+          <div className="actions" style={{ marginTop: 0, marginBottom: 10 }}>
+            <button onClick={() => onOpenReport('letter')}>{t('assistant.prepare_my_letter')}</button>
+            <button className="btn-secondary" onClick={() => onOpenReport('recommend')}>
               {t('assistant.full_guidance')}
             </button>
-            <button className="chip" onClick={() => onOpenReport('letter')}>
-              {t('assistant.prepare_letter')}
-            </button>
+          </div>
+          <div className="chips">
             {r?.primary?.href.startsWith('https://') && (
               <a className="chip" href={r.primary.href} target="_blank" rel="noopener noreferrer">
                 {t('guidance:channel_action.online_portal')}
@@ -334,9 +392,7 @@ function BotTurn({
         <>
           <p>{t('assistant.letter_help')}</p>
           {f ? (
-            <button className="chip" onClick={() => onOpenReport('letter')}>
-              {t('assistant.prepare_letter')}
-            </button>
+            <button onClick={() => onOpenReport('letter')}>{t('assistant.prepare_my_letter')}</button>
           ) : (
             <Link to="/letter">{t('assistant.open_letter')}</Link>
           )}

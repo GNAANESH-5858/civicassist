@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { IconDownload } from '../components/icons.tsx'
+import { IconChart, IconDownload, IconTable } from '../components/icons.tsx'
+import { Drawer } from '../components/kit.tsx'
 import { PageHeader, Status, UrgencyBadge } from '../components/ui.tsx'
 import { currentLang } from '../i18n.ts'
 import { recordsApi } from '../lib/browser/records.ts'
@@ -67,14 +68,17 @@ export default function OfficerPage() {
       <PageHeader eyebrow={t('officer.eyebrow')} title={t('officer.title')}>
         {t('officer.intro')}
       </PageHeader>
-      <div className="tabs" role="tablist">
-        {(['sample', 'records'] as const).map((k) => (
-          <button key={k} role="tab" aria-selected={tab === k} className={tab === k ? 'tab active' : 'tab'} onClick={() => setTab(k)}>
-            {t(`officer.tab_${k}`)}
-          </button>
-        ))}
+      <div className="dash">
+        <nav className="dash-rail" role="tablist" aria-label={t('officer.nav_label')}>
+          <span className="rail-label">{t('officer.nav_label')}</span>
+          {(['sample', 'records'] as const).map((k) => (
+            <button key={k} role="tab" aria-selected={tab === k} onClick={() => setTab(k)}>
+              {k === 'sample' ? <IconChart /> : <IconTable />} {t(`officer.tab_${k}`)}
+            </button>
+          ))}
+        </nav>
+        <div className="dash-main">{tab === 'sample' ? <SampleDashboard /> : <AdminRecords />}</div>
       </div>
-      {tab === 'sample' ? <SampleDashboard /> : <AdminRecords />}
     </>
   )
 }
@@ -86,6 +90,7 @@ function SampleDashboard() {
   const [dept, setDept] = useState('')
   const [urgency, setUrgency] = useState('')
   const [q, setQ] = useState('')
+  const [detail, setDetail] = useState<Row | null>(null)
 
   useEffect(() => {
     fetch('/data/triaged.json')
@@ -182,20 +187,51 @@ function SampleDashboard() {
             </thead>
             <tbody>
               {primaries.map((r) => (
-                <FragmentRows key={r.complaint_id} row={r} repeats={repeatsOf.get(r.complaint_id) ?? []} />
+                <FragmentRows key={r.complaint_id} row={r} repeats={repeatsOf.get(r.complaint_id) ?? []} onOpen={setDetail} />
               ))}
             </tbody>
           </table>
         </div>
       )}
+      <Drawer open={detail !== null} title={t('officer.detail_title')} onClose={() => setDetail(null)}>
+        {detail && (
+          <>
+            <span className="badge badge-warn" style={{ marginBottom: 14 }}>
+              {t('officer.tab_sample')}
+            </span>
+            <dl className="kv">
+              <dt>ID</dt>
+              <dd className="mono">{detail.complaint_id}</dd>
+              <dt>{t('officer.urgency')}</dt>
+              <dd>
+                <UrgencyBadge level={detail.urgency} />
+              </dd>
+              <dt>{t('officer.department')}</dt>
+              <dd>{detail.department ?? '—'}</dd>
+              <dt>{t('officer.ward')}</dt>
+              <dd>{detail.ward ?? '—'}</dd>
+              <dt>{t('officer.issue')}</dt>
+              <dd>{detail.issue ?? '—'}</dd>
+              {detail.duplicate_of && (
+                <>
+                  <dt>{t('officer.repeats')}</dt>
+                  <dd>{t('officer.repeat_of', { id: detail.duplicate_of, score: detail.similarity.toFixed(2) })}</dd>
+                </>
+              )}
+            </dl>
+            <h3>{t('officer.complaint_masked')}</h3>
+            <p>{detail.masked_text}</p>
+          </>
+        )}
+      </Drawer>
     </>
   )
 }
 
-function FragmentRows({ row, repeats }: { row: Row; repeats: Row[] }) {
+function FragmentRows({ row, repeats, onOpen }: { row: Row; repeats: Row[]; onOpen: (r: Row) => void }) {
   const { t } = useTranslation()
   const cells = (r: Row, repeat: boolean) => (
-    <tr key={r.complaint_id} className={repeat ? 'repeat-row' : undefined}>
+    <tr key={r.complaint_id} className={`clickable ${repeat ? 'repeat-row' : ''}`} tabIndex={0} aria-label={t('officer.open_detail')} onClick={() => onOpen(r)} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), onOpen(r))}>
       <td className="mono">{repeat ? `↳ ${r.complaint_id}` : r.complaint_id}</td>
       <td>
         <UrgencyBadge level={r.urgency} />
@@ -335,7 +371,7 @@ function AdminRecords() {
               </thead>
               <tbody>
                 {shown.map((r) => (
-                  <tr key={r.id} onClick={() => setSelected(r)} style={{ cursor: 'pointer' }}>
+                  <tr key={r.id} className="clickable" onClick={() => setSelected(r)}>
                     <td className="mono">{r.updated_at.slice(0, 10)}</td>
                     <td>{t(`records.status.${r.status}`)}</td>
                     <td>{categoryLabel(r.category, lang)}</td>
@@ -352,6 +388,7 @@ function AdminRecords() {
           </div>
         </>
       )}
+      <Drawer open={selected !== null} title={t('officer.detail_title')} onClose={() => setSelected(null)}>
       {selected && (
         <AdminDetail
           key={selected.id}
@@ -363,6 +400,7 @@ function AdminRecords() {
           }}
         />
       )}
+      </Drawer>
     </>
   )
 }
@@ -391,7 +429,7 @@ function AdminDetail({ record, token, onChanged }: { record: ComplaintRecord; to
   }
 
   return (
-    <section className="card" style={{ marginTop: 16 }}>
+    <section>
       <h2>{record.title}</h2>
       <p>{record.summary}</p>
       <p className="hint">{t('officer.admin_audit')}</p>

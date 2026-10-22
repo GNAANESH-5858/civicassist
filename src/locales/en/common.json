@@ -14,7 +14,8 @@
     "dark_theme": "Switch to dark theme",
     "light_theme": "Switch to light theme",
     "open_menu": "Open menu",
-    "close_menu": "Close menu"
+    "close_menu": "Close menu",
+    "cta": "Get help"
   },
   "brand": {
     "home_label": "CivicAssist home",
@@ -26,7 +27,9 @@
     "sources": "Sources and verification",
     "official": "Official portals",
     "project": "Project",
-    "verification": "How information is verified"
+    "verification": "How information is verified",
+    "letter": "Letter builder",
+    "blurb": "Independent help for civic issues in Chennai, in English, Tamil and Hindi."
   },
   "common": {
     "loading": "Loading…",
@@ -64,16 +67,17 @@
       "month_other": "months",
       "year_one": "year",
       "year_other": "years"
-    }
+    },
+    "close": "Close"
   },
   "home": {
     "eyebrow": "For residents of Chennai",
     "headline": "Get the right help for civic issues in Chennai",
-    "lead": "Describe a problem in English, Tamil or Hindi. CivicAssist suggests which authority handles it, how to contact them, and helps you prepare a clear complaint letter.",
+    "lead": "Describe an issue in Chennai. Get guidance on the right authority, prepare your complaint, and find the official channel to submit it.",
     "cta_primary": "Get Help With an Issue",
     "cta_secondary": "Explore Government Schemes",
     "input_label": "What is the problem?",
-    "input_placeholder": "For example: The streetlight near the bus stop on 3rd Main Road, Adyar has not worked for a week.",
+    "input_placeholder": "Describe the issue you're facing...",
     "input_hint": "Do not include phone numbers or Aadhaar numbers. They are masked automatically if you do.",
     "input_submit": "Get guidance",
     "chat_instead": "Prefer to chat? Use the Civic Assistant",
@@ -82,10 +86,22 @@
     "shortcut_followup": "Follow up on a complaint you already filed",
     "how_title": "How it works",
     "how": {
-      "1": { "title": "Describe", "body": "Tell us what is wrong and where, in your own words and language." },
-      "2": { "title": "Clarify", "body": "Answer a few short questions only when they change where the complaint should go." },
-      "3": { "title": "Get a recommendation", "body": "See the likely authority, the verified way to contact them, and what to keep ready." },
-      "4": { "title": "Submit and track", "body": "Prepare a letter, submit it yourself on the official channel, then keep track of the reference number here." }
+      "1": {
+        "title": "Describe",
+        "body": "Tell us what is wrong and where, in your own words and language."
+      },
+      "2": {
+        "title": "Clarify",
+        "body": "Answer a few short questions only when they change where the complaint should go."
+      },
+      "3": {
+        "title": "Get a recommendation",
+        "body": "See the likely authority, the verified way to contact them, and what to keep ready."
+      },
+      "4": {
+        "title": "Submit and track",
+        "body": "Prepare a letter, submit it yourself on the official channel, then keep track of the reference number here."
+      }
     },
     "what_title": "What CivicAssist does and does not do",
     "what": {
@@ -95,7 +111,46 @@
       "4": "Works without AI. AI is used only to help understand free text or polish wording, and only when available."
     },
     "independent_title": "Independent, not official",
-    "independent_body": "CivicAssist is not run by the Greater Chennai Corporation or any government department. Always check the official portal before you submit."
+    "independent_body": "CivicAssist is not run by the Greater Chennai Corporation or any government department. Always check the official portal before you submit.",
+    "headline_a": "Your civic concerns,",
+    "headline_b": "moving towards resolution.",
+    "input_too_short": "Please describe the issue in a few more words.",
+    "chips_label": "Common issues",
+    "chip": {
+      "roads": "Road damage",
+      "garbage": "Garbage collection",
+      "water_supply": "Water supply",
+      "drainage_flooding": "Drainage",
+      "streetlight": "Streetlights",
+      "other": "Something else"
+    },
+    "trust": "Independent tool. You always submit on the official channel yourself.",
+    "how_eyebrow": "How it works",
+    "how_intro": "Four steps from a problem to a complaint the right office can act on.",
+    "shortcuts_eyebrow": "Start here",
+    "demo": {
+      "example": "The streetlight near the bus stop on 3rd Main Road, Adyar has not worked for a week.",
+      "badge": "Example",
+      "label": "How CivicAssist handles an example complaint",
+      "stage": {
+        "describe": "Describe",
+        "understand": "Understand",
+        "authority": "Authority",
+        "prepare": "Prepare",
+        "submit": "Submit"
+      },
+      "k_describe": "A resident writes",
+      "k_understand": "CivicAssist understands",
+      "k_authority": "The right office",
+      "k_prepare": "A clear letter",
+      "k_submit": "Official channel",
+      "describe_note": "In English, Tamil or Hindi, in your own words.",
+      "still_needed": "Still needed",
+      "submit_note": "You submit it yourself. CivicAssist never submits for you.",
+      "foot": "Illustrative example computed by the real guidance engine. Not a real complaint.",
+      "pause": "Pause",
+      "play": "Play"
+    }
   },
   "report": {
     "eyebrow": "Report an issue",
@@ -184,7 +239,9 @@
     "saved": "Saved. Keep the private link below; it is the only way to open this record on another device.",
     "save_failed": "Could not save the record. Your complaint details are still in this browser.",
     "link_warning": "Anyone with this link can view and change this record. Do not share it publicly.",
-    "open_my_complaints": "Open My Complaints"
+    "open_my_complaints": "Open My Complaints",
+    "summary_title": "Your complaint",
+    "summary_empty": "Describe the issue to see a summary here."
   },
   "assistant": {
     "eyebrow": "Civic Assistant",
@@ -230,7 +287,16 @@
     "use_form": "Prefer a form? Use Report an Issue",
     "switch_language": "Your message looks like {{language}}. Switch the assistant to {{language}}?",
     "switch": "Switch",
-    "keep": "Keep current language"
+    "keep": "Keep current language",
+    "guide_label": "CivicAssist Guide",
+    "guide_sub": "Guided answers from verified sources",
+    "sec_understanding": "Understanding the issue",
+    "sec_authority": "Recommended authority",
+    "sec_missing": "Information still needed",
+    "sec_links": "Official submission links",
+    "prepare_my_letter": "Prepare my complaint letter",
+    "side_title": "Try asking",
+    "side_note": "The assistant uses the same rules and verified sources as Report an Issue. It never submits anything for you."
   },
   "schemes": {
     "eyebrow": "Government schemes",
@@ -271,7 +337,14 @@
       "official_source": "Official source",
       "score": "Score",
       "type": "Type"
-    }
+    },
+    "filter_label": "Show",
+    "filter_all": "All",
+    "filter_schemes": "Schemes",
+    "filter_rules": "Rules",
+    "from_kb": "From the knowledge base",
+    "generated": "AI-generated summary",
+    "results": "Matching records"
   },
   "letter": {
     "eyebrow": "Complaint letter",
@@ -330,7 +403,12 @@
       "eligibility_claim": "Do not claim eligibility or entitlement; the department decides that.",
       "too_long": "The letter is too long. Keep it under 350 words.",
       "missing_name": "The letter has no name. Add yours, or confirm you want to continue without it."
-    }
+    },
+    "tab_details": "Details",
+    "tab_preview": "Preview",
+    "open_portal": "Open official submission portal",
+    "page_label": "A4 · page 1",
+    "edit_hint": "You can edit the letter directly on the page."
   },
   "records": {
     "eyebrow": "My complaints",
@@ -410,7 +488,10 @@
     "locality": "Locality",
     "title_col": "Title",
     "resolution_notes": "Resolution notes",
-    "admin_audit": "Changes are recorded in the history as made by a CivicAssist administrator. They are not government updates."
+    "admin_audit": "Changes are recorded in the history as made by a CivicAssist administrator. They are not government updates.",
+    "nav_label": "Dashboard sections",
+    "detail_title": "Complaint details",
+    "open_detail": "Open details"
   },
   "evaluation": {
     "eyebrow": "Transparency",

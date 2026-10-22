@@ -40,6 +40,7 @@ export default function SchemeAnswer({ question, lang, gateway, aiAvailable }: {
   const [records, setRecords] = useState<Map<number, SchemeRecord>>(new Map())
   const [error, setError] = useState<string | null>(null)
   const qLang = useMemo(() => detectLanguage(question).lang ?? 'en', [question])
+  const [kind, setKind] = useState<'all' | 'scheme' | 'regulatory'>('all')
 
   useEffect(() => {
     let cancelled = false
@@ -98,22 +99,43 @@ export default function SchemeAnswer({ question, lang, gateway, aiAvailable }: {
   }
 
   const matchText = `${question} ${result.rewritten_query}`
+  const found = result.sources.map((s) => ({ s, r: records.get(s.id) })).filter((x): x is { s: (typeof result.sources)[number]; r: SchemeRecord } => Boolean(x.r))
+  const kinds = new Set(found.map((x) => x.r.kind))
+  const shown = found.filter((x) => kind === 'all' || x.r.kind === kind)
   return (
     <div className="stack">
       {result.answer ? (
-        <div>
+        <div className="answer-block">
+          <div className="provenance">
+            <span className="badge badge-brand">{t('schemes.generated')}</span>
+          </div>
           <AnswerText text={result.answer} lang={lang} />
-          <p className="hint">{t('schemes.ai_answer_note')}</p>
+          <p className="hint" style={{ margin: 0 }}>
+            {t('schemes.ai_answer_note')}
+          </p>
         </div>
       ) : (
         <Status kind="info">{t(aiAvailable ? 'schemes.answer_unavailable' : 'schemes.no_ai_records_only')}</Status>
       )}
-      {result.rewritten_query !== question && <p className="hint">{t('schemes.searched_for', { query: result.rewritten_query })}</p>}
+      {result.rewritten_query !== question && <p className="hint" style={{ margin: 0 }}>{t('schemes.searched_for', { query: result.rewritten_query })}</p>}
+      <div className="filter-bar">
+        <h2 style={{ margin: 0, fontSize: '1rem', display: 'flex', alignItems: 'center', gap: 8 }}>
+          {t('schemes.results')} <span className="badge badge-ok">{t('schemes.from_kb')}</span>
+        </h2>
+        {kinds.size > 1 && (
+          <div className="chips" role="group" aria-label={t('schemes.filter_label')}>
+            {(['all', 'scheme', 'regulatory'] as const).map((k) => (
+              <button key={k} type="button" className="chip" aria-pressed={kind === k} onClick={() => setKind(k)}>
+                {t(k === 'all' ? 'schemes.filter_all' : k === 'scheme' ? 'schemes.filter_schemes' : 'schemes.filter_rules')}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
       <div className="scheme-list">
-        {result.sources.map((s) => {
-          const r = records.get(s.id)
-          return r ? <SchemeCard key={s.id} n={s.n} record={r} score={s.score} boost={s.boost} match={matchBreakdown(matchText, r)} /> : null
-        })}
+        {shown.map(({ s, r }) => (
+          <SchemeCard key={s.id} n={s.n} record={r} score={s.score} boost={s.boost} match={matchBreakdown(matchText, r)} />
+        ))}
       </div>
       {lang !== 'en' && <p className="hint">{t('schemes.corpus_english')}</p>}
     </div>

@@ -58,6 +58,7 @@ export default function LetterPage() {
           <LetterBuilder
             aiAvailable={!aiMarkedUnavailable()}
             gateway={gateway}
+            channel={routing.primary}
             seed={{
               authority: routing.authority.id,
               department: routing.department,

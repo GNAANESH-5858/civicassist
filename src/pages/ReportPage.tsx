@@ -1,7 +1,10 @@
-import { AnimatePresence, motion } from 'motion/react'
+import { motion } from 'motion/react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
+import { ComplaintInput, ProgressStepper } from '../components/kit.tsx'
+import { IconChevron } from '../components/icons.tsx'
+import type { ReportPrefill } from './HomePage.tsx'
 import ChannelCard from '../components/civic/ChannelCard.tsx'
 import { CategoryPicker, QuestionField } from '../components/civic/QuestionField.tsx'
 import Recommendation, { SafetyPanel } from '../components/civic/Recommendation.tsx'
@@ -35,7 +38,7 @@ function locationText(r: ReportState): string {
 export default function ReportPage() {
   const { t } = useTranslation()
   const lang = currentLang()
-  const [params, setParams] = useSearchParams()
+  const [params] = useSearchParams()
   const [r, setR] = useState<ReportState>(() => loadReport())
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -50,17 +53,20 @@ export default function ReportPage() {
     })
   }, [])
 
-  // Prefill from the home page ("/report?text=...&category=...").
+  // Prefill from the home page. Complaint text arrives in router state (never in the URL);
+  // "?category=" is still accepted for old links.
+  const location = useLocation()
+  const navigate = useNavigate()
   useEffect(() => {
-    const text = params.get('text')
-    const category = params.get('category')
-    if (text || category) {
-      const fresh = { ...emptyReport(), text: text ?? '', userCategory: category && categoryById.has(category) ? category : null }
+    const prefill = (location.state as { prefill?: ReportPrefill } | null)?.prefill
+    const category = prefill ? prefill.category : params.get('category')
+    if (prefill || category) {
+      const fresh = { ...emptyReport(), text: prefill?.text ?? '', userCategory: category && categoryById.has(category) ? category : null }
       setR(fresh)
       saveReport(fresh)
-      setParams({}, { replace: true })
+      navigate('/report', { replace: true, state: null })
     }
-  }, [params, setParams])
+  }, [location.state, params, navigate])
 
   useEffect(() => {
     document.getElementById('main')?.scrollIntoView({ block: 'start' })
@@ -99,50 +105,48 @@ export default function ReportPage() {
         {t('report.intro')}
       </PageHeader>
 
-      <nav aria-label={t('report.steps_label')}>
-        <ol className="stepper">
-          {STEPS.map((s, i) => (
-            <li key={s} className={`${r.step === s ? 'current' : ''} ${STEPS.indexOf(r.step) > i ? 'done' : ''}`}>
-              <button type="button" disabled={!stepEnabled(r, s)} aria-current={r.step === s ? 'step' : undefined} onClick={() => go(s)}>
-                <span className="num">{STEPS.indexOf(r.step) > i ? <IconCheck size={12} /> : i + 1}</span>
-                {t(`report.step.${s}`)}
-              </button>
-            </li>
-          ))}
-        </ol>
-      </nav>
+      <ProgressStepper steps={STEPS} current={r.step} label={t('report.steps_label')} labelOf={(s) => t(`report.step.${s}`)} enabled={(s) => stepEnabled(r, s)} onSelect={go} />
 
+      <div className="flow">
+      <div style={{ minWidth: 0 }}>
       {!aiAvailable && r.step !== 'describe' && <Status kind="info">{t('common.ai_unavailable_notice')}</Status>}
       {error && <Status kind="error">{error}</Status>}
 
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.div key={r.step} initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -12 }} transition={{ duration: 0.18 }}>
+        <motion.div key={r.step} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.24, ease: [0.2, 0.7, 0.2, 1] }}>
           {r.step === 'describe' && (
-            <section className="card">
-              <label htmlFor="describe" className="field-label">
-                {t('report.describe_label')}
-              </label>
-              <textarea id="describe" rows={5} value={r.text} onChange={(e) => update({ text: e.target.value })} placeholder={t('report.describe_placeholder')} maxLength={2000} />
-              <p className="hint">{t('report.describe_hint')}</p>
-              <h3>{t('report.quick_label')}</h3>
-              <div className="chips">
-                {QUICK.map((id) => (
-                  <button key={id} type="button" className="chip" aria-pressed={r.userCategory === id} onClick={() => update({ userCategory: r.userCategory === id ? null : id })}>
-                    {categoryLabel(id, lang)}
-                  </button>
-                ))}
+            <section className="stack">
+              <div>
+                <h2 style={{ fontSize: '1.2rem' }}>{t('report.describe_label')}</h2>
+                <ComplaintInput
+                  id="describe"
+                  value={r.text}
+                  onChange={(text) => update({ text })}
+                  onSubmit={analyse}
+                  busy={busy}
+                  label={t('report.describe_label')}
+                  placeholder={t('report.describe_placeholder')}
+                  hint={t('report.describe_hint')}
+                  submitLabel={busy ? t('report.analysing') : t('report.continue')}
+                />
               </div>
-              <div className="actions">
-                <button onClick={analyse} disabled={busy || r.text.trim().length < 5}>
-                  {busy ? t('report.analysing') : t('report.continue')}
-                </button>
-                {r.text && (
+              <div>
+                <h3>{t('report.quick_label')}</h3>
+                <div className="chips">
+                  {QUICK.map((id) => (
+                    <button key={id} type="button" className="chip" aria-pressed={r.userCategory === id} onClick={() => update({ userCategory: r.userCategory === id ? null : id })}>
+                      {categoryLabel(id, lang)}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <p className="hint" style={{ margin: 0 }}>{t('report.privacy_note')}</p>
+              {r.text && (
+                <div>
                   <button className="btn-ghost" onClick={() => update(emptyReport())}>
                     {t('report.start_over')}
                   </button>
-                )}
-              </div>
-              <p className="hint">{t('report.privacy_note')}</p>
+                </div>
+              )}
             </section>
           )}
 
@@ -195,6 +199,7 @@ export default function ReportPage() {
               <LetterBuilder
                 aiAvailable={aiAvailable}
                 gateway={gateway}
+                channel={routing.primary}
                 seed={{
                   authority: routing.authority.id,
                   department: routing.department,
@@ -221,8 +226,67 @@ export default function ReportPage() {
 
           {r.step === 'track' && r.frame && routing && <TrackStep r={r} onSaved={(id) => update({ savedRecordId: id })} />}
         </motion.div>
-      </AnimatePresence>
+      </div>
+      <aside className="flow-aside" aria-label={t('report.summary_title')}>
+        <Summary r={r} />
+      </aside>
+      </div>
     </>
+  )
+}
+
+/** Running summary of what the citizen has told us and where it is going. Collapsible on small screens. */
+function Summary({ r }: { r: ReportState }) {
+  const { t } = useTranslation()
+  const lang = currentLang()
+  const routing = r.frame ? route(r.frame, r.answers) : null
+  const rows: [string, string][] = r.frame
+    ? ([
+        [t('report.category'), categoryLabel(r.frame.category, lang)],
+        [t('report.location'), locationText(r) || t('common.not_given')],
+        [t('report.duration'), r.frame.duration ? t('report.duration_value', { value: r.frame.duration.value, unit: t(`common.unit.${r.frame.duration.unit}`, { count: r.frame.duration.value }) }) : t('common.not_given')],
+        routing ? [t('report.likely_authority'), routing.authority.name] : null,
+        routing?.department ? [t('report.department'), routing.department] : null,
+      ].filter(Boolean) as [string, string][])
+    : r.userCategory
+      ? [[t('report.category'), categoryLabel(r.userCategory, lang)]]
+      : []
+  const narrow = typeof window !== 'undefined' && window.matchMedia?.('(max-width: 1000px)').matches
+  const body = rows.length ? (
+    <dl>
+      {rows.map(([k, v]) => (
+        <div key={k}>
+          <dt>{k}</dt>
+          <dd>{v}</dd>
+        </div>
+      ))}
+    </dl>
+  ) : (
+    <p className="hint" style={{ margin: 0 }}>
+      {t('report.summary_empty')}
+    </p>
+  )
+  return (
+    <div className="summary">
+      {narrow ? (
+        <details>
+          <summary>
+            <strong>{t('report.summary_title')}</strong> <IconChevron />
+          </summary>
+          {body}
+        </details>
+      ) : (
+        <>
+          <h2>{t('report.summary_title')}</h2>
+          {body}
+          {routing && (
+            <p className="hint" style={{ margin: '14px 0 0' }}>
+              {t('report.confidence', { level: t(`guidance:confidence.${routing.confidence}`) })}
+            </p>
+          )}
+        </>
+      )}
+    </div>
   )
 }
 

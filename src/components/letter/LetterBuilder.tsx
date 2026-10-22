@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { pick, type Lang } from '../../lib/civic/data.ts'
+import { pick, type Channel, type Lang } from '../../lib/civic/data.ts'
 import type { Duration } from '../../lib/civic/lexicon.ts'
 import { LANGUAGES } from '../../i18n.ts'
 import { composeLetter, type LetterFields } from '../../lib/letter/compose.ts'
@@ -8,7 +8,7 @@ import { checkPolish, factTokens, splitParagraphs } from '../../lib/letter/polis
 import { blocking, validateLetter } from '../../lib/letter/validate.ts'
 import { categoryById } from '../../lib/civic/data.ts'
 import type { Gateway } from '../../lib/rag/ask.ts'
-import { IconAlert, IconCheck, IconCopy, IconDownload } from '../icons.tsx'
+import { IconAlert, IconCheck, IconCopy, IconDownload, IconExternal } from '../icons.tsx'
 import { Status } from '../ui.tsx'
 
 export interface LetterSeed {
@@ -27,7 +27,7 @@ export interface LetterSeed {
 
 type Editable = Omit<LetterFields, 'date' | 'authority' | 'department' | 'category' | 'description' | 'body_override' | 'programme'> & { include_programme: boolean; attachments_text: string; impact: string }
 
-export default function LetterBuilder({ seed, gateway, aiAvailable, onLetter }: { seed: LetterSeed; gateway: Gateway | null; aiAvailable: boolean; onLetter?: (text: string) => void }) {
+export default function LetterBuilder({ seed, gateway, aiAvailable, onLetter, channel }: { seed: LetterSeed; gateway: Gateway | null; aiAvailable: boolean; onLetter?: (text: string) => void; channel?: Channel | null }) {
   const { t, i18n } = useTranslation()
   const [f, setF] = useState<Editable>(() => ({
     language: (i18n.language as Lang) ?? 'en',
@@ -51,6 +51,7 @@ export default function LetterBuilder({ seed, gateway, aiAvailable, onLetter }: 
   const [note, setNote] = useState<{ kind: 'ok' | 'warn' | 'error'; text: string } | null>(null)
   const [allowNoName, setAllowNoName] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [view, setView] = useState<'details' | 'preview'>('details')
 
   const cat = categoryById.get(seed.category) ?? categoryById.get('other')!
   const defaultAction = pick(cat.requested_action, f.language)
@@ -64,7 +65,7 @@ export default function LetterBuilder({ seed, gateway, aiAvailable, onLetter }: 
       category: seed.category,
       description: seed.description,
       requested_action: f.requested_action || undefined,
-      attachments: f.attachments_text.split(',').map((s) => s.trim()).filter(Boolean),
+      attachments: f.attachments_text.split(/[,\n]/).map((s) => s.trim()).filter(Boolean),
       programme: f.include_programme ? (seed.programme ?? null) : null,
       body_override: bodyOverride,
       complaint_id: seed.complaint_id,
@@ -147,9 +148,17 @@ export default function LetterBuilder({ seed, gateway, aiAvailable, onLetter }: 
   const languageMismatch = seed.descriptionLanguage && seed.descriptionLanguage !== f.language
 
   return (
-    <div className="layout-2">
-      <div className="stack">
-        <section className="card">
+    <>
+      <div className="doc-tabs" role="tablist" aria-label={t('letter.preview')}>
+        {(['details', 'preview'] as const).map((v) => (
+          <button key={v} type="button" role="tab" aria-selected={view === v} onClick={() => setView(v)}>
+            {t(v === 'details' ? 'letter.tab_details' : 'letter.tab_preview')}
+          </button>
+        ))}
+      </div>
+      <div className="doc-layout" data-view={view}>
+        <div className="doc-form card">
+        <section className="form-section">
           <h2>{t('letter.details')}</h2>
           <div className="grid-2">
             <div className="field">
@@ -200,7 +209,7 @@ export default function LetterBuilder({ seed, gateway, aiAvailable, onLetter }: 
               <label className="field-label" htmlFor="l-att">
                 {t('letter.attachments')}
               </label>
-              <input id="l-att" className="input" value={f.attachments_text} onChange={(e) => set('attachments_text', e.target.value)} placeholder={t('letter.attachments_placeholder')} maxLength={200} />
+              <textarea id="l-att" rows={2} style={{ minHeight: 64 }} value={f.attachments_text} onChange={(e) => set('attachments_text', e.target.value)} placeholder={t('letter.attachments_placeholder')} maxLength={300} />
             </div>
           </div>
           <div className="field">
@@ -223,7 +232,7 @@ export default function LetterBuilder({ seed, gateway, aiAvailable, onLetter }: 
           )}
         </section>
 
-        <section className="card">
+        <section className="form-section">
           <h2>{t('letter.sender')}</h2>
           <p className="hint">{t('letter.sender_privacy')}</p>
           <div className="grid-2">
@@ -237,26 +246,33 @@ export default function LetterBuilder({ seed, gateway, aiAvailable, onLetter }: 
             ))}
           </div>
         </section>
-      </div>
+        </div>
 
-      <aside className="stack">
-        <section className="card">
-          <div className="card-title">
+        <aside className="doc-aside">
+          <div className="doc-toolbar">
             <h2>{t('letter.preview')}</h2>
-            <span className="hint">
-              <code>{composed.version}</code>
-            </span>
+            <span className="badge badge-outline mono">{composed.version}</span>
           </div>
           {languageMismatch && <Status kind="info">{t('letter.language_mismatch')}</Status>}
-          <label htmlFor="letter-text" className="sr-only">
-            {t('letter.preview')}
-          </label>
-          <textarea id="letter-text" className="letter-paper" lang={f.language} rows={18} value={text} onChange={(e) => setEdited(e.target.value)} />
-          {edited !== null && (
-            <button className="btn-ghost" onClick={() => setEdited(null)}>
-              {t('letter.rebuild')}
-            </button>
-          )}
+          <div className="doc-desk">
+            <div className="doc-page">
+              <label htmlFor="letter-text" className="sr-only">
+                {t('letter.preview')}
+              </label>
+              <textarea id="letter-text" className="letter-paper" lang={f.language} value={text} onChange={(e) => setEdited(e.target.value)} spellCheck={false} />
+              <span className="doc-page-label" aria-hidden>
+                {t('letter.page_label')}
+              </span>
+            </div>
+          </div>
+          <p className="hint" style={{ margin: '10px 0 0' }}>
+            {t('letter.edit_hint')}{' '}
+            {edited !== null && (
+              <button className="btn-ghost" onClick={() => setEdited(null)}>
+                {t('letter.rebuild')}
+              </button>
+            )}
+          </p>
           {issues.length > 0 ? (
             <ul className="checks">
               {issues.map((i) => (
@@ -266,7 +282,7 @@ export default function LetterBuilder({ seed, gateway, aiAvailable, onLetter }: 
               ))}
             </ul>
           ) : (
-            <p className="ok small">
+            <p className="ok small" style={{ marginTop: 12 }}>
               <IconCheck /> {t('letter.checks_passed')}
             </p>
           )}
@@ -290,11 +306,22 @@ export default function LetterBuilder({ seed, gateway, aiAvailable, onLetter }: 
               </button>
             )}
           </div>
-          <p className="hint" style={{ marginTop: 10 }}>
+          {channel && (
+            <div className="source-block" style={{ marginTop: 16 }}>
+              <IconExternal />
+              <div>
+                <div style={{ fontWeight: 600, color: 'var(--text)' }}>{pick(channel.label, f.language)}</div>
+                <a href={channel.href} {...(channel.href.startsWith('https://') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+                  {t('letter.open_portal')}
+                </a>
+              </div>
+            </div>
+          )}
+          <p className="hint" style={{ marginTop: 12 }}>
             {t('letter.form_note')}
           </p>
-        </section>
-      </aside>
-    </div>
+        </aside>
+      </div>
+    </>
   )
 }
